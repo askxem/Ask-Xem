@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import useForm from "../../hooks/useForm.js";
 
@@ -6,7 +5,7 @@ import useForm from "../../hooks/useForm.js";
 
 /**
  * Called within the home form on click of the login/signup button
- * @param {Boolean} isSigningUp Optional parameter. Tells component how to manage the data. 
+ * @param {Boolean} isSigningUp Optional parameter, defeaults to false. Tells component how to manage the data. 
  * @returns a form that can handle signing up and logging in.
  */
 export default function AuthForm({isSigningUp=false}) {
