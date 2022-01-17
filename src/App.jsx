@@ -26,12 +26,12 @@ export default function App() {
           <Route exact path='/favorites'>
             <Favorites />
           </Route>
-          <Route exact path='/pronouns/:term'>
+          {/* <Route exact path='/pronouns/:term'>
             <PronounDetail />
           </Route>
           <Route exact path='/beyond/:term'>
             <BeyondDetail />
-          </Route>
+          </Route> */}
           <Route exact path='/beyond'>
             <Beyond />
           </Route>
