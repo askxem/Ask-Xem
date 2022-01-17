@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import useForm from "../../hooks/useForm.js";
 
 
 
@@ -9,8 +10,10 @@ import { useHistory, useLocation } from "react-router-dom";
  * @returns a form that can handle signing up and logging in.
  */
 export default function AuthForm({isSigningUp=false}) {
-  const [emailInput, setEmailInput] = useState('');
-  const [passwordInput, setPasswordInput] = useState('');
+  const {formState, handleChange} = useForm({
+    email: '',
+    password: ''
+  });
   const location = useLocation();
   const history = useHistory();
 
@@ -34,10 +37,10 @@ export default function AuthForm({isSigningUp=false}) {
         <legend>{isSigningUp ? 'Sign Up' : 'Login'}</legend>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} />
+          <input name='email' type="email" id="email" value={formState.email} onChange={handleChange} />
 
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} />
+          <input name='password' type="password" id="password" value={formState.password} onChange={handleChange} />
 
           <button>{isSigningUp ? 'Create Account' : 'Login'}</button>
         </form>
