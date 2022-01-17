@@ -10,7 +10,7 @@ import useForm from "../../hooks/useForm.js";
  * @returns a form that can handle signing up and logging in.
  */
 export default function AuthForm({isSigningUp=false}) {
-  const {formState, handleChange} = useForm({
+  const [{email, password}, handleChange] = useForm({
     email: '',
     password: ''
   });
@@ -37,10 +37,10 @@ export default function AuthForm({isSigningUp=false}) {
         <legend>{isSigningUp ? 'Sign Up' : 'Login'}</legend>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
-          <input name='email' type="email" id="email" value={formState.email} onChange={handleChange} />
+          <input name='email' type="email" id="email" value={email} onChange={handleChange} />
 
           <label htmlFor="password">Password</label>
-          <input name='password' type="password" id="password" value={formState.password} onChange={handleChange} />
+          <input name='password' type="password" id="password" value={password} onChange={handleChange} />
 
           <button>{isSigningUp ? 'Create Account' : 'Login'}</button>
         </form>

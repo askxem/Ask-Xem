@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 /**
- * Called within any form component. 
+ * Called within AuthForm component. Can be used with any form component. 
  * @param {object} intialValue properties must correspond with input name attributes. 
  * @returns a current form state and handleChange fn for the input onChange attributes.
  */
@@ -21,5 +21,5 @@ export default function useForm(intialValue) {
         });
     }
 
-    return {formState, handleChange};
+    return [formState, handleChange];
 }
