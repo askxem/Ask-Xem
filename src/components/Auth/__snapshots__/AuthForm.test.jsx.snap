@@ -96,7 +96,7 @@ exports[`renders authForm component renders signup form 1`] = `
         </div>
         <div>
           <p>
-            Disclaimer: You must be 13 years of age or older to have create and manage an account.
+            Disclaimer: You must be 13 years of age or older to create and manage an account.
           </p>
           <a
             href="https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule"
