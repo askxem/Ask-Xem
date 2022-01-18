@@ -4,6 +4,7 @@ import useForm from '../../hooks/useForm.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
+
 export default function Auth() {
     const history = useHistory();
     const location = useLocation();
@@ -19,8 +20,7 @@ export default function Auth() {
 
     function handleSubmit (e){
         e.preventDefault();
-        // throw an error that reads to user on form.
-        if (password.length < 8) return;
+        if (password.length <= 12) return;
         // Later: 
         // Update user in context
         // Make appropriate call to backend

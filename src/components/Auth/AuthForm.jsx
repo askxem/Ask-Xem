@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import CoppaDisclaimer from "./CoppaDisclaimer.jsx"
 
 /**
  * Called within the auth view/container component
@@ -41,14 +42,22 @@ export default function AuthForm({
           autoComplete={isSigningUp ? 'new-password' : 'current-password'} 
           required 
           />
-          <p aria-label='Password contraints'>Password must be a at least 8 characters long.</p>
-
+          
+          {
+            isSigningUp && <p aria-label='Password contraints'>{password.length >= 12 ? '🟢 Password must be at least 12 characters long.' : '🔴 Password must be at least 12 characters long.'}</p>
+          }
+          
           <div 
           id="toggle-password"
           aria-label={`Show password as plain text. Warning: this will display your password on the screen. Password is currently ${isPasswordVisible ? 'visible' : 'hidden'}`}
           onClick={() => setIsPasswordVisible(prevState => !prevState)}>
             { isPasswordVisible ? 'Hide Password' : 'Show Password'}
           </div>
+
+          {
+            isSigningUp && <CoppaDisclaimer />
+          }
+        
           
           <button>{isSigningUp ? 'Create Account' : 'Login'}</button>
 
