@@ -27,15 +27,19 @@ export default function App() {
           <Route exact path='/about'>
             <About />
           </Route>
+    
           <Route exact path='/favorites'>
             <Favorites />
           </Route>
+
           <Route exact path='/pronouns/:term'>
             <PronounsDetail />
           </Route>
+    
           <Route exact path='/beyond/:term'>
             <BeyondDetail />
           </Route>
+    
           <Route exact path='/beyond'>
             <Beyond />
           </Route>
