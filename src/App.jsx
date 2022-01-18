@@ -9,6 +9,7 @@ import Favorites from './views/Favorites/Favorites.jsx';
 import Home from './views/Home/Home.jsx';
 import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
 import BeyondDetail from './views/Beyond/BeyondDetail.jsx';
+import AuthForm from './components/Auth/AuthForm.jsx';
 
 // to protect:
 // favorites, profile
@@ -47,7 +48,8 @@ export default function App() {
             <Select />
           </Route>
           <Route exact path='/'>
-            <Home />
+            {/* <Home /> */}
+            <AuthForm />
           </Route>
 
         </Switch>

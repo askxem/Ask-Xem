@@ -17,6 +17,7 @@ export default function AuthForm({isSigningUp=false}) {
   const [formSwitch, setFormSwitch] = useState(isSigningUp);
   const location = useLocation();
   const history = useHistory();
+  const [showPassword, setShowPassword] = useState(false);
 
 
   const {from} = location.state || { from: { pathname: '/select'}};
@@ -36,6 +37,10 @@ export default function AuthForm({isSigningUp=false}) {
     setFormSwitch(prevState => !prevState);
   }
 
+  function handleShowPassword(){
+    setShowPassword(prevState => !prevState);
+  }
+
 
   return (
     <div>
@@ -44,10 +49,17 @@ export default function AuthForm({isSigningUp=false}) {
         <form onSubmit={handleSubmit}>
 
           <label htmlFor="email">Email</label>
-          <input name='email' type="email" id="email" value={email} onChange={handleChange} />
+          <input name='email' type="email" id="email" value={email} onChange={handleChange} required />
 
           <label htmlFor="password">Password</label>
-          <input name='password' type="password" id="password" value={password} onChange={handleChange} />
+          <input name='password' type={showPassword ? 'text' : 'password'} id="password" value={password} onChange={handleChange} required />
+          <div 
+          id="toggle-password"
+          aria-label={`Show password as plain text. Warning: this will display your password on the screen. Password is currently ${showPassword ? 'visible.' : 'hidden.'}`}
+          onClick={handleShowPassword}>
+            { showPassword ? 'Hide Password' : 'Show Password'}
+          </div>
+          
 
           <button>{formSwitch ? 'Create Account' : 'Login'}</button>
 
