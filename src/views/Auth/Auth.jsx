@@ -28,6 +28,19 @@ export default function Auth() {
         history.replace(from);
     }
 
+    function handleFormSwitch(){
+        setIsSigningUp(prevState => !prevState);
+        setIsPasswordVisible(false);
+        const resetPassword = {
+            preventDefault: () => null,
+            target: {
+                name: 'password',
+                value: ''
+            }
+        }
+        handleChange(resetPassword);
+    }
+
 
     return (
         <section>
@@ -40,7 +53,7 @@ export default function Auth() {
             isPasswordVisible={isPasswordVisible}
             setIsPasswordVisible={setIsPasswordVisible}
             />
-            <button onClick={() => setIsSigningUp(prevState => !prevState)}>{isSigningUp ? 'Already have an account?' : 'Need to signup?'}</button>
+            <button onClick={handleFormSwitch}>{isSigningUp ? 'Already have an account?' : 'Need to signup?'}</button>
         </section>
     )
 }
