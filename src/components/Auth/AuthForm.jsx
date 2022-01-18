@@ -1,5 +1,6 @@
 import { useHistory, useLocation } from "react-router-dom";
 import useForm from "../../hooks/useForm.js";
+import { useState } from "react";
 
 
 
@@ -13,6 +14,7 @@ export default function AuthForm({isSigningUp=false}) {
     email: '',
     password: ''
   });
+  const [formSwitch, setFormSwitch] = useState(isSigningUp);
   const location = useLocation();
   const history = useHistory();
 
@@ -30,10 +32,14 @@ export default function AuthForm({isSigningUp=false}) {
     history.replace(from);
   }
 
+  function switchForm(){
+    setFormSwitch(prevState => !prevState);
+  }
+
   return (
     <div>
       <fieldset>
-        <legend>{isSigningUp ? 'Sign Up' : 'Login'}</legend>
+        <legend>{formSwitch ? 'Sign Up' : 'Login'}</legend>
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email</label>
           <input name='email' type="email" id="email" value={email} onChange={handleChange} />
@@ -41,9 +47,10 @@ export default function AuthForm({isSigningUp=false}) {
           <label htmlFor="password">Password</label>
           <input name='password' type="password" id="password" value={password} onChange={handleChange} />
 
-          <button>{isSigningUp ? 'Create Account' : 'Login'}</button>
+          <button>{formSwitch ? 'Create Account' : 'Login'}</button>
         </form>
       </fieldset>
+      <button onClick={switchForm}>{formSwitch ? 'Already have an account?' : 'Need to signup?'}</button>
     </div>
   )
 }
