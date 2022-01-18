@@ -21,6 +21,7 @@ export default function Favorites() {
 
   const history = useHistory();
 
+  user ?
   useEffect(() => {
      try {
       const res = getFavorites();
@@ -29,7 +30,8 @@ export default function Favorites() {
     } catch (error) {
       throw new Error(error.message);
     }
-  }, [])
+  }, []) :
+  history.push('/login')
 
 
   return (
