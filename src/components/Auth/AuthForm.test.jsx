@@ -2,6 +2,15 @@ import { render } from '@testing-library/react'
 import { Route, MemoryRouter } from 'react-router-dom';
 import AuthForm from './AuthForm.jsx'
 
+const testProps = {
+    isSigningUp: false,
+    email: 'test-email',
+    password: 'test-password',
+    handleChange: jest.fn(),
+    handleSubmit: jest.fn(),
+    isPasswordVisible: false,
+    setIsPasswordVisible: jest.fn()
+}
 
 describe('renders authForm component', () => {
     
@@ -9,7 +18,7 @@ describe('renders authForm component', () => {
         const {container} = render(
         <MemoryRouter initialEntries={['/']}>
             <Route path='/'>
-                <AuthForm />
+                <AuthForm {...testProps}/>
             </Route>
         </MemoryRouter>
         );
@@ -21,7 +30,7 @@ describe('renders authForm component', () => {
         const {container} = render(
             <MemoryRouter initialEntries={['/']}>
             <Route path='/'>
-                <AuthForm isSigningUp={true}/>
+                <AuthForm {...testProps} isSigningUp={true}/>
             </Route>
         </MemoryRouter>
         );

@@ -14,10 +14,12 @@ exports[`renders authForm component renders login form 1`] = `
           Email
         </label>
         <input
+          autocomplete="email"
           id="email"
           name="email"
+          required=""
           type="email"
-          value=""
+          value="test-email"
         />
         <label
           for="password"
@@ -25,19 +27,29 @@ exports[`renders authForm component renders login form 1`] = `
           Password
         </label>
         <input
+          autocomplete="current-password"
           id="password"
           name="password"
+          required=""
           type="password"
-          value=""
+          value="test-password"
         />
+        <p
+          aria-label="Password contraints"
+        >
+          Password must be a at least 8 characters long.
+        </p>
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
         <button>
           Login
         </button>
       </form>
     </fieldset>
-    <button>
-      Need to signup?
-    </button>
   </div>
 </div>
 `;
@@ -56,10 +68,12 @@ exports[`renders authForm component renders signup form 1`] = `
           Email
         </label>
         <input
+          autocomplete="email"
           id="email"
           name="email"
+          required=""
           type="email"
-          value=""
+          value="test-email"
         />
         <label
           for="password"
@@ -67,19 +81,29 @@ exports[`renders authForm component renders signup form 1`] = `
           Password
         </label>
         <input
+          autocomplete="new-password"
           id="password"
           name="password"
+          required=""
           type="password"
-          value=""
+          value="test-password"
         />
+        <p
+          aria-label="Password contraints"
+        >
+          Password must be a at least 8 characters long.
+        </p>
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
         <button>
           Create Account
         </button>
       </form>
     </fieldset>
-    <button>
-      Already have an account?
-    </button>
   </div>
 </div>
 `;
