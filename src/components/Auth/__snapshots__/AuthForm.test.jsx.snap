@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders authForm component renders login form 1`] = `
+<div>
+  <div>
+    <fieldset>
+      <legend>
+        Login
+      </legend>
+      <form>
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          value=""
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          value=""
+        />
+        <button>
+          Login
+        </button>
+      </form>
+    </fieldset>
+    <button>
+      Need to signup?
+    </button>
+  </div>
+</div>
+`;
+
+exports[`renders authForm component renders signup form 1`] = `
+<div>
+  <div>
+    <fieldset>
+      <legend>
+        Sign Up
+      </legend>
+      <form>
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          value=""
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          value=""
+        />
+        <button>
+          Create Account
+        </button>
+      </form>
+    </fieldset>
+    <button>
+      Already have an account?
+    </button>
+  </div>
+</div>
+`;

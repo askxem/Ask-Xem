@@ -15,6 +15,7 @@ export default function AuthForm({isSigningUp=false}) {
     password: ''
   });
   const [formSwitch, setFormSwitch] = useState(isSigningUp);
+  // ❗ Causing tests to fail. 
   const location = useLocation();
   const history = useHistory();
 
