@@ -7,7 +7,6 @@ import Pronouns from './views/Pronouns/Pronouns.jsx';
 import Beyond from './views/Beyond/Beyond.jsx';
 import Favorites from './views/Favorites/Favorites.jsx';
 import Home from './views/Home/Home.jsx';
-import AuthForm from './components/Auth/AuthForm.jsx';
 import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
 import BeyondDetail from './views/Beyond/BeyondDetail.jsx';
 
@@ -48,8 +47,7 @@ export default function App() {
             <Select />
           </Route>
           <Route exact path='/'>
-            {/* Here for testing purposes only. */}
-            <AuthForm />
+            <Home />
           </Route>
 
         </Switch>

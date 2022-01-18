@@ -1,11 +1,17 @@
 import { render } from '@testing-library/react'
+import { Route, MemoryRouter } from 'react-router-dom';
 import AuthForm from './AuthForm.jsx'
 
 
 describe('renders authForm component', () => {
+    
     it('renders login form', () => {
         const {container} = render(
-            <AuthForm />
+        <MemoryRouter initialEntries={['/']}>
+            <Route path='/'>
+                <AuthForm />
+            </Route>
+        </MemoryRouter>
         );
     
         expect(container).toMatchSnapshot();
@@ -13,7 +19,11 @@ describe('renders authForm component', () => {
 
     it('renders signup form', () => {
         const {container} = render(
-            <AuthForm isSigningUp={true}/>
+            <MemoryRouter initialEntries={['/']}>
+            <Route path='/'>
+                <AuthForm isSigningUp={true}/>
+            </Route>
+        </MemoryRouter>
         );
     
         expect(container).toMatchSnapshot();
