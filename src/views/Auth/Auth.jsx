@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function Auth() {
     const history = useHistory();
     const location = useLocation();
-    const [showPassword, setShowPassword] = useState(false);
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isSigningUp, setIsSigningUp] = useState(false);
     const [{email, password}, handleChange] = useForm({
         email: '',
@@ -32,13 +32,13 @@ export default function Auth() {
     return (
         <section>
             <AuthForm 
+            isSigningUp={isSigningUp}
             email={email}
             password={password}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
-            showPassword={showPassword}
-            setShowPassword={setShowPassword}
-            isSigningUp={isSigningUp}
+            isPasswordVisible={isPasswordVisible}
+            setIsPasswordVisible={setIsPasswordVisible}
             />
             <button onClick={() => setIsSigningUp(prevState => !prevState)}>{isSigningUp ? 'Already have an account?' : 'Need to signup?'}</button>
         </section>
