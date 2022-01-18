@@ -7,6 +7,10 @@ import Pronouns from './views/Pronouns/Pronouns.jsx';
 import Beyond from './views/Beyond/Beyond.jsx';
 import Favorites from './views/Favorites/Favorites.jsx';
 import Home from './views/Home/Home.jsx';
+import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
+import BeyondDetail from './views/Beyond/BeyondDetail.jsx';
+import AuthForm from './components/Auth/AuthForm.jsx';
+import Auth from './views/Auth/Auth.jsx';
 
 // to protect:
 // favorites, profile
@@ -27,7 +31,7 @@ export default function App() {
             <Favorites />
           </Route>
           <Route exact path='/pronouns/:term'>
-            <PronounDetail />
+            <PronounsDetail />
           </Route>
           <Route exact path='/beyond/:term'>
             <BeyondDetail />
@@ -43,6 +47,9 @@ export default function App() {
           </Route>
           <Route exact path='/select'>
             <Select />
+          </Route>
+          <Route exact path='/auth'>
+            <Auth />
           </Route>
           <Route exact path='/'>
             <Home />

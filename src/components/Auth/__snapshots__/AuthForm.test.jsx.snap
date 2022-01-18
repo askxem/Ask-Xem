@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders authForm component renders login form 1`] = `
+<div>
+  <div>
+    <fieldset>
+      <legend>
+        Login
+      </legend>
+      <form>
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          autocomplete="email"
+          id="email"
+          name="email"
+          required=""
+          type="email"
+          value="test-email"
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          autocomplete="current-password"
+          id="password"
+          name="password"
+          required=""
+          type="password"
+          value="test-password"
+        />
+        <p
+          aria-label="Password contraints"
+        >
+          Password must be a at least 8 characters long.
+        </p>
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
+        <button>
+          Login
+        </button>
+      </form>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`renders authForm component renders signup form 1`] = `
+<div>
+  <div>
+    <fieldset>
+      <legend>
+        Sign Up
+      </legend>
+      <form>
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          autocomplete="email"
+          id="email"
+          name="email"
+          required=""
+          type="email"
+          value="test-email"
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          autocomplete="new-password"
+          id="password"
+          name="password"
+          required=""
+          type="password"
+          value="test-password"
+        />
+        <p
+          aria-label="Password contraints"
+        >
+          Password must be a at least 8 characters long.
+        </p>
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
+        <button>
+          Create Account
+        </button>
+      </form>
+    </fieldset>
+  </div>
+</div>
+`;
