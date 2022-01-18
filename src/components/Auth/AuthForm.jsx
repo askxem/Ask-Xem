@@ -15,12 +15,10 @@ export default function AuthForm({isSigningUp=false}) {
     password: ''
   });
   const [formSwitch, setFormSwitch] = useState(isSigningUp);
-  // ❗ Causing tests to fail. 
   const location = useLocation();
   const history = useHistory();
 
 
-  // Pulls from obj from the private route state if it exists, otherwise use the /select path.
   const {from} = location.state || { from: { pathname: '/select'}};
 
 
