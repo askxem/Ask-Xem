@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
+//to import
+//getFavorites
+//useUser from user context
 
 //if a user is not present, redirect them to the login page. 
 //the guide displays a welcoming message like "these are the cards you wanted to remember!"
@@ -11,11 +15,22 @@ import { useState } from "react";
 
 
 export default function Favorites() {
+  const { user } = useUser();
   const [favorites, setFavorites] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  //useEffect will:
-  //getFaves
-  //setFaves
+  const history = useHistory();
+
+  useEffect(() => {
+     try {
+      const res = getFavorites();
+      setFavorites(res);
+      setLoading(false);
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }, [])
+
 
   return (
     <div>
