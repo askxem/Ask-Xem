@@ -11,7 +11,7 @@ import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
 import GenderDetail from './views/Gender/GenderDetail.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
 import Auth from './views/Auth/Auth.jsx';
-import { ProvideAuth } from './context/AuthContext/AuthContext.jsx';
+import { ProvideAuth } from './context/AuthContext.jsx';
 import './App.css'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
@@ -25,7 +25,6 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 export default function App() {
   return (
     <ProvideAuth>
-      <Layout>
         <Router>
           <Switch>
 
@@ -36,22 +35,32 @@ export default function App() {
               <Favorites />
             </PrivateRoute>
             <Route path='/pronoun/:id'>
-              <PronounsDetail />
+              <Layout>
+                <PronounsDetail />
+              </Layout>
             </Route>
             <Route path='/gender/:id'>
-              <GenderDetail />
+              <Layout>
+                <GenderDetail />
+              </Layout>
             </Route>
             <Route exact path='/gender'>
-              <Gender />
+              <Layout>
+                <Gender />
+              </Layout>
             </Route>
             <Route exact path='/pronouns'>
-              <Pronouns />
+              <Layout>
+                <Pronouns />
+              </Layout>
             </Route>
             <PrivateRoute exact path='/profile'>
               <Profile />
             </PrivateRoute>
             <Route exact path='/select'>
-              <Select />
+              <Layout>
+                <Select />
+              </Layout>
             </Route>
             <Route exact path='/auth'>
               <Auth />
@@ -62,7 +71,6 @@ export default function App() {
 
           </Switch>
         </Router>
-      </Layout>
     </ProvideAuth>
     );
 }

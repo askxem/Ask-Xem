@@ -1,6 +1,5 @@
 import { createContext, useState, useContext, useMemo } from "react";
-import { getUser, signInUser, signOutUser, signUpUser } from "../../services/users.js";
-
+import { getUser, signInUser, signOutUser, signUpUser } from "../services/users.js";
 
 
 const AuthContext = createContext();
@@ -10,7 +9,7 @@ function ProvideAuth({children}) {
     const currentUser = getUser();
 
     const [user, setUser] = useState(
-        currentUser ? {email: currentUser.email} : {}
+        currentUser ? {...currentUser} : {}
     );
 
     async function signUp(email, password) {
@@ -20,6 +19,7 @@ function ProvideAuth({children}) {
 
     async function signIn(email, password) {
         const newUser = await signInUser(email, password);
+        console.log(newUser);
         setUser(newUser);
     }
 

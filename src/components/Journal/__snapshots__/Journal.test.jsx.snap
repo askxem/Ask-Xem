@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the journal component 1`] = `
+<div>
+  <div
+    class="backdrop"
+    style="opacity: 0;"
+  >
+    <div
+      class="modal"
+    >
+      <form>
+        <label
+          for="journal"
+        >
+          Journal
+        </label>
+        <textarea
+          id="journal"
+          name="journal"
+        />
+        <button>
+          Submit and Return to page.
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+`;
