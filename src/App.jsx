@@ -12,6 +12,8 @@ import GenderDetail from './views/Gender/GenderDetail.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
 import Auth from './views/Auth/Auth.jsx';
 import { ProvideAuth } from './context/AuthContext/AuthContext.jsx';
+import './App.css'
+
 
 // to protect:
 // favorites, profile
@@ -29,19 +31,15 @@ export default function App() {
             <Route exact path='/about'>
               <About />
             </Route>
-      
             <Route exact path='/favorites'>
               <Favorites />
             </Route>
-
-            <Route exact path='/pronouns/:term'>
+            <Route path='/pronoun/:id'>
               <PronounsDetail />
             </Route>
-      
-            <Route exact path='/gender/:term'>
+            <Route path='/gender/:id'>
               <GenderDetail />
             </Route>
-      
             <Route exact path='/gender'>
               <Gender />
             </Route>
