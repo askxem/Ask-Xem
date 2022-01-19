@@ -28,12 +28,12 @@ function setGuideLocal(guide) {
   const stringyGuide = JSON.stringify(guide);
   localStorage.setItem('GUIDE', stringyGuide)
 }
+}
 
-function useGuide(){
+const useGuide = () => {
     const context = useContext(GuideContext);
     if (context === undefined) throw new Error('Guide context not accessible outside of the guide provider.')
     return context;
 }
-}
 
-export { GuideProvider, useGuide, setGuideGlobal }
+export { GuideProvider, useGuide }
