@@ -23,8 +23,7 @@ export default function Auth() {
     function handleSubmit (e){
         e.preventDefault();
         if (password.length <= 12) return;
-        // Should this be in try catch?
-        // Should we handle specific errors?
+
         isSigningUp 
         ? signUp(email, password)
         : signIn(email, password)
