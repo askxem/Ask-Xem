@@ -30,7 +30,7 @@ export default function About() {
 
       <div className="members">
       <h2>Sarani</h2>
-      <p>I use she/her pronouns. I am passionite about this project because I have nieces and nephews starting to question the world around them and I want to contribute in a positive and loving way to help them discover themselves</p>
+      <p>I use she/her pronouns. I'm passionate about this project because I have nieces and nephews starting to question the world around them and I want to contribute in a positive and loving way to help them discover themselves</p>
       <img src={lion} alt="lion"/>
       </div>
   

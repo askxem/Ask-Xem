@@ -1,8 +1,27 @@
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+
+[type=radio]+img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 5px dotted rgb(100, 185, 255);
+}
+
+body {
+  margin: 2rem;
+  min-height: 200px;
+}
+
 .locked {
-    cursor: default;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-      -o-filter: grayscale(100%);
-     -ms-filter: grayscale(100%);
-         filter: grayscale(100%);
+  cursor: default;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+   -ms-filter: grayscale(100%);
+       filter: grayscale(100%);
 }
