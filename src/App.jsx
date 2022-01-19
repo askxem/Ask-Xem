@@ -24,7 +24,6 @@ import './App.css'
 export default function App() {
   return (
     <ProvideAuth>
-      <Layout>
         <Router>
           <Switch>
 
@@ -35,22 +34,32 @@ export default function App() {
               <Favorites />
             </Route>
             <Route path='/pronoun/:id'>
-              <PronounsDetail />
+              <Layout>
+                <PronounsDetail />
+              </Layout>
             </Route>
             <Route path='/gender/:id'>
-              <GenderDetail />
+              <Layout>
+                <GenderDetail />
+              </Layout>
             </Route>
             <Route exact path='/gender'>
-              <Gender />
+              <Layout>
+                <Gender />
+              </Layout>
             </Route>
             <Route exact path='/pronouns'>
-              <Pronouns />
+              <Layout>
+                <Pronouns />
+              </Layout>
             </Route>
             <Route exact path='/profile'>
               <Profile />
             </Route>
             <Route exact path='/select'>
-              <Select />
+              <Layout>
+                <Select />
+              </Layout>
             </Route>
             <Route exact path='/auth'>
               <Auth />
@@ -61,7 +70,6 @@ export default function App() {
 
           </Switch>
         </Router>
-      </Layout>
     </ProvideAuth>
     );
 }
