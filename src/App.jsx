@@ -19,63 +19,57 @@ import './App.css'
 export default function App() {
   return (
     <ProvideAuth>
-        <Router>
-          <Switch>
+      <DeckProvider>
+        <Layout>
 
-            <Route exact path='/about'>
-              <About />
-            </Route>
-    
-            <PrivateRoute exact path='/favorites'>
-              <Favorites />
-            </PrivateRoute>
-    
-            <DeckProvider>
-                <Route path='/pronoun/:id'>
-                  <Layout>
-                    <PronounsDetail />
-                  </Layout>
-                </Route>
-    
-                <Route path='/gender/:id'>
-                  <Layout>
-                    <GenderDetail />
-                  </Layout>
-                </Route>
-    
-                <Route exact path='/gender'>
-                  <Layout>
-                    <Gender />
-                  </Layout>
-                </Route>
-    
-                <Route exact path='/pronouns'>
-                  <Layout>
-                    <Pronouns />
-                  </Layout>
-                </Route>
-             </DeckProvider>
-    
-            <PrivateRoute exact path='/profile'>
-              <Profile />
-            </PrivateRoute>
-    
-            <Route exact path='/select'>
-              <Layout>
-                <Select />
-              </Layout>
-            </Route>
-    
-            <Route exact path='/auth'>
-              <Auth />
-            </Route>
-    
-            <Route exact path='/'>
-              <Home />
-            </Route>
+          <Router>
+            <Switch>
 
-          </Switch>
-        </Router>
+              <Route exact path='/about'>
+                <About />
+              </Route>
+      
+              <PrivateRoute exact path='/favorites'>
+                <Favorites />
+              </PrivateRoute>
+      
+                  <Route path='/pronoun/:id'>
+                      <PronounsDetail />
+                  </Route>
+      
+                  <Route path='/gender/:id'>
+                      <GenderDetail />
+                  </Route>
+      
+                  <Route exact path='/gender'>
+                      <Gender />
+                  </Route>
+      
+                  <Route exact path='/pronouns'>
+                      <Pronouns />
+                  </Route>
+      
+              <PrivateRoute exact path='/profile'>
+                <Profile />
+              </PrivateRoute>
+      
+              <Route exact path='/select'>
+                  <Select />
+              </Route>
+      
+              <Route exact path='/auth'>
+                <Auth />
+              </Route>
+      
+              <Route exact path='/'>
+                <Home />
+              </Route>
+
+            </Switch>
+          </Router>
+          
+        </Layout>
+      </DeckProvider>
     </ProvideAuth>
     );
 }

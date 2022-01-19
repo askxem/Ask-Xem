@@ -5,7 +5,6 @@
 // need to implement a switch state which is true/false within the parent components to manage wether or not this is displayed.
 
 import React, {useEffect, useState} from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Journal.css'
 import { useAuth } from '../../context/AuthContext.jsx';
