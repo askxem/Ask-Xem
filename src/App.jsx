@@ -11,7 +11,9 @@ import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
 import GenderDetail from './views/Gender/GenderDetail.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
 import Auth from './views/Auth/Auth.jsx';
+import { ProvideAuth } from './context/AuthContext/AuthContext.jsx';
 import './App.css'
+
 
 // to protect:
 // favorites, profile
@@ -21,47 +23,45 @@ import './App.css'
 
 export default function App() {
   return (
-    <Layout>
-      <Router>
-        <Switch>
+    <ProvideAuth>
+      <Layout>
+        <Router>
+          <Switch>
 
-          <Route exact path='/about'>
-            <About />
-          </Route>
-    
-          <Route exact path='/favorites'>
-            <Favorites />
-          </Route>
+            <Route exact path='/about'>
+              <About />
+            </Route>
+            <Route exact path='/favorites'>
+              <Favorites />
+            </Route>
+            <Route path='/pronoun/:id'>
+              <PronounsDetail />
+            </Route>
+            <Route path='/gender/:id'>
+              <GenderDetail />
+            </Route>
+            <Route exact path='/gender'>
+              <Gender />
+            </Route>
+            <Route exact path='/pronouns'>
+              <Pronouns />
+            </Route>
+            <Route exact path='/profile'>
+              <Profile />
+            </Route>
+            <Route exact path='/select'>
+              <Select />
+            </Route>
+            <Route exact path='/auth'>
+              <Auth />
+            </Route>
+            <Route exact path='/'>
+              <Home />
+            </Route>
 
-          <Route path='/pronoun/:id'>
-            <PronounsDetail />
-          </Route>
-    
-          <Route path='/gender/:id'>
-            <GenderDetail />
-          </Route>
-    
-          <Route exact path='/gender'>
-            <Gender />
-          </Route>
-          <Route exact path='/pronouns'>
-            <Pronouns />
-          </Route>
-          <Route exact path='/profile'>
-            <Profile />
-          </Route>
-          <Route exact path='/select'>
-            <Select />
-          </Route>
-          <Route exact path='/auth'>
-            <Auth />
-          </Route>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-
-        </Switch>
-      </Router>
-    </Layout>
+          </Switch>
+        </Router>
+      </Layout>
+    </ProvideAuth>
     );
 }
