@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom"
 import lion from '../../assets/Icons/lion.png'
 import axolotl from '../../assets/Icons/axolotl.png'
 import bunny from '../../assets/Icons/bunny.png'
-import { useAuth } from "../../context/AuthContext/AuthContext"
+import { useAuth } from "../../context/AuthContext"
 import styles from './Select.css'
 
 
