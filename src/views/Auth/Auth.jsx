@@ -3,7 +3,7 @@ import AuthForm from '../../components/Auth/AuthForm.jsx'
 import useForm from '../../hooks/useForm.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import { useAuth } from '../../context/AuthContext/AuthContext.jsx';
+import { useAuth } from '../../context/AuthContext.jsx';
 
 
 export default function Auth() {

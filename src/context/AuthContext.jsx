@@ -1,6 +1,5 @@
 import { createContext, useState, useContext, useMemo } from "react";
-import { getUser, signInUser, signOutUser, signUpUser } from "../../services/users.js";
-
+import { getUser, signInUser, signOutUser, signUpUser } from "../services/users.js";
 
 
 const AuthContext = createContext();

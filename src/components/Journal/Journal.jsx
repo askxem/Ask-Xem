@@ -8,7 +8,7 @@ import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Journal.css'
-import { useAuth } from '../../context/AuthContext/AuthContext.jsx';
+import { useAuth } from '../../context/AuthContext.jsx';
 import { getJournal, insertJournal, updateJournal } from '../../services/journal.js';
 
 const backdropVariants = {

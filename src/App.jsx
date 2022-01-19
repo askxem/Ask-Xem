@@ -11,7 +11,7 @@ import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
 import GenderDetail from './views/Gender/GenderDetail.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
 import Auth from './views/Auth/Auth.jsx';
-import { ProvideAuth } from './context/AuthContext/AuthContext.jsx';
+import { ProvideAuth } from './context/AuthContext.jsx';
 import './App.css'
 
 
