@@ -5,9 +5,6 @@ import getFavs from '../../services/favorites.js';
 //to import
 //useUser from user context
 
-//with the card front, we need a delete fav button
-
-
 
 export default function Favorites() {
   const { user } = useUser();
