@@ -3,9 +3,6 @@ import AuthForm from '../../components/Auth/AuthForm.jsx'
 import useForm from '../../hooks/useForm.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import Guide from '../../components/Guide/Guide.jsx';
-import retrieveGuideText from '../../components/Guide/retrieveGuideText.js';
-
 
 export default async function Auth() {
     const history = useHistory();
