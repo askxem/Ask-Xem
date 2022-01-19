@@ -18,7 +18,9 @@ exports[`renders the journal component 1`] = `
         <textarea
           id="journal"
           name="journal"
-        />
+        >
+          Welcome to your journal!
+        </textarea>
         <button>
           Submit and Return to page.
         </button>

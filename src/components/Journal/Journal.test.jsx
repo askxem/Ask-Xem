@@ -9,7 +9,7 @@ jest.mock('../../context/AuthContext.jsx')
 it('renders the journal component', () => {
     const {container} = render(
         <ProvideAuth mockUser={{id: 2}}>
-            <Journal showJournal={true} setShowJournal={jest.fn()}/>
+            <Journal setShowJournal={jest.fn()}/>
         </ProvideAuth>
     )
 
