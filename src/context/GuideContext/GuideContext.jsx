@@ -2,7 +2,7 @@ import { createContext, useState, useContext } from "react";
 
 const GuideContext = createContext();
 
-function ProvideGuide({children}) {
+function GuideProvider({children}) {
 
     const [guide, setGuide] = useState('');
 
@@ -22,4 +22,4 @@ function useGuide(){
 }
 
 
-export { ProvideGuide, useGuide }
+export { GuideProvider, useGuide }
