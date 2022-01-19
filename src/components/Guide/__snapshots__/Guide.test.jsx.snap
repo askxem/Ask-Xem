@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders guide component 1`] = `
+<div>
+  <article>
+    <div
+      aria-label="guide text box"
+    >
+      <pre>
+        test-text
+      </pre>
+    </div>
+    <img
+      alt="lion"
+      aria-label="user guide"
+      src="/path/image"
+    />
+  </article>
+</div>
+`;
