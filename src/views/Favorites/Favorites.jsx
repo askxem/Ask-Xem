@@ -1,16 +1,11 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import getFavs from '../../services/favorites.js';
+
 //to import
-//getFavorites
 //useUser from user context
 
-//if a user is not present, redirect them to the login page. 
-//the guide displays a welcoming message like "these are the cards you wanted to remember!"
-//if they are logged in:
-//the favorites view will make a call to supabase in a useEffect to get the list of favorites and map through them
-//and will render a card front component for each of those favorites
-//each card front will link to the detail page for that card, using the id from the card clicked for as the URL id for the redirect path
-//with the card front, we need two buttons one to edit the favorite and one to delete the favorite 
+//with the card front, we need a delete fav button
 
 
 
@@ -21,22 +16,44 @@ export default function Favorites() {
 
   const history = useHistory();
 
+
   user ?
   useEffect(() => {
      try {
-      const res = getFavorites();
+      const res = getFavs(user.id);
       setFavorites(res);
       setLoading(false);
     } catch (error) {
       throw new Error(error.message);
     }
   }, []) :
-  history.push('/login')
+  history.push('/login');
+
+
+  const handleDelete = (e) => {
+    const { value } = e.target ;
+    deleteFav(value);
+  }
 
 
   return (
     <div>
-      Favorites view.
+      <h3>Welcome to your Favorites Page</h3>
+      { loading ?
+      'Loading your favorites...' :
+      (
+      <div>
+        <p>These are the cards you wanted to remember</p>
+        {favorites.map((fav) => 
+        <div>
+          <a href={`/${fav.category}/${fav.id}`}>
+            <CardFront favorite={fav}/>
+          </a> 
+          <button value={fav.id} onClick={handleDelete} >Un-Favorite</button>
+        </div>
+         )}
+      </div>
+    )}      
     </div>
   )
 }
