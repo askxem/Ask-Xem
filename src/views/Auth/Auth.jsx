@@ -4,7 +4,8 @@ import useForm from '../../hooks/useForm.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
-export default async function Auth() {
+
+export default function Auth() {
     const history = useHistory();
     const location = useLocation();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -15,6 +16,7 @@ export default async function Auth() {
     });
 
     const {from} = location.state || { from: { pathname: '/select'}};
+
 
     function handleSubmit (e){
         e.preventDefault();
@@ -38,6 +40,7 @@ export default async function Auth() {
         }
         handleChange(resetPassword);
     }
+
 
     return (
         <section>
