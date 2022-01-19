@@ -10,7 +10,9 @@ export default function Nav() {
         //Nav links here!
         <article>
             <button onClick={() => setShowJournal(true)} disabled={!user.id}>Journal</button>
-            <Journal showJournal={showJournal} setShowJournal={setShowJournal}/>
+            {
+              showJournal && <Journal setShowJournal={setShowJournal}/>
+            }
         </article>
   );
 }
