@@ -1,16 +1,16 @@
 # Ask Xem
 ### Diyana Mendoza
-- [LinkedIn](https://www.linkedin.com/in/diyana-mendoza-price/)
-- [GitHub](https://github.com/diyanamendoza)
-- ### Michael Rider
-- [LinkedIn](https://www.linkedin.com/in/mikepdxrider/)
-- [GitHub](https://github.com/MikepdXRider)
-- ### Katie Schrattenholzer
-- [LinkedIn](https://www.linkedin.com/in/k-schrattenholzer/)
-- [GitHub](https://github.com/k-schrattenholzer)
-- ### Emily Sarani
-- [LinkedIn](https://www.linkedin.com/in/emily-sarani-2b3074135/)
-- [GitHub](https://github.com/EmilyDSarani)
+[LinkedIn](https://www.linkedin.com/in/diyana-mendoza-price/)
+[GitHub](https://github.com/diyanamendoza)
+### Michael Rider
+[LinkedIn](https://www.linkedin.com/in/mikepdxrider/)
+[GitHub](https://github.com/MikepdXRider)
+### Katie Schrattenholzer
+[LinkedIn](https://www.linkedin.com/in/k-schrattenholzer/)
+[GitHub](https://github.com/k-schrattenholzer)
+### Emily Sarani
+[LinkedIn](https://www.linkedin.com/in/emily-sarani-2b3074135/)
+[GitHub](https://github.com/EmilyDSarani)
 <br>
 <br>
 ### This app allows users of all ages to learn about the different pronouns and genders. 
