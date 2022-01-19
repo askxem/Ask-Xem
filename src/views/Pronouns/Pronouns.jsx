@@ -4,12 +4,13 @@ import CardList from "../../components/Cards/CardList"
 
 export default function Pronouns() {
   const [deck, setDeck] = useState('')
-  const [loading, setLoading] =useState(true)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchDeck = async () => {
+      setLoading(true)
+
       try {
-        setLoading(true)
         const response = await getCardsbyCategory('pronoun')
         setDeck(response)
         setLoading(false)

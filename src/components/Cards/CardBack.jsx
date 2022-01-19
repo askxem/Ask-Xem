@@ -1,4 +1,5 @@
 import styles from './CardBack.css'
+import { Link } from 'react-router-dom'
 
 export default function CardBack({ card }) {
     return (
@@ -7,9 +8,9 @@ export default function CardBack({ card }) {
             <figcaption className={styles.definition}>
             {card.definition}
             </figcaption>
-            <Link to={card.source}><p>Source</p></Link>
+            <a href={card.source}>Source</a>
             <img
-                src={`../../assets/Icons/${card.animal}`}
+                src={`/icons/${card.animal}.png`}
                 alt={card.animal}
                 className={styles.image}
             />
