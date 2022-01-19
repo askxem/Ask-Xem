@@ -9,7 +9,7 @@ import styles from './Select.css'
 
 export default function Select() {
 const { user } = useAuth();
-console.log(user)
+
   return (
     <>
     <section>
