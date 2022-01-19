@@ -1,16 +1,32 @@
 import { Link } from "react-router-dom"
 import CardFront from "./CardFront"
 import styles from './CardList.css'
+import { motion } from 'framer-motion'
+
 
 export default function CardList({ cards }) {
+
+  const cardVariants = {
+    initial: { scale: 0 },
+    animate: { scale: [0, 1.5, 1] },
+    bounce: { y: [0, -10, 0], transition: { yoyo: 10 }}
+  }
+
   return (
     <ul aria-label="cards" className={styles.list}>
       {cards && cards.map((card) => (
-        <li key={card.title} className={styles.item}>
+        <motion.li 
+          variants={cardVariants}
+          initial={'initial'}
+          animate={'animate'}
+          whileHover={'bounce'}
+          whileFocus={'bounce'}
+          key={card.title} 
+          className={styles.item}>
           <Link to={`/${card.category}/${card.id}`}>
             <CardFront card={card} />
           </Link>
-        </li>
+        </motion.li>
       ))}
     </ul>
   )
