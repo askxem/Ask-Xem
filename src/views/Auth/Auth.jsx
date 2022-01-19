@@ -3,9 +3,11 @@ import AuthForm from '../../components/Auth/AuthForm.jsx'
 import useForm from '../../hooks/useForm.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import Guide from '../../components/Guide/Guide.jsx';
+import retrieveGuideText from '../../components/Guide/retrieveGuideText.js';
 
 
-export default function Auth() {
+export default async function Auth() {
     const history = useHistory();
     const location = useLocation();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -16,7 +18,6 @@ export default function Auth() {
     });
 
     const {from} = location.state || { from: { pathname: '/select'}};
-
 
     function handleSubmit (e){
         e.preventDefault();
@@ -40,7 +41,6 @@ export default function Auth() {
         }
         handleChange(resetPassword);
     }
-
 
     return (
         <section>

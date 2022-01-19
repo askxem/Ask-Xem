@@ -10,7 +10,6 @@ export default function Guide({text}) {
   //LATER:
     // pull users guide from user context
   const [userGuide, setUserGuide] = useState('lion');
-  
 
   return (
     <article>
