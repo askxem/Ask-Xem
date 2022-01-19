@@ -3,12 +3,13 @@ import AuthForm from '../../components/Auth/AuthForm.jsx'
 import useForm from '../../hooks/useForm.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import { signInUser, signUpUser } from '../../services/users.js';
+import { useAuth } from '../../context/AuthContext/AuthContext.jsx';
 
 
 export default function Auth() {
     const history = useHistory();
     const location = useLocation();
+    const {signUp, signIn} = useAuth();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isSigningUp, setIsSigningUp] = useState(false);
     const [{email, password}, handleChange] = useForm({
@@ -22,14 +23,11 @@ export default function Auth() {
     function handleSubmit (e){
         e.preventDefault();
         if (password.length <= 12) return;
-        // Later: 
-        // Update user in context
-
         // Should this be in try catch?
         // Should we handle specific errors?
         isSigningUp 
-        ? signUpUser(email, password)
-        : signInUser(email, password)
+        ? signUp(email, password)
+        : signIn(email, password)
 
         history.replace(from);
     }
