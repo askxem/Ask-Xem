@@ -13,6 +13,20 @@ export default function Favorites() {
 
   const history = useHistory();
 
+//Idea for favs thing
+// [favs, setFavs] = ------
+// [user, setUser] = useAuth();
+//function FavoritesClick(){
+// if(user.id){
+// setFavs{[...favs {user}]} 
+//}  
+//}
+//const handleSubmit = (e) => {
+  // e.preventDefault()
+  // FavoritesClick()
+//}
+
+
 
   user ?
   useEffect(() => {
