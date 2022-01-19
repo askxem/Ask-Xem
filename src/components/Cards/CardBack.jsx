@@ -1,3 +1,4 @@
+import styles from './CardBack.css'
 
 export default function CardBack({ card }) {
     return (
