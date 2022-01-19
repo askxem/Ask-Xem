@@ -3,6 +3,7 @@ import AuthForm from '../../components/Auth/AuthForm.jsx'
 import useForm from '../../hooks/useForm.js';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { signInUser, signUpUser } from '../../services/users.js';
 
 
 export default function Auth() {
@@ -23,8 +24,13 @@ export default function Auth() {
         if (password.length <= 12) return;
         // Later: 
         // Update user in context
-        // Make appropriate call to backend
-          // isSigningUp ? /* sign up user */ : /* sign in user*/
+
+        // Should this be in try catch?
+        // Should we handle specific errors?
+        isSigningUp 
+        ? signUpUser(email, password)
+        : signInUser(email, password)
+
         history.replace(from);
     }
 
