@@ -13,6 +13,7 @@ import AuthForm from './components/Auth/AuthForm.jsx';
 import Auth from './views/Auth/Auth.jsx';
 import { ProvideAuth } from './context/AuthContext/AuthContext.jsx';
 import './App.css'
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
 
 // to protect:
@@ -31,9 +32,9 @@ export default function App() {
             <Route exact path='/about'>
               <About />
             </Route>
-            <Route exact path='/favorites'>
+            <PrivateRoute exact path='/favorites'>
               <Favorites />
-            </Route>
+            </PrivateRoute>
             <Route path='/pronoun/:id'>
               <PronounsDetail />
             </Route>
@@ -46,9 +47,9 @@ export default function App() {
             <Route exact path='/pronouns'>
               <Pronouns />
             </Route>
-            <Route exact path='/profile'>
+            <PrivateRoute exact path='/profile'>
               <Profile />
-            </Route>
+            </PrivateRoute>
             <Route exact path='/select'>
               <Select />
             </Route>
