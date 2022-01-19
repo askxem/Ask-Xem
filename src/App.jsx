@@ -11,63 +11,71 @@ import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
 import GenderDetail from './views/Gender/GenderDetail.jsx';
 import AuthForm from './components/Auth/AuthForm.jsx';
 import Auth from './views/Auth/Auth.jsx';
-import { ProvideAuth } from './context/AuthContext/AuthContext.jsx';
-import './App.css'
+import { ProvideAuth } from './context/AuthContext.jsx';
 import { DeckProvider } from './context/DeckContext/DeckContext.jsx';
-
-
-// to protect:
-// favorites, profile
-
-// to add: 
-// parent resources, can link to queer portraits
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
+import './App.css'
 
 export default function App() {
   return (
     <ProvideAuth>
-      <Layout>
         <Router>
           <Switch>
 
             <Route exact path='/about'>
               <About />
             </Route>
-            <Route exact path='/favorites'>
+    
+            <PrivateRoute exact path='/favorites'>
               <Favorites />
-            </Route>
-            
+            </PrivateRoute>
+    
             <DeckProvider>
-              <Route path='/pronoun/:id'>
-                <PronounsDetail />
-              </Route>
-              <Route path='/gender/:id'>
-                <GenderDetail />
-              </Route>
-              <Route exact path='/gender'>
-                <Gender />
-              </Route>
-              <Route exact path='/pronouns'>
-                <Pronouns />
-              </Route>
-            </DeckProvider>
-
-
-            <Route exact path='/profile'>
+                <Route path='/pronoun/:id'>
+                  <Layout>
+                    <PronounsDetail />
+                  </Layout>
+                </Route>
+    
+                <Route path='/gender/:id'>
+                  <Layout>
+                    <GenderDetail />
+                  </Layout>
+                </Route>
+    
+                <Route exact path='/gender'>
+                  <Layout>
+                    <Gender />
+                  </Layout>
+                </Route>
+    
+                <Route exact path='/pronouns'>
+                  <Layout>
+                    <Pronouns />
+                  </Layout>
+                </Route>
+             </DeckProvider>
+    
+            <PrivateRoute exact path='/profile'>
               <Profile />
-            </Route>
+            </PrivateRoute>
+    
             <Route exact path='/select'>
-              <Select />
+              <Layout>
+                <Select />
+              </Layout>
             </Route>
+    
             <Route exact path='/auth'>
               <Auth />
             </Route>
+    
             <Route exact path='/'>
               <Home />
             </Route>
 
           </Switch>
         </Router>
-      </Layout>
     </ProvideAuth>
     );
 }

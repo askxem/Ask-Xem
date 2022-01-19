@@ -13,7 +13,6 @@ export default function Favorites() {
 
   const history = useHistory();
 
-
   user ?
   useEffect(() => {
      try {

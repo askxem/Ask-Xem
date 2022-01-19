@@ -1,8 +1,9 @@
+import Nav from "../Nav/Nav.jsx";
 
 export default function Layout({ children }) {
   return (
     <div>
-      Layout View
+      <Nav />
       {children}
     </div>
   )
