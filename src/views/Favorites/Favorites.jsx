@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import getFavs from '../../services/favorites.js';
+import getFavs from '../../services/favs.js';
 
 //to import
 //useUser from user context
