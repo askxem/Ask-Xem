@@ -10,7 +10,7 @@ function ProvideAuth({children}) {
     const currentUser = getUser();
 
     const [user, setUser] = useState(
-        currentUser ? {email: currentUser.email} : {}
+        currentUser ? {...currentUser} : {}
     );
 
     async function signUp(email, password) {
@@ -20,6 +20,7 @@ function ProvideAuth({children}) {
 
     async function signIn(email, password) {
         const newUser = await signInUser(email, password);
+        console.log(newUser);
         setUser(newUser);
     }
 

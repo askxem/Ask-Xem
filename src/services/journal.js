@@ -3,17 +3,41 @@ import { client, parseData } from './client';
 // confirm that with our policies in place we can do these gets without specifying userId
 
 export async function getJournal(userId) {
-    const request = await client
+    try{
+      const request = await client
       .from('journal')
-      .select('journal, user_id')
-      .match({ user_id: userId });
+      .select()
+      .match({user_id: userId})
+      .single()
     return parseData(request)
+    } catch (e) {
+      console.log(e);
+      return [{journal: ''}];
+    }
   }
 
-export async function updateJournal(userId, journalUpdate) {
+  // returns array with object and journal property
+export async function insertJournal(userId, journal) {
+  try {
     const request = await client
-    .from('journal')
-    .update('journal')
-    .match({ user_id: userId });
-    return parseData(request)
+        .from('journal')
+        .insert({user_id: userId, journal})
+      return parseData(request);
+  } catch (e) {
+    console.log(e);
+    return [{journal: ''}];
+  }
+}
+
+export async function updateJournal(userId, journal) {
+    try{
+      const request = await client
+      .from('journal')
+      .update({journal})
+      .match({ user_id: userId });
+      return parseData(request)
+    } catch(e) {
+      console.log(e);
+      return [{journal: ''}]
+    }
 }
