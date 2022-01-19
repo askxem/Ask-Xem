@@ -13,6 +13,7 @@ import AuthForm from './components/Auth/AuthForm.jsx';
 import Auth from './views/Auth/Auth.jsx';
 import { ProvideAuth } from './context/AuthContext/AuthContext.jsx';
 import './App.css'
+import { DeckProvider } from './context/DeckContext/DeckContext.jsx';
 
 
 // to protect:
@@ -34,18 +35,23 @@ export default function App() {
             <Route exact path='/favorites'>
               <Favorites />
             </Route>
-            <Route path='/pronoun/:id'>
-              <PronounsDetail />
-            </Route>
-            <Route path='/gender/:id'>
-              <GenderDetail />
-            </Route>
-            <Route exact path='/gender'>
-              <Gender />
-            </Route>
-            <Route exact path='/pronouns'>
-              <Pronouns />
-            </Route>
+            
+            <DeckProvider>
+              <Route path='/pronoun/:id'>
+                <PronounsDetail />
+              </Route>
+              <Route path='/gender/:id'>
+                <GenderDetail />
+              </Route>
+              <Route exact path='/gender'>
+                <Gender />
+              </Route>
+              <Route exact path='/pronouns'>
+                <Pronouns />
+              </Route>
+            </DeckProvider>
+
+
             <Route exact path='/profile'>
               <Profile />
             </Route>

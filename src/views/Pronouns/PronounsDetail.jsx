@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CardBack from '../../components/Cards/CardBack'
 import { getCard } from '../../services/cards'
+import { useDeck } from '../../context/DeckContext/DeckContext'
 
 export default function PronounsDetail() {
   const { id } = useParams();
   const [loading, setLoading] = useState(true)
   const [card, setCard] = useState(null)
+  const { seen } = useDeck()
 
   useEffect(() => {
     const fetchCard = async () => {
@@ -17,6 +19,7 @@ export default function PronounsDetail() {
         console.log(response)
         setCard(response)
         setLoading(false)
+        seen(response.id, response.category)
       } catch (error) {
        console.log(error.message) 
       }
