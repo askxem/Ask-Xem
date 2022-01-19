@@ -29,12 +29,3 @@ export default function Gender() {
   )
 }
 
-//Fav Add Idea
-//const [Favs, setFavs] = useState('');
-//useEffect(async()=>{
-  // let savedFavs = await -put in localStorage-
-  //if(savedFavs){
- // setFavs(savedFavs)  
- // }
-//}, [])
-//<button onClick{() => }> </button>
