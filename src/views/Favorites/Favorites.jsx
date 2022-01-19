@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import getFavs from '../../services/favs.js';
+// import getFavs from '../../services/favs.js';
 
 //to import
 //useUser from user context
@@ -17,7 +17,7 @@ export default function Favorites() {
   user ?
   useEffect(() => {
      try {
-      const res = getFavs(user.id);
+      // const res = getFavs(user.id);
       setFavorites(res);
       setLoading(false);
     } catch (error) {
@@ -29,7 +29,7 @@ export default function Favorites() {
 
   const handleDelete = (e) => {
     const { value } = e.target ;
-    deleteFav(value);
+    // deleteFav(value);
   }
 
 
