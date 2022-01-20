@@ -13,7 +13,7 @@ exports[`renders guide component 1`] = `
     <img
       alt="lion"
       aria-label="user guide"
-      src="/path/image"
+      src="/icons/lion.png"
     />
   </article>
 </div>

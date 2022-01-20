@@ -58,7 +58,8 @@ export default function Journal({ setShowJournal }) {
                             value={journalInput} 
                             onChange={(e) => setJournalInput(e.target.value)} />
 
-                            <button>Submit and Return to page.</button>
+                            <button>Save and return</button>
+                            <button onClick={() => setShowJournal(false)}>Cancel</button>
                         </form>
                     </motion.div>
                 </motion.div>
