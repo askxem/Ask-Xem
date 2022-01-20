@@ -15,8 +15,8 @@ const backdropVariants = {
     hidden: {opacity: 0 }
 }
 
-export default function Journal({ showJournal, setShowJournal }) {
-    const [journalInput, setJournalInput] = useState('')
+export default function Journal({ setShowJournal }) {
+    const [journalInput, setJournalInput] = useState('Welcome to your journal!')
     const {user} = useAuth();
 
     useEffect(() => {
@@ -25,7 +25,6 @@ export default function Journal({ showJournal, setShowJournal }) {
                 const resp = await getJournal(user.id);
                 setJournalInput(resp.journal);
             } catch(e) {
-                console.log(e);
                 if (e.details === 'Results contain 0 rows, application/vnd.pgrst.object+json requires 1 row'){
                     const resp = await insertJournal(user.id, 'Welcome to your journal!');
                     setJournalInput(resp[0].journal);
@@ -46,8 +45,7 @@ export default function Journal({ showJournal, setShowJournal }) {
     //   allows us to animate the mounting and dismounting of nested components. 
     //  exitBeforeEnter allows all animations within the component to complete before it executes it's own.
       <AnimatePresence exitBeforeEnter>
-          {
-              showJournal && (
+        {
                 <motion.div className={styles.backdrop} variants={backdropVariants} initial='hidden' animate='visible'>
                     {/* represents backdrop of modal. Will create the semi-transparent sheet that fades out background view.*/}
                     <motion.div className={styles.modal}>
@@ -64,7 +62,7 @@ export default function Journal({ showJournal, setShowJournal }) {
                         </form>
                     </motion.div>
                 </motion.div>
-              )}
+            }
       </AnimatePresence>
   )
 }
