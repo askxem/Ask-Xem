@@ -20,9 +20,9 @@ export default function App() {
   return (
     <ProvideAuth>
       <DeckProvider>
-        <Layout>
 
-          <Router>
+        <Router>
+          <Layout>
             <Switch>
 
               <Route exact path='/about'>
@@ -66,9 +66,9 @@ export default function App() {
               </Route>
 
             </Switch>
-          </Router>
+          </Layout>
+        </Router>
           
-        </Layout>
       </DeckProvider>
     </ProvideAuth>
     );
