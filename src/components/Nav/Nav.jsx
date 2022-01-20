@@ -9,12 +9,14 @@ export default function Nav() {
   const {user} = useAuth();
 
   return (
-    showJournal &&  
+    user.id &&
     <nav>
       <Link to='/select'>Home Img</Link>
       <Link to='/favorites'>Heart Img</Link>
       <button onClick={() => setShowJournal(true)} disabled={!user.id}>Journal</button>
-      <Journal setShowJournal={setShowJournal}/>
+      {
+      showJournal && <Journal setShowJournal={setShowJournal}/>
+      }
     </nav>
   );
 }
