@@ -9,6 +9,7 @@ export default function CardBack({ card, favStatus }) {
     const { user } = useAuth()
 
     const handleFav = async () => {
+        if(!user.id) { alert('Sign in to be able to fav!') }
         setFav(prevFav => !prevFav)
     }
 
@@ -41,7 +42,7 @@ export default function CardBack({ card, favStatus }) {
 
           <figure>
                 <div className={styles.heartcontainer}>
-                    <img onClick={handleFav} src={fav ? '/redheart.png' : '/heart.png'} alt='heart' />
+                    <img className={styles.heart} onClick={handleFav} src={fav ? '/redheart.png' : '/heart.png'} alt='heart' />
                 </div>
                 <h3>{card.title}</h3>
                 <figcaption className={styles.definition}>

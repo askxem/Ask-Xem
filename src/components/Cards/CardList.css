@@ -1,4 +1,6 @@
 ul {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -8,12 +10,23 @@ ul {
     justify-content: center;
 }
 
-img {
-    max-width: 20vw;
+.list li {
+    width: 40%;
+}
+
+.list img {
+    width: 40%;
 }
 
 .rainbow {
     z-index: 1;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+}
+
+.rainbow img {
+    height: 100%; 
     position: fixed;
     right: 0px;
     bottom: 0px;

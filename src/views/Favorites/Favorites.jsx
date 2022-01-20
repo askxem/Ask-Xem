@@ -43,7 +43,7 @@ export default function Favorites() {
 
   return (
     <div>
-      <h3>Welcome to your Favorites Page</h3>
+      <h3>Cards You <img src='/redheart.png' alt='red heart' style={{ width: '25px' }}/></h3>
       { loading ?
       'Loading your favorites...' :
       (
