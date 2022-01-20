@@ -1,17 +1,16 @@
 import React from 'react'
 import AuthForm from '../../components/Auth/AuthForm.jsx'
 import useForm from '../../hooks/useForm.js';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext.jsx';
 
 
-export default function Auth() {
+export default function Signup() {
     const history = useHistory();
     const location = useLocation();
     const {signUp, signIn} = useAuth();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-    const [isSigningUp, setIsSigningUp] = useState(false);
     const [{email, password}, handleChange] = useForm({
         email: '',
         password: ''
@@ -19,36 +18,16 @@ export default function Auth() {
 
     const {from} = location.state || { from: { pathname: '/select'}};
 
-
-    function handleSubmit (e){
+    async function handleSubmit (e){
         e.preventDefault();
-        if (password.length <= 12) return;
-
-        isSigningUp 
-        ? signUp(email, password)
-        : signIn(email, password)
-
+        await signUp(email, password);
         history.replace(from);
     }
-
-    function handleFormSwitch(){
-        setIsSigningUp(prevState => !prevState);
-        setIsPasswordVisible(false);
-        const resetPassword = {
-            preventDefault: () => null,
-            target: {
-                name: 'password',
-                value: ''
-            }
-        }
-        handleChange(resetPassword);
-    }
-
 
     return (
         <section>
             <AuthForm 
-            isSigningUp={isSigningUp}
+            isSigningUp={true}
             email={email}
             password={password}
             handleChange={handleChange}
@@ -56,7 +35,7 @@ export default function Auth() {
             isPasswordVisible={isPasswordVisible}
             setIsPasswordVisible={setIsPasswordVisible}
             />
-            <button onClick={handleFormSwitch}>{isSigningUp ? 'Already have an account?' : 'Need to signup?'}</button>
+            <Link to='/login'>Alright have an account?</Link>
         </section>
     )
 }

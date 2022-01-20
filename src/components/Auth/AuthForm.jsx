@@ -55,12 +55,14 @@ export default function AuthForm({
           </div>
 
           {
-            isSigningUp && <CoppaDisclaimer />
+            isSigningUp
+            ? (<>
+              <CoppaDisclaimer />
+              <button disabled={password.length < 12}>Create Account</button>
+            </>)
+            : <button>Login</button>
           }
-        
           
-          <button>{isSigningUp ? 'Create Account' : 'Login'}</button>
-
         </form>
       </fieldset>
 
