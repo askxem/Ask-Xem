@@ -24,6 +24,7 @@ function ProvideAuth({children}) {
 
     async function signOut() {
         await signOutUser();
+        localStorage.clear();
         setUser({});
     }
 
