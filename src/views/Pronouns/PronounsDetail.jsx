@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CardBack from '../../components/Cards/CardBack'
 import Guide from '../../components/Guide/Guide.jsx'
+import retrieveGuideText from '../../utils/retrieveGuideText/retrieveGuideText.js'
 import { getCard } from '../../services/cards'
 import { useDeck } from '../../context/DeckContext/DeckContext'
 
