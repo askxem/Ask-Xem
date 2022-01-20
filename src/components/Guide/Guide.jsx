@@ -17,9 +17,9 @@ export default function Guide({text}) {
   return (
     <article className={styles.guideContainer}>
       <div aria-label='guide text box' className={styles.guideText}>
-        <pre>
+        <p>
         {text}
-        </pre>
+        </p>
       </div>
       <img className={styles.guideImg} src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
     </article>
