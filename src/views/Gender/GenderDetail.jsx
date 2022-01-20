@@ -17,7 +17,6 @@ export default function GenderDetail() {
   const [guideText, setGuideText] = useState('')
   const { seen } = useDeck()
   const [favStatus, setFavStatus] = useState(false)
-  const [favsArray, setFavsArray] = useState([])
 
   useEffect(() => {
     const fetchFavs = async () => {
@@ -27,7 +26,6 @@ export default function GenderDetail() {
           const response = await getFavs(user.id)
           //extract an array of just the card ids from the response         
           const favArr = response.map((item) => item.card_id)
-          setFavsArray(favArr)
           //does the extracted array include the current card?
           const faved = favArr.includes(Number(id))
           //set favStatus to pass to card component so appropriate heart is displayed

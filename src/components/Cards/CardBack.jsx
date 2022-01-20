@@ -10,8 +10,9 @@ export default function CardBack({ card, favStatus }) {
     const { user } = useAuth()
 
     const handleFav = async () => {
-        if(!user.id) { alert('Sign in to be able to fav!') }
-        setFav(prevFav => !prevFav)
+        if(user.id) { setFav(prevFav => !prevFav) } 
+        else {
+          alert('Sign in to be able to fav!') }  
     }
 
     useEffect(() => {
