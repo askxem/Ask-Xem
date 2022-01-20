@@ -40,6 +40,10 @@ a {
 
 a:active, a:hover {
     text-decoration: none;
-    color: #A486FF;
+    color: #E57C49;
+}
+
+p {
+    padding: 10px;
 }
 

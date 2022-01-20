@@ -44,17 +44,17 @@ export default function AuthForm({
           required 
           />
           
-          {
-            isSigningUp && <p aria-label='Password contraints'>{password.length >= 12 ? '🟢 Password must be at least 12 characters long.' : '🔴 Password must be at least 12 characters long.'}</p>
-          }
-          
-          <div 
+          <div className={styles.pwtoggle}
           id="toggle-password"
           aria-label={`Show password as plain text. Warning: this will display your password on the screen. Password is currently ${isPasswordVisible ? 'visible' : 'hidden'}`}
           onClick={() => setIsPasswordVisible(prevState => !prevState)}>
             { isPasswordVisible ? 'Hide Password' : 'Show Password'}
           </div>
 
+          {
+            isSigningUp && <p aria-label='Password contraints'>{password.length >= 12 ? '🟢 Password must be at least 12 characters long.' : '🔴 Password must be at least 12 characters long.'}</p>
+          }
+          
           {
             isSigningUp
             ? (<>
