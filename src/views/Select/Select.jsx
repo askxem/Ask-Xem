@@ -27,7 +27,6 @@ export default function Select() {
       <img className={styles.locked} src={axolotl} alt="axolotl" />
       <input className="locked" disabled type="radio" value={bunny} name="guide" />
       <img className={styles.locked} src={bunny} alt="bunny" />
-      
       </p>
   ) : ( 
         <p>
@@ -37,7 +36,6 @@ export default function Select() {
        <img src={axolotl} alt="axolotl" />
        <input type="radio" value={'bunny'} name="guide" onClick={setGuideGlobal} />
        <img src={bunny} alt="bunny" />
-       </label>
        </p>
   )
     }
