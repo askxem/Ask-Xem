@@ -24,7 +24,7 @@ export default function About() {
 
       <div className="members">  
       <h2>Katie</h2>
-      <p>-inser bio here-</p>
+      <p>Currently, my pronouns are they/them. I hope this site can inspire folks of all ages to learn about  pronouns, and forms of gender expression they may not be as familiar with. To develop more a compassionate community, and spread the knowledge that its always okay to explore and experiment with the ways you identify and express your gender.</p>
       <img src={turtle} alt="turtle"/>
       </div>
 

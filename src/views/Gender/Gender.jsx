@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getCardsbyCategory } from "../../services/cards"
+import { getCardsByCategory } from "../../services/cards"
 import CardList from "../../components/Cards/CardList"
 import { useDeck } from "../../context/DeckContext/DeckContext"
 import renderRainbow from "../../utils/rainbow"
@@ -20,7 +20,7 @@ export default function Gender() {
       setLoading(true)
 
       try {
-        const response = await getCardsbyCategory('gender')
+        const response = await getCardsByCategory('gender')
         setDeck(response)
         setLoading(false)
       } catch (error) {

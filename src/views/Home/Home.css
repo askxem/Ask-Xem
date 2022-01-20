@@ -1,0 +1,33 @@
+.main {
+    padding: 5%;
+}
+.welcome {
+    margin-bottom: 20px;
+}
+.authbuttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.authbuttons a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    background-color: #91ad8c; 
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px gray;
+    color: white;
+}
+
+.authbuttons a:active {
+    border: none;
+    background-color: #91ad8c; 
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+}
+
