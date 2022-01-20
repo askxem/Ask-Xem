@@ -10,9 +10,9 @@ export async function getJournal(userId) {
       .match({user_id: userId})
       .single()
     return parseData(request)
-    } catch (e) {
-      console.log(e.detail);
-      throw(e);
+    } catch (error) {
+      console.log(error.detail);
+      throw(error);
     }
   }
 
@@ -23,8 +23,8 @@ export async function insertJournal(userId, journal) {
         .from('journal')
         .insert({user_id: userId, journal})
       return parseData(request);
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error);
     return [{journal: ''}];
   }
 }
@@ -36,8 +36,8 @@ export async function updateJournal(userId, journal) {
       .update({journal})
       .match({ user_id: userId });
       return parseData(request)
-    } catch(e) {
-      console.log(e);
+    } catch(error) {
+      console.log(error);
       return [{journal: ''}]
     }
 }

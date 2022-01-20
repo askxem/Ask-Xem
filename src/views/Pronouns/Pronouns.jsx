@@ -1,4 +1,4 @@
-import { getCardsbyCategory } from "../../services/cards"
+import { getCardsByCategory } from "../../services/cards"
 import { useState, useEffect } from "react"
 import Guide from "../../components/Guide/Guide.jsx"
 import CardList from "../../components/Cards/CardList"
@@ -18,7 +18,7 @@ export default function Pronouns() {
       setLoading(true)
 
       try {
-        const response = await getCardsbyCategory('pronoun')
+        const response = await getCardsByCategory('pronoun')
         setDeck(response)
         setLoading(false)
       } catch (error) {

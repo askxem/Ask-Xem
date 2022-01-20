@@ -24,8 +24,8 @@ export default function Journal({ setShowJournal }) {
             try{
                 const resp = await getJournal(user.id);
                 setJournalInput(resp.journal);
-            } catch(e) {
-                if (e.details === 'Results contain 0 rows, application/vnd.pgrst.object+json requires 1 row'){
+            } catch(error) {
+                if (error.details === 'Results contain 0 rows, application/vnd.pgrst.object+json requires 1 row'){
                     const resp = await insertJournal(user.id, 'Welcome to your journal!');
                     setJournalInput(resp[0].journal);
                 }
