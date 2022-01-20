@@ -15,13 +15,13 @@ export default function Guide({text}) {
   const [userGuide, setUserGuide] = useState( guide ? guide : 'lion');
 
   return (
-    <article>
-      <div aria-label='guide text box'>
+    <article className={styles.guideContainer}>
+      <div aria-label='guide text box' className={styles.guideText}>
         <pre>
         {text}
         </pre>
       </div>
-      <img className={styles.guide}src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
+      <img className={styles.guideImg} src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
     </article>
   )
 }

@@ -7,4 +7,5 @@ figure {
     align-items: center;
     border: 1px solid gray;
     border-radius: 10%;
+    background-color: white;
 }

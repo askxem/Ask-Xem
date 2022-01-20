@@ -1,6 +1,11 @@
 .main {
     padding: 5%;
 }
+
+.main p {
+    margin-bottom: 10px;
+}
+
 .welcome {
     margin-bottom: 20px;
 }
@@ -21,6 +26,10 @@
     padding: 10px;
     box-shadow: 0px 5px 10px gray;
     color: white;
+}
+
+.authbuttons a:hover {
+    color: #FFFA9B; 
 }
 
 .authbuttons a:active {

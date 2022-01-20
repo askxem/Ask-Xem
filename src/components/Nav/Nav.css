@@ -17,6 +17,24 @@ nav img {
     cursor: pointer;
 }
 
+header span {
+    margin-right: 5px;
+    font-size: .9em;
+}
+
+header button {
+    border: none;
+    background-color: #91ad8c;
+    border-radius: 5px;
+    padding: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+header button:hover, button:focus {
+    background-color: #E57C49;
+}
+
 @media only screen and (min-width: 768px) {
     nav img {
         width: 60px;

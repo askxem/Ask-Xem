@@ -8,7 +8,7 @@ import { useAuth } from '../../context/AuthContext.jsx';
 export default function Login() {
     const history = useHistory();
     const location = useLocation();
-    const {signUp, signIn} = useAuth();
+    const {signIn, user} = useAuth();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [{email, password}, handleChange] = useForm({
         email: '',
@@ -24,7 +24,8 @@ export default function Login() {
     }
 
     return (
-        <section>
+        <>
+        {!user.id && <section>
             <AuthForm 
             email={email}
             password={password}
@@ -34,6 +35,9 @@ export default function Login() {
             setIsPasswordVisible={setIsPasswordVisible}
             />
             <Link to='/signup'>Need an account?</Link>
-        </section>
+        </section>}
+
+        {user.id && <p>You're already logged in! If you're ready to log out, there's a handy button for that up top!</p>}
+        </>
     )
 }
