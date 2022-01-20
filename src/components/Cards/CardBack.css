@@ -14,9 +14,18 @@ figure {
     justify-content: center;
     align-items: center;
     border: 1px solid gray;
-    border-radius: 10%;
+    border-radius: 20px;
+}
+
+.container {
+    width: 70%;
 }
 
 .image {
-    max-width: 40vw;
+    /* max-width: 40vw; */
+    width: 40%;
+}
+
+.heart {
+    width: 10vw;
 }

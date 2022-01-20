@@ -1,22 +1,22 @@
 export default function renderRainbow(seenCount) {
     switch(seenCount) {
         case 1: 
-            return <>red</>
+            return ['red']
         case 2: 
-            return <>red,orange</>
+            return ['red','orange']
         case 3: 
-            return <>red,orange,yellow</>
+            return ['red','orange','yellow']
         case 4: 
-            return <>red,orange,yellow,green</>
+            return ['red','orange','yellow','green']
         case 5: 
-            return <>red,orange,yellow,green,blue</>
+            return ['red','orange','yellow','green','blue']
         case 6: 
-            return <>red,orange,yellow,green,blue,indigo</>
+            return ['red','orange','yellow','green','blue','indigo']
         case 7: 
-            return <>red,orange,yellow,green,blue,indigo,purple</>
+            return ['red','orange','yellow','green','blue','indigo','purple']
         case 8: 
-            return <>YAYAYAY</>
+            return ['YAYAYAY']
         default:
-            return <></>
+            return []
     }
 }
