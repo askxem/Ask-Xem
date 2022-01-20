@@ -10,12 +10,10 @@ import Guide from "../../components/Guide/Guide.jsx"
 export default function Gender() {
   const [deck, setDeck] = useState('')
   const [loading, setLoading] =useState(true)
+  const [rainbow, setRainbow] = useState('')
   const { genSeen } = useDeck()
 
-  const rainbow = renderRainbow(genSeen.length)
-
   const guideText = 'This is the Gender Deck'
-
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -32,10 +30,18 @@ export default function Gender() {
     fetchDeck()
   }, [])
 
+  useEffect(() => {
+    const showRainbow = () => {
+      const rainbow = renderRainbow(genSeen.length)
+      setRainbow(rainbow)
+    }
+    showRainbow()
+  }, [genSeen])
+
   return (
     <main>
       {loading && <p>Loading...</p>}
-      <CardList cards={deck}/>
+      <CardList cards={deck} rainbow={rainbow} />
       {rainbow}
       <Guide text={guideText} />
     </main>

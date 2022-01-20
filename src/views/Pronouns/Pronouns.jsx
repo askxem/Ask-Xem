@@ -8,11 +8,10 @@ import renderRainbow from "../../utils/rainbow"
 export default function Pronouns() {
   const [deck, setDeck] = useState('')
   const [loading, setLoading] = useState(true)
+  const [rainbow, setRainbow] = useState('')
   const { pronSeen } = useDeck()
 
   const guideText = 'This is the Pronouns Deck'
-
-  const rainbow = renderRainbow(pronSeen.length)
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -29,11 +28,18 @@ export default function Pronouns() {
     fetchDeck()
   }, [])
 
+  useEffect(() => {
+    const showRainbow = () => {
+      const rainbow = renderRainbow(pronSeen.length)
+      setRainbow(rainbow)
+    }
+    showRainbow()
+  }, [pronSeen])
+
   return (
     <main>
       {loading && <p>Loading...</p>}
-      <CardList cards={deck} />
-      {rainbow}
+      <CardList cards={deck} rainbow={rainbow} />
       <Guide text={guideText}/>
     </main>
   )
