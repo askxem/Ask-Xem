@@ -25,15 +25,18 @@ export default function Nav() {
         }
       </nav>
       }
-      
+
       <article>
         {
           user.id 
-          ? <>
+          ? <div>
             <p>Signed in as {user.email}</p>
             <button onClick={signOut}>Signout</button>
-          </>
-          : <Link to='/login'>Login</Link>
+          </div>
+          : <div>
+            <Link to='/login'>Login</Link>
+            <p>Login to unlock a journal, favorites, and more guides!</p>
+          </div> 
         }
       </article>
     </>
