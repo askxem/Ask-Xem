@@ -3,6 +3,7 @@ import { getCardsbyCategory } from "../../services/cards"
 import CardList from "../../components/Cards/CardList"
 import { useDeck } from "../../context/DeckContext/DeckContext"
 import renderRainbow from "../../utils/rainbow"
+import Guide from "../../components/Guide/Guide.jsx"
 
 
 
@@ -12,6 +13,8 @@ export default function Gender() {
   const { genSeen } = useDeck()
 
   const rainbow = renderRainbow(genSeen.length)
+
+  const guideText = 'This is the Gender Deck'
 
 
   useEffect(() => {
@@ -34,6 +37,7 @@ export default function Gender() {
       {loading && <p>Loading...</p>}
       <CardList cards={deck}/>
       {rainbow}
+      <Guide text={guideText} />
     </main>
   )
 }
