@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import CoppaDisclaimer from "./CoppaDisclaimer.jsx"
+import styles from './AuthForm.css'
 
 /**
  * Called within the auth view/container component
@@ -16,7 +17,7 @@ export default function AuthForm({
   setIsPasswordVisible}) {
 
   return (
-    <div>
+    <div className={styles.formcontainer}>
       <fieldset>
         <legend>{isSigningUp ? 'Sign Up' : 'Login'}</legend>
         <form onSubmit={handleSubmit}>

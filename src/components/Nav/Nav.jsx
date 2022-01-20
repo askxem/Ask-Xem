@@ -3,13 +3,28 @@ import { BrowserRouter, Link } from 'react-router-dom';
 import { NavLink, Router } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
 import Journal from '../Journal/Journal.jsx';
+import styles from './Nav.css'
+import { motion } from 'framer-motion';
 
 export default function Nav() {
   const [showJournal, setShowJournal] = useState(false);
   const {user, signOut} = useAuth();
 
+  const headerVariants = {
+    initial: {
+        opacity: 0, 
+        y: '-100vh'
+    },
+    animate: {
+        opacity: [0, 1], 
+        y: 0,
+        transition: { duration: 1.2, ease: 'easeIn', type: 'spring', when: 'beforeChildren' }
+    }  
+}
+
   return (
-    <>
+    <motion.header variants={headerVariants} initial={'initial'} animate={'animate'}>
+      <Link to='/'><h1>ask xem</h1></Link>
       {
       user.id &&
       <nav>
@@ -36,6 +51,6 @@ export default function Nav() {
           : <Link to='/login'>Login</Link>
         }
       </article>
-    </>
+    </motion.header>
   );
 }
