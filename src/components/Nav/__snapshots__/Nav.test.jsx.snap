@@ -2,41 +2,70 @@
 
 exports[`renders nav component render nav bar with user in context 1`] = `
 <div>
-  <nav>
+  <header
+    style="opacity: 0; transform: translateY(-100vh) translateZ(0);"
+  >
     <a
-      href="/select"
+      href="/"
     >
-      Home Img
+      <h1>
+        ask xem
+      </h1>
     </a>
-    <a
-      href="/favorites"
-    >
-      Heart Img
-    </a>
-    <button>
-      Journal
-    </button>
-  </nav>
-  <article>
-    <p>
-      Signed in as 
-      test@test.com
-    </p>
-    <button>
-      Signout
-    </button>
-  </article>
+    <nav>
+      <a
+        href="/select"
+      >
+        <img
+          alt="world map"
+          src="/nav-icons/world-map.png"
+        />
+      </a>
+      <a
+        href="/favorites"
+      >
+        <img
+          alt="backpack"
+          src="/nav-icons/backpack.png"
+        />
+      </a>
+      <img
+        alt="notebook"
+        src="/nav-icons/notebook.png"
+      />
+    </nav>
+    <article>
+      <span>
+        Signed in as 
+        test@test.com
+      </span>
+      <button>
+        Signout
+      </button>
+    </article>
+  </header>
 </div>
 `;
 
 exports[`renders nav component render nav bar without user in context 1`] = `
 <div>
-  <article>
+  <header
+    style="opacity: 0; transform: translateY(-100vh) translateZ(0);"
+  >
     <a
-      href="/login"
+      href="/"
     >
-      Login
+      <h1>
+        ask xem
+      </h1>
     </a>
-  </article>
+    <article>
+      <a
+        href="/login"
+      >
+        Login
+      </a>
+    </article>
+  </header>
 </div>
 `;

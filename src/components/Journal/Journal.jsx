@@ -49,18 +49,20 @@ export default function Journal({ setShowJournal }) {
                 <motion.div className={styles.backdrop} variants={backdropVariants} initial='hidden' animate='visible'>
                     {/* represents backdrop of modal. Will create the semi-transparent sheet that fades out background view.*/}
                     <motion.div className={styles.modal}>
-                        <form onSubmit={handleSubmit}> 
-
-                            <label htmlFor="journal">Journal</label>
-                            <textarea 
-                            id='journal' 
-                            name='journal' 
-                            value={journalInput} 
-                            onChange={(e) => setJournalInput(e.target.value)} />
-
-                            <button>Save and return</button>
-                            <button onClick={() => setShowJournal(false)}>Cancel</button>
-                        </form>
+                            <form onSubmit={handleSubmit}> 
+                                {/* Add aria labels */}
+                                <textarea 
+                                className={styles.journal}
+                                id='journal' 
+                                name='journal' 
+                                value={journalInput}
+                                aria-label='journal input' 
+                                onChange={(e) => setJournalInput(e.target.value)} />
+                                <div>
+                                    <button>Save and return</button>
+                                    <button onClick={() => setShowJournal(false)}>Cancel</button>
+                                </div>
+                            </form>
                     </motion.div>
                 </motion.div>
             }
