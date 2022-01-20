@@ -5,16 +5,16 @@ import { useAuth } from '../../context/AuthContext.jsx';
 import Journal from '../Journal/Journal.jsx';
 
 export default function Nav() {
-    const [showJournal, setShowJournal] = useState(false);
-    const {user} = useAuth();
+  const [showJournal, setShowJournal] = useState(false);
+  const {user} = useAuth();
 
   return (
-        //Nav links here!
-        <nav>
-          <Link to='/select'>Home Img</Link>
-          <Link to='/favorites'>Heart Img</Link>
-          <button onClick={() => setShowJournal(true)} disabled={!user.id}>Journal</button>
-          <Journal showJournal={showJournal} setShowJournal={setShowJournal}/>
-        </nav>
+    showJournal &&  
+    <nav>
+      <Link to='/select'>Home Img</Link>
+      <Link to='/favorites'>Heart Img</Link>
+      <button onClick={() => setShowJournal(true)} disabled={!user.id}>Journal</button>
+      <Journal setShowJournal={setShowJournal}/>
+    </nav>
   );
 }
