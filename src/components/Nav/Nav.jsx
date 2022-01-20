@@ -6,7 +6,7 @@ import Journal from '../Journal/Journal.jsx';
 
 export default function Nav() {
   const [showJournal, setShowJournal] = useState(false);
-  const {user} = useAuth();
+  const {user, signOut} = useAuth();
 
   return (
     <>
@@ -21,6 +21,17 @@ export default function Nav() {
         }
       </nav>
       }
+      
+      <article>
+        {
+          user.id 
+          ? <>
+            <p>Signed in as {user.email}</p>
+            <button onClick={signOut}>Signout</button>
+          </>
+          : <Link to='/login'>Login</Link>
+        }
+      </article>
     </>
   );
 }
