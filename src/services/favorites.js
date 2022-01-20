@@ -1,10 +1,12 @@
+import { getCard } from './cards';
 import { client, parseData } from './client';
+
 
 export async function getFavs(userId) {
     try {           
         const request = await client
             .from('favs')
-            .select('*, cards(*)')
+            .select()
             .match({ user_id: userId })
         return parseData(request)
     } catch (e) {
@@ -13,11 +15,11 @@ export async function getFavs(userId) {
     }
   }
 
-export async function addFav(cardId) {
+export async function addFav(cardId, userId) {
     try {
         const request = await client
             .from('favs')
-            .insert({ card_id: cardId })
+            .insert({ card_id: cardId, user_id: userId })
         return parseData(request)
     } catch (e) {
         console.log(e)
@@ -37,4 +39,17 @@ export async function deleteFav(cardId) {
         return {}
     }
 }
-  
+
+
+export async function getFavCards(cardIdArray) {
+    let allFavCards = []
+    try {
+       await Promise.all(cardIdArray.map(async(cardid) => {
+           const [response] = await getCard(cardid)
+           allFavCards.push(response)
+       })) 
+       return allFavCards
+    } catch (error) {
+        console.log(error.message)
+    }
+}

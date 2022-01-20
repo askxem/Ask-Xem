@@ -1,29 +1,48 @@
 import styles from './CardBack.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { addFav, deleteFav, getFavs } from '../../services/favorites'
+import { useAuth } from '../../context/AuthContext'
+import { Link } from 'react-router-dom'
 
 export default function CardBack({ card, favStatus }) {
     const [fav, setFav] = useState(favStatus)
-    
-    const handleFav = () => {
-        setFav(prevFav => !prevFav)
-        //acount for lag in state change below
-        //came in fav'd already, then unfaved so fav is now false
-        if (fav == true && favStatus == true) {
-            console.log('removing')
-        }
+    const { user } = useAuth()
 
-        //came in not fav'd (favstatus false), then faved so fav is now true
-        if (fav == false && favStatus == false) {
-            console.log('adding')
-        }
+    const handleFav = async () => {
+        if(!user.id) { alert('Sign in to be able to fav!') }
+        setFav(prevFav => !prevFav)
     }
+
+    useEffect(() => {
+        const updateFavTable = async () => {
+            //get current fav db data to see if card is already there
+            try {
+                const response = await getFavs(user.id)
+                const favArr = response.map((item) => item.card_id)
+                const faved = favArr.includes(Number(card.id))
+                //if faved is true and fav state is now false, delete
+                if(faved && fav == false) {
+                  await deleteFav(card.id)
+                  console.log('deleted')
+                } 
+                //if faved is false (card is not already in db) and fav stat is now true, add
+                if(!faved && fav) {
+                  await addFav(card.id, user.id)
+                  console.log('added')
+                }
+            } catch (error) {
+                console.log(error.message)
+              }
+           }
+           updateFavTable()
+      }, [fav])
 
     return (
         <div className={styles.container}>
 
-            <figure>
+          <figure>
                 <div className={styles.heartcontainer}>
-                    <img onClick={handleFav} src={fav ? '/redheart.png' : '/heart.png'} alt='heart' />
+                    <img className={styles.heart} onClick={handleFav} src={fav ? '/redheart.png' : '/heart.png'} alt='heart' />
                 </div>
                 <h3>{card.title}</h3>
                 <figcaption className={styles.definition}>
@@ -36,6 +55,8 @@ export default function CardBack({ card, favStatus }) {
                     className={styles.image}
                 />
         </figure>
+
+        <Link to={card.category === 'pronoun' ? '/pronouns' : '/gender'}>Back</Link>
       </div>
     )
 }

@@ -19,26 +19,26 @@ export default function GenderDetail() {
   const [favStatus, setFavStatus] = useState(false)
   const [favsArray, setFavsArray] = useState([])
 
-
   useEffect(() => {
     const fetchFavs = async () => {
       if (user.id){
         try {
+          //get the card ids in the favs table for this user
           const response = await getFavs(user.id)
-          console.log(response)
-          const favCards = response.map((entry) => entry.card_id)
-          setFavsArray(favCards)
-          console.log(favCards)
-          const faved = favsArray.includes(id)
+          //extract an array of just the card ids from the response         
+          const favArr = response.map((item) => item.card_id)
+          setFavsArray(favArr)
+          //does the extracted array include the current card?
+          const faved = favArr.includes(Number(id))
+          //set favStatus to pass to card component so appropriate heart is displayed
           setFavStatus(faved)
         } catch (error) {
-         console.log(error.message) 
+          console.log(error.message)
         }
       }
-    }
-    fetchFavs()
+     }
+     fetchFavs()
   }, [])
-
 
   useEffect(() => {
     const fetchCard = async () => {

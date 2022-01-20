@@ -9,13 +9,13 @@ import Favorites from './views/Favorites/Favorites.jsx';
 import Home from './views/Home/Home.jsx';
 import PronounsDetail from './views/Pronouns/PronounsDetail.jsx';
 import GenderDetail from './views/Gender/GenderDetail.jsx';
-import AuthForm from './components/Auth/AuthForm.jsx';
-import Auth from './views/Auth/Auth.jsx';
 import { ProvideAuth } from './context/AuthContext.jsx';
 import { DeckProvider } from './context/DeckContext/DeckContext.jsx';
 import { GuideProvider } from './context/GuideContext/GuideContext.jsx';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 import './App.css'
+import Login from './views/Auth/Login.jsx';
+import Signup from './views/Auth/Signup.jsx';
 
 export default function App() {
   return (
@@ -59,8 +59,12 @@ export default function App() {
                     <Select />
                 </Route>
         
-                <Route exact path='/auth'>
-                  <Auth />
+                <Route exact path='/login'>
+                  <Login />
+                </Route>
+
+                <Route exact path='/signup'>
+                  <Signup />
                 </Route>
         
                 <Route exact path='/'>
