@@ -31,4 +31,8 @@
 3. Netlify
 4. Supabase
 
-Icons made by [Whitevector](https://www.flaticon.com/authors/whitevector) from [Flaticon](https://www.flaticon.com/)
+Animal Pack Icons made by [Whitevector](https://www.flaticon.com/authors/whitevector) from [Flaticon](https://www.flaticon.com/)
+[Map]("https://www.flaticon.com/free-icons/map ) created by Freepik from [Flaticon](https://www.flaticon.com/)
+[Backpack]"(https://www.flaticon.com/free-icons/backpack") created by Freepik from [Flaticon](https://www.flaticon.com/)
+[Notepad]("https://www.flaticon.com/free-icons/notepad" )created by Freepik from [Flaticon](https://www.flaticon.com/)
+
