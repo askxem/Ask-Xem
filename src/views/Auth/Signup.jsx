@@ -20,8 +20,7 @@ export default function Signup() {
 
     async function handleSubmit (e){
         e.preventDefault();
-        if (password.length <= 12) return;
-        await signUp(email, password)
+        await signUp(email, password);
         history.replace(from);
     }
 
