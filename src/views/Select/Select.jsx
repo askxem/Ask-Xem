@@ -5,10 +5,14 @@ import axolotl from '../../assets/Icons/axolotl.png'
 import bunny from '../../assets/Icons/bunny.png'
 import { useAuth } from "../../context/AuthContext"
 import styles from './Select.css'
+import { useGuide } from "../../context/GuideContext/GuideContext.jsx"
 
 
 export default function Select() {
-const { user } = useAuth();
+  const { user } = useAuth();
+  const { guide, setGuideGlobal } = useGuide();
+
+  console.log(guide);
 
   return (
     <>
@@ -26,11 +30,11 @@ const { user } = useAuth();
       </p>
   ) : ( 
         <p>
-       <input type="radio" value={lion} name="guide" />
+       <input type="radio" value={'lion'} name="guide" onClick={setGuideGlobal} />
        <img src={lion} alt="lion" />
-       <input type="radio" value={axolotl} name="guide" />
+       <input type="radio" value={'axolotl'} name="guide" onClick={setGuideGlobal} />
        <img src={axolotl} alt="axolotl" />
-       <input type="radio" value={bunny} name="guide" />
+       <input type="radio" value={'bunny'} name="guide" onClick={setGuideGlobal} />
        <img src={bunny} alt="bunny" />
        </p>
   )

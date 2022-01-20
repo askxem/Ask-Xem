@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useGuide } from "../../context/GuideContext/GuideContext.jsx";
 
 /**
  * 
@@ -9,7 +10,8 @@ import { useState } from "react";
 export default function Guide({text}) {
   //LATER:
     // pull users guide from user context
-  const [userGuide, setUserGuide] = useState('lion');
+  const { guide } = useGuide();
+  const [userGuide, setUserGuide] = useState( guide ? guide : 'lion');
 
   return (
     <article>
@@ -18,7 +20,7 @@ export default function Guide({text}) {
         {text}
         </pre>
       </div>
-      <img src={require(`../../assets/Icons/${userGuide}.png`)} alt={userGuide} aria-label='user guide'/>
+      <img src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
     </article>
   )
 }

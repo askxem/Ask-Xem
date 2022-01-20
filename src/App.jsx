@@ -23,7 +23,6 @@ export default function App() {
       <DeckProvider>
         <GuideProvider>
           <Layout>
-
             <Router>
               <Switch>
 
@@ -35,21 +34,21 @@ export default function App() {
                   <Favorites />
                 </PrivateRoute>
         
-                    <Route path='/pronoun/:id'>
-                        <PronounsDetail />
-                    </Route>
-        
-                    <Route path='/gender/:id'>
-                        <GenderDetail />
-                    </Route>
-        
-                    <Route exact path='/gender'>
-                        <Gender />
-                    </Route>
-        
-                    <Route exact path='/pronouns'>
-                        <Pronouns />
-                    </Route>
+                <Route path='/pronoun/:id'>
+                    <PronounsDetail />
+                </Route>
+    
+                <Route path='/gender/:id'>
+                    <GenderDetail />
+                </Route>
+    
+                <Route exact path='/gender'>
+                    <Gender />
+                </Route>
+    
+                <Route exact path='/pronouns'>
+                    <Pronouns />
+                </Route>
         
                 <PrivateRoute exact path='/profile'>
                   <Profile />
@@ -69,7 +68,6 @@ export default function App() {
 
               </Switch>
             </Router>
-            
           </Layout>
         </GuideProvider>
       </DeckProvider>

@@ -8,26 +8,27 @@ function GuideProvider({children}) {
 
   const [guide, setGuide] = useState(hasSelectedGuide ? hasSelectedGuide : '');
 
-    return (
-        <GuideContext.Provider value={{guide, setGuide}} >
-            {children}
-        </GuideContext.Provider>
-    )
+  function getGuideLocal() {
+    const stringyGuide = localStorage.getItem('GUIDE');
+    return JSON.parse(stringyGuide);
+  }
 
-function setGuideGlobal(guide) {
-  setGuideLocal(guide);
-  setGuide(guide);
-}
+  function setGuideLocal(guide) {
+    const stringyGuide = JSON.stringify(guide);
+    localStorage.setItem('GUIDE', stringyGuide)
+  }
 
-function getGuideLocal() {
-  const stringyGuide = localStorage.getItem('GUIDE');
-  return JSON.parse(stringyGuide);
-}
+  function setGuideGlobal(e) {
+    const { value } = e.target
+    setGuideLocal(value);
+    setGuide(value);
+  }
 
-function setGuideLocal(guide) {
-  const stringyGuide = JSON.stringify(guide);
-  localStorage.setItem('GUIDE', stringyGuide)
-}
+  return (
+      <GuideContext.Provider value={{guide, setGuideGlobal}} >
+          {children}
+      </GuideContext.Provider>
+  )
 }
 
 const useGuide = () => {
