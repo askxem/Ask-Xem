@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render } from '@testing-library/react';
 import { Route, MemoryRouter } from 'react-router-dom';
 import AuthForm from './AuthForm.jsx'
 
