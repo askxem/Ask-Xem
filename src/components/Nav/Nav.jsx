@@ -13,9 +13,13 @@ export default function Nav() {
       {
       user.id &&
       <nav>
-        <Link to='/select'>Home Img</Link>
-        <Link to='/favorites'>Heart Img</Link>
-        <button onClick={() => setShowJournal(true)} disabled={!user.id}>Journal</button>
+        <Link to='/select'>
+          <img src='/nav-icons/world-map.png' alt="world map" />
+        </Link>
+        <Link to='/favorites'>
+          <img src='/nav-icons/backpack.png' alt="backpack" />
+        </Link>
+        <img src="/nav-icons/notebook.png" alt="notebook" onClick={() => setShowJournal(true)} />
         {
           showJournal && <Journal setShowJournal={setShowJournal}/>
         }
