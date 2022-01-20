@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders nav component render nav bar with user in context 1`] = `
+<div>
+  <nav>
+    <a
+      href="/select"
+    >
+      Home Img
+    </a>
+    <a
+      href="/favorites"
+    >
+      Heart Img
+    </a>
+    <button>
+      Journal
+    </button>
+  </nav>
+  <article>
+    <p>
+      Signed in as 
+      test@test.com
+    </p>
+    <button>
+      Signout
+    </button>
+  </article>
+</div>
+`;
+
+exports[`renders nav component render nav bar without user in context 1`] = `
+<div>
+  <article>
+    <a
+      href="/login"
+    >
+      Login
+    </a>
+  </article>
+</div>
+`;
