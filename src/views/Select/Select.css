@@ -23,6 +23,10 @@
   color: white;
 }
 
+.section a:hover {
+  color: #FFFA9B; 
+}
+
 
 [type=radio] {
   position: absolute;

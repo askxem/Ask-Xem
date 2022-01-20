@@ -45,7 +45,7 @@ export default function Nav() {
         {
           user.id 
           ? <>
-            <p>Signed in as {user.email}</p>
+            <span>Signed in as {user.email}</span>
             <button onClick={signOut}>Signout</button>
           </>
           : <Link to='/login'>Login</Link>

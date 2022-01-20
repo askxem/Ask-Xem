@@ -22,14 +22,17 @@ export default function Home() {
     <main className={styles.main}>
       <motion.article className={styles.welcome} variants={mainVariants} initial={'initial'} animate={'animate'}> 
         <h2>Welcome to Ask Xem</h2>
-        <p>Ask Xem is a place where you and your family can learn more about pronouns (how we refer to ourselves) and gender (how we see and express our genders).</p> 
+        <p>Ask Xem is a place where you and your family can learn more about pronouns (how we refer to ourselves) and gender (how we see and express our genders).</p>
         <p>If you sign in, you get to choose your guide, take notes in your journal, and keep track of your favorites as you explore the site. These are your guides! Xyr pronouns are xe/xem/xyr. Look to xem for helpful tips!</p> 
       </motion.article>
-      <div className={styles.authbuttons}>
+      {!user.id && <div className={styles.authbuttons}>
       <Link to="/login">Login</Link>
       <Link to="/signup">Signup</Link>
       <Link to='/select'>Continue as Guest</Link>
-      </div>
+      </div>}
+      {user.id && <div className={styles.authbuttons}>
+      <Link to='/select'>Let's Go!</Link>
+      </div>}
     </main>
   )
 }

@@ -1,3 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+/* font-family: 'Varela Round', sans-serif; */
+/* font-family: 'M PLUS Rounded 1c', sans-serif; */
+/* font-family: 'Allerta Stencil', sans-serif; */
+
 .formcontainer {
     padding: 20px;
+}
+
+legend {
+    font-family: 'Varela Round', sans-serif;
+    margin-bottom: 10px;
+}
+
+fieldset, form {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.pwtoggle {
+    text-align: right;
+    font-size: .9em;
+    cursor: pointer;
+    text-decoration: underline;
 }
