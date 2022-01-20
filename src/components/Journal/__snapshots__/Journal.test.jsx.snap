@@ -22,7 +22,10 @@ exports[`renders the journal component 1`] = `
           Welcome to your journal!
         </textarea>
         <button>
-          Submit and Return to page.
+          Save and return
+        </button>
+        <button>
+          Cancel
         </button>
       </form>
     </div>
