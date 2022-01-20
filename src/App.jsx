@@ -52,7 +52,10 @@ export default function App() {
           <Route exact path='/select'>
             <Select />
           </Route>
-          <Route exact path='/auth'>
+          <Route exact path='/login'>
+            <Auth />
+          </Route>
+          <Route exact path='/signup'>
             <Auth />
           </Route>
           <Route exact path='/'>
