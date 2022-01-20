@@ -16,7 +16,7 @@ export default async function retrieveGuideText(cardCategory, cardAnimal, cardTi
             case 'rat': 
                 return 'My friend rat has been deadnamed. We try not to deadname our friends!'
             case 'raccoon': 
-                return 'My friend raccoon has gender disphoria!'
+                return 'My friend raccoon has gender dysphoria!'
             case 'octopus': 
                 return 'What\'s your gender identity?'
             case 'llama': 
