@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useGuide } from "../../context/GuideContext/GuideContext.jsx";
+import styles from "./Guide.css"
 
 /**
  * 
@@ -14,13 +15,13 @@ export default function Guide({text}) {
   const [userGuide, setUserGuide] = useState( guide ? guide : 'lion');
 
   return (
-    <article>
-      <div aria-label='guide text box'>
+    <article className={styles.guideContainer}>
+      <div aria-label='guide text box' className={styles.guideText}>
         <pre>
         {text}
         </pre>
       </div>
-      <img src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
+      <img className={styles.guideImg} src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
     </article>
   )
 }
