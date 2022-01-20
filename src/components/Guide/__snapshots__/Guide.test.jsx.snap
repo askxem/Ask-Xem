@@ -2,17 +2,21 @@
 
 exports[`renders guide component 1`] = `
 <div>
-  <article>
+  <article
+    class="guideContainer"
+  >
     <div
       aria-label="guide text box"
+      class="guideText"
     >
-      <pre>
+      <p>
         test-text
-      </pre>
+      </p>
     </div>
     <img
       alt="lion"
       aria-label="user guide"
+      class="guideImg"
       src="/icons/lion.png"
     />
   </article>

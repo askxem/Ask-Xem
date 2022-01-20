@@ -10,23 +10,22 @@ exports[`renders the journal component 1`] = `
       class="modal"
     >
       <form>
-        <label
-          for="journal"
-        >
-          Journal
-        </label>
         <textarea
+          aria-label="journal input"
+          class="journal"
           id="journal"
           name="journal"
         >
           Welcome to your journal!
         </textarea>
-        <button>
-          Save and return
-        </button>
-        <button>
-          Cancel
-        </button>
+        <div>
+          <button>
+            Save and return
+          </button>
+          <button>
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   </div>

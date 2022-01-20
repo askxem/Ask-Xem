@@ -2,7 +2,9 @@
 
 exports[`renders authForm component renders login form 1`] = `
 <div>
-  <div>
+  <div
+    class="formcontainer"
+  >
     <fieldset>
       <legend>
         Login
@@ -36,6 +38,7 @@ exports[`renders authForm component renders login form 1`] = `
         />
         <div
           aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          class="pwtoggle"
           id="toggle-password"
         >
           Show Password
@@ -51,7 +54,9 @@ exports[`renders authForm component renders login form 1`] = `
 
 exports[`renders authForm component renders signup form failing password contraints 1`] = `
 <div>
-  <div>
+  <div
+    class="formcontainer"
+  >
     <fieldset>
       <legend>
         Sign Up
@@ -83,17 +88,18 @@ exports[`renders authForm component renders signup form failing password contrai
           type="password"
           value="test"
         />
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          class="pwtoggle"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
         <p
           aria-label="Password contraints"
         >
           🔴 Password must be at least 12 characters long.
         </p>
-        <div
-          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
-          id="toggle-password"
-        >
-          Show Password
-        </div>
         <div>
           <p>
             Disclaimer: You must be 13 years of age or older to create and manage an account.
@@ -131,7 +137,9 @@ exports[`renders authForm component renders signup form failing password contrai
 
 exports[`renders authForm component renders signup form meeting password constraints 1`] = `
 <div>
-  <div>
+  <div
+    class="formcontainer"
+  >
     <fieldset>
       <legend>
         Sign Up
@@ -163,17 +171,18 @@ exports[`renders authForm component renders signup form meeting password constra
           type="password"
           value="test-password"
         />
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          class="pwtoggle"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
         <p
           aria-label="Password contraints"
         >
           🟢 Password must be at least 12 characters long.
         </p>
-        <div
-          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
-          id="toggle-password"
-        >
-          Show Password
-        </div>
         <div>
           <p>
             Disclaimer: You must be 13 years of age or older to create and manage an account.
