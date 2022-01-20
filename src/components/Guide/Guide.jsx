@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import { useGuide } from "../../context/GuideContext/GuideContext.jsx";
+import styles from "./Guide.css"
 
 /**
  * 
@@ -20,7 +21,7 @@ export default function Guide({text}) {
         {text}
         </pre>
       </div>
-      <img src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
+      <img className={styles.guide}src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
     </article>
   )
 }
