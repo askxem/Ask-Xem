@@ -22,8 +22,9 @@ export default function App() {
     <ProvideAuth>
       <DeckProvider>
         <GuideProvider>
-          <Layout>
-            <Router>
+    
+          <Router>
+            <Layout>
               <Switch>
 
                 <Route exact path='/about'>
@@ -67,8 +68,9 @@ export default function App() {
                 </Route>
 
               </Switch>
-            </Router>
-          </Layout>
+            </Layout>
+          </Router>
+          
         </GuideProvider>
       </DeckProvider>
     </ProvideAuth>

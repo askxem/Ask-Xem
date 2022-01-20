@@ -1,6 +1,6 @@
 import { client, parseData } from './client';
 
-export async function getFavs() {
+export async function getFavs(userId) {
     try {           
         const request = await client
             .from('favs')

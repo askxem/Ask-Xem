@@ -12,8 +12,6 @@ export default function Select() {
   const { user } = useAuth();
   const { guide, setGuideGlobal } = useGuide();
 
-  console.log(guide);
-
   return (
     <>
     <section>
@@ -21,12 +19,15 @@ export default function Select() {
       {
       !user.id ? (
       <p>
+      <label>
       <input type="radio" value={lion} name="guide"/>
       <img src={lion} alt="lion" />
+      </label>
       <input className="locked" disabled type="radio" value={axolotl} name="guide" />
       <img className={styles.locked} src={axolotl} alt="axolotl" />
       <input className="locked" disabled type="radio" value={bunny} name="guide" />
       <img className={styles.locked} src={bunny} alt="bunny" />
+      
       </p>
   ) : ( 
         <p>
@@ -36,6 +37,7 @@ export default function Select() {
        <img src={axolotl} alt="axolotl" />
        <input type="radio" value={'bunny'} name="guide" onClick={setGuideGlobal} />
        <img src={bunny} alt="bunny" />
+       </label>
        </p>
   )
     }

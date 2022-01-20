@@ -11,8 +11,8 @@ export async function getJournal(userId) {
       .single()
     return parseData(request)
     } catch (e) {
-      console.log(e);
-      return [{journal: ''}];
+      console.log(e.detail);
+      throw(e);
     }
   }
 

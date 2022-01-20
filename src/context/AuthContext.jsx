@@ -19,7 +19,6 @@ function ProvideAuth({children}) {
 
     async function signIn(email, password) {
         const newUser = await signInUser(email, password);
-        console.log(newUser);
         setUser(newUser);
     }
 
