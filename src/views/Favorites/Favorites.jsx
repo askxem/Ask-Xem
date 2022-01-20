@@ -44,14 +44,8 @@ export default function Favorites() {
   return (
     <div>
       <h3>Cards You <img src='/redheart.png' alt='red heart' style={{ width: '25px' }}/></h3>
-      { loading ?
-      'Loading your favorites...' :
-      (
-      <div>
-        <p>These are the cards you wanted to remember</p>
-        <CardList cards={favorites} />
-      </div>
-    )}      
+      {loading && <p>Loading your favorites...</p>}
+      {favorites.length > 0 && <div><p>These are the cards you wanted to remember! If you don't see any yet, visit the cards and click on some hearts!</p><CardList cards={favorites} /></div>}
     </div>
   )
 }

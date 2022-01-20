@@ -4,14 +4,39 @@ import CardBack from '../../components/Cards/CardBack'
 import Guide from '../../components/Guide/Guide.jsx'
 import retrieveGuideText from '../../utils/retrieveGuideText/retrieveGuideText.js'
 import { getCard } from '../../services/cards'
+import { getFavs } from '../../services/favorites'
 import { useDeck } from '../../context/DeckContext/DeckContext'
+import { useAuth } from '../../context/AuthContext'
+
 
 export default function PronounsDetail() {
+  const { user } = useAuth()
   const { id } = useParams();
   const [loading, setLoading] = useState(true)
   const [card, setCard] = useState(null)
   const [guideText, setGuideText] = useState('')
   const { seen } = useDeck()
+  const [favStatus, setFavStatus] = useState(false)
+
+  useEffect(() => {
+    const fetchFavs = async () => {
+      if (user.id){
+        try {
+          //get the card ids in the favs table for this user
+          const response = await getFavs(user.id)
+          //extract an array of just the card ids from the response         
+          const favArr = response.map((item) => item.card_id)
+          //does the extracted array include the current card?
+          const faved = favArr.includes(Number(id))
+          //set favStatus to pass to card component so appropriate heart is displayed
+          setFavStatus(faved)
+        } catch (error) {
+          console.log(error.message)
+        }
+      }
+     }
+     fetchFavs()
+  }, [])
 
   useEffect(() => {
     const fetchCard = async () => {
@@ -35,7 +60,7 @@ export default function PronounsDetail() {
   return (
     <main>
       {loading && <p>Loading...</p>}
-      {card && <CardBack card={card}/>}
+      {card && <CardBack card={card} favStatus={favStatus}/>}
       {guideText && <Guide text={guideText}/>}
     </main>
   )
