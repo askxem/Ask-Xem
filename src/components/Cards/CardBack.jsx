@@ -2,10 +2,11 @@ import styles from './CardBack.css'
 import { useState, useEffect } from 'react'
 import { addFav, deleteFav, getFavs } from '../../services/favorites'
 import { useAuth } from '../../context/AuthContext'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export default function CardBack({ card, favStatus }) {
     const [fav, setFav] = useState(favStatus)
+    const history = useHistory();
     const { user } = useAuth()
 
     const handleFav = async () => {
@@ -56,7 +57,7 @@ export default function CardBack({ card, favStatus }) {
                 />
         </figure>
 
-        <Link to={card.category === 'pronoun' ? '/pronouns' : '/gender'}>Back</Link>
+        <button onClick={() => history.goBack()}>Back</button>
       </div>
     )
 }

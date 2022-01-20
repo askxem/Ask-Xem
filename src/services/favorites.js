@@ -9,8 +9,8 @@ export async function getFavs(userId) {
             .select()
             .match({ user_id: userId })
         return parseData(request)
-    } catch (e) {
-        console.log(e)
+    } catch (error) {
+        console.log(error)
         return {}
     }
   }
@@ -21,8 +21,8 @@ export async function addFav(cardId, userId) {
             .from('favs')
             .insert({ card_id: cardId, user_id: userId })
         return parseData(request)
-    } catch (e) {
-        console.log(e)
+    } catch (error) {
+        console.log(error)
         return {}
     }
 }
@@ -34,8 +34,8 @@ export async function deleteFav(cardId) {
             .delete()
             .match({ card_id: cardId });
         return parseData(request)
-    } catch (e) {
-        console.log(e)
+    } catch (error) {
+        console.log(error)
         return {}
     }
 }

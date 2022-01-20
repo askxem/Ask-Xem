@@ -16,8 +16,8 @@ export default async function fetchExamples(pronoun){
             const possesivePronoun = pronoun.split('/')[1];
             return `My friend the dog uses ${pronoun} pronouns. I love ${possesivePronoun}!`;
         }
-    } catch(e) {
-        console.log(e);
+    } catch(error) {
+        console.log(error);
         return;
     }
 }
