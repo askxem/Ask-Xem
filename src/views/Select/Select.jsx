@@ -30,12 +30,18 @@ export default function Select() {
       </p>
   ) : ( 
         <p>
+        <label>
        <input type="radio" value={'lion'} name="guide" onClick={setGuideGlobal} />
        <img src={lion} alt="lion" />
+       </label>
+       <label>
        <input type="radio" value={'axolotl'} name="guide" onClick={setGuideGlobal} />
        <img src={axolotl} alt="axolotl" />
+       </label>
+       <label>
        <input type="radio" value={'bunny'} name="guide" onClick={setGuideGlobal} />
        <img src={bunny} alt="bunny" />
+       </label>
        </p>
   )
     }
