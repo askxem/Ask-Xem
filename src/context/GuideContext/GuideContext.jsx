@@ -8,32 +8,33 @@ function GuideProvider({children}) {
 
   const [guide, setGuide] = useState(hasSelectedGuide ? hasSelectedGuide : '');
 
-    return (
-        <GuideContext.Provider value={{guide, setGuide}} >
-            {children}
-        </GuideContext.Provider>
-    )
+  function getGuideLocal() {
+    const stringyGuide = localStorage.getItem('GUIDE');
+    return JSON.parse(stringyGuide);
+  }
 
-function setGuideGlobal(guide) {
-  setGuideLocal(guide);
-  setGuide(guide);
+  function setGuideLocal(guide) {
+    const stringyGuide = JSON.stringify(guide);
+    localStorage.setItem('GUIDE', stringyGuide)
+  }
+
+  function setGuideGlobal(e) {
+    const { value } = e.target
+    setGuideLocal(value);
+    setGuide(value);
+  }
+
+  return (
+      <GuideContext.Provider value={{guide, setGuideGlobal}} >
+          {children}
+      </GuideContext.Provider>
+  )
 }
 
-function getGuideLocal() {
-  const stringyGuide = localStorage.getItem('GUIDE');
-  return JSON.parse(stringyGuide);
-}
-
-function setGuideLocal(guide) {
-  const stringyGuide = JSON.stringify(guide);
-  localStorage.setItem('GUIDE', stringyGuide)
-}
-
-function useGuide(){
+const useGuide = () => {
     const context = useContext(GuideContext);
     if (context === undefined) throw new Error('Guide context not accessible outside of the guide provider.')
     return context;
 }
-}
 
-export { GuideProvider, useGuide, setGuideGlobal }
+export { GuideProvider, useGuide }
