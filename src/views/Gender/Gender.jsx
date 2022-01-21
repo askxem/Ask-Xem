@@ -19,12 +19,17 @@ export default function Gender() {
 
   const guideText = 'This is the Gender Deck - click on a card to find out more!'
 
+  const handleClick = () => {
+    setShowModal(false)
+  }
+
   useEffect(() => {
     const showModal = () => {
       if (genSeen.length === 8) {
         setShowModal(true)
       }
     }
+    showModal()
   },[genSeen])
 
   useEffect(() => {
@@ -55,7 +60,7 @@ export default function Gender() {
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
       <Guide text={guideText} />
-      { showModal && <DeckComplete />}
+      { showModal && <DeckComplete handleClick={handleClick}/>}
     </main>
   )
 }

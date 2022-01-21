@@ -2,6 +2,7 @@ import { getCardsByCategory } from "../../services/cards"
 import { useState, useEffect } from "react"
 import Guide from "../../components/Guide/Guide.jsx"
 import CardList from "../../components/Cards/CardList"
+import DeckComplete from "../../components/DeckComplete/DeckComplete.jsx"
 import { useDeck } from "../../context/DeckContext/DeckContext"
 import renderRainbow from "../../utils/rainbow"
 import Loader from "../../components/Loading/Loader.jsx"
@@ -10,9 +11,23 @@ export default function Pronouns() {
   const [deck, setDeck] = useState('')
   const [loading, setLoading] = useState(true)
   const [rainbow, setRainbow] = useState('')
+  const [showModal, setShowModal] = useState(false)
   const { pronSeen } = useDeck()
 
   const guideText = 'This is the Pronouns Deck - click on a card to find out more!'
+
+  const handleClick = () => {
+    setShowModal(false)
+  }
+
+  useEffect(() => {
+    const showModal = () => {
+      if (pronSeen.length === 8) {
+        setShowModal(true)
+      }
+    }
+    showModal()
+  },[pronSeen])
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -42,7 +57,7 @@ export default function Pronouns() {
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
       <Guide text={guideText}/>
-      { (pronSeen.length === 8) && <DeckComplete />}
+      { showModal && <DeckComplete handleClick={handleClick}/>}
     </main>
   )
 }
