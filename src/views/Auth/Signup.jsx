@@ -8,7 +8,6 @@ import styles from './AuthView.css'
 
 export default function Signup() {
     const history = useHistory();
-    const location = useLocation();
     const {signUp, user} = useAuth();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [{email, password}, handleChange] = useForm({
