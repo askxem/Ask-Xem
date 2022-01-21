@@ -8,4 +8,11 @@ figure {
     border: 1px solid gray;
     border-radius: 10%;
     background-color: white;
+    min-height: 110px;
+}
+
+figure h3 {
+    width: 100%;
+    word-wrap: break-word;
+    text-align: center;
 }
