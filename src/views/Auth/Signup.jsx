@@ -4,7 +4,7 @@ import useForm from '../../hooks/useForm.js';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext.jsx';
-
+import styles from './AuthView.css'
 
 export default function Signup() {
     const history = useHistory();
@@ -25,7 +25,7 @@ export default function Signup() {
     }
 
     return (
-        <>
+        <div className={styles.authview}>
         {!user.id && <section>
             <AuthForm 
             isSigningUp={true}
@@ -36,10 +36,10 @@ export default function Signup() {
             isPasswordVisible={isPasswordVisible}
             setIsPasswordVisible={setIsPasswordVisible}
             />
-            <Link to='/login'>Alright have an account?</Link>
+            
         </section>}
 
         {user.id && <p>You're already signed up! If you're ready to log out, there's a handy button for that up top!</p>}
-        </>
+        </div>
     )
 }

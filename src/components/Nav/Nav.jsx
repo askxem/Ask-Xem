@@ -24,7 +24,7 @@ export default function Nav() {
 const iconVariants = {
   initial: { scale: 0 },
   animate: { scale: [0, 1.2, 1] },
-  bounce: { y: [0, -10, 0], transition: { yoyo: 10 }}
+  bounce: { y: [0, -10, 0] }
 }
 
   return (
@@ -40,7 +40,9 @@ const iconVariants = {
             animate={'animate'}
             whileHover={'bounce'}
             whileFocus={'bounce'}
-            src='/nav-icons/world-map.png' alt="world map" />
+            src='/nav-icons/world-map.png' 
+            alt="world map" 
+            title='Options'/>
         </Link>
         <Link to='/favorites'>
           <motion.img variants={iconVariants}
@@ -48,7 +50,9 @@ const iconVariants = {
             animate={'animate'}
             whileHover={'bounce'}
             whileFocus={'bounce'}
-            src='/nav-icons/backpack.png' alt="backpack" />
+            src='/nav-icons/backpack.png' 
+            alt="backpack"
+            title='Favs' />
         </Link>
           <motion.img 
           variants={iconVariants}
@@ -56,7 +60,10 @@ const iconVariants = {
           animate={'animate'}
           whileHover={'bounce'}
           whileFocus={'bounce'}
-          src="/nav-icons/notebook.png" alt="notebook" onClick={() => setShowJournal(true)} />
+          src="/nav-icons/notebook.png" 
+          alt="notebook" 
+          onClick={() => setShowJournal(true)}
+          title='Journal' />
         </div>
         {
           showJournal && <Journal setShowJournal={setShowJournal}/>

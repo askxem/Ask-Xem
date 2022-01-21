@@ -9,6 +9,18 @@
     padding: 20px;
 }
 
+.formcontainer button {
+    text-align: center;
+    border: none;
+    background-color: #91ad8c; 
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px gray;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1em;
+}
+
 legend {
     font-family: 'Varela Round', sans-serif;
     margin-bottom: 10px;
@@ -31,4 +43,11 @@ input {
     font-size: .9em;
     cursor: pointer;
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+    .formcontainer {
+        width: 50%;
+        margin-left: 40px;
+    }
 }

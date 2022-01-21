@@ -9,7 +9,7 @@ import { useGuide } from "../../context/GuideContext/GuideContext.jsx"
 
 export default function Select() {
   const { user } = useAuth();
-  const { guide, setGuideGlobal } = useGuide();
+  const { setGuideGlobal } = useGuide();
 
   return (
     <main className={styles.main}>
@@ -45,11 +45,14 @@ export default function Select() {
   )
     }
     </section>
-    <section className={styles.section}>
-      <h2>Choose Your Deck</h2>
-      <Link to="/pronouns">Pronouns Deck</Link>
-      <Link to="/gender">Gender Deck</Link>
-      </section>
+    <div className={styles.deckchoice}>
+        <h2>Choose Your Deck</h2>
+        <div className={styles.deckbuttons}>
+        <Link to="/pronouns">Pronouns Deck</Link>
+        <Link to="/gender">Gender Deck</Link>
+        </div>
+      </div>
+
     </main>
   )
 }
