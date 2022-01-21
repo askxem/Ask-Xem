@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { getCardsByCategory } from "../../services/cards"
 import CardList from "../../components/Cards/CardList"
+import DeckComplete from "../../components/DeckComplete/DeckComplete.jsx"
 import { useDeck } from "../../context/DeckContext/DeckContext"
 import renderRainbow from "../../utils/rainbow"
 import Guide from "../../components/Guide/Guide.jsx"
@@ -12,9 +13,10 @@ export default function Gender() {
   const [deck, setDeck] = useState('')
   const [loading, setLoading] =useState(true)
   const [rainbow, setRainbow] = useState('')
+  
   const { genSeen } = useDeck()
 
-  const guideText = 'This is the Gender Deck'
+  const guideText = 'This is the Gender Deck. Here, you can '
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -45,6 +47,8 @@ export default function Gender() {
       <CardList cards={deck} rainbow={rainbow} />
       {rainbow}
       <Guide text={guideText} />
+      {/* { (genSeen.length === 8) && <DeckComplete deckCategory={'gender'}/>} */}
+      <DeckComplete />
     </main>
   )
 }
