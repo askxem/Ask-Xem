@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Confetti from 'react-confetti'
 import styles from './DeckComplete.css'
 import { Link } from 'react-router-dom'
 
@@ -21,6 +22,7 @@ return (
           animate='visible'        
           >
           <motion.div className={styles.completeModal}>
+            <Confetti />
             <div className={styles.completedContent}>
               <div className={styles.buttonContainer}>
                 <svg onClick={handleClick} xmlns="http://www.w3.org/2000/svg" className={styles.exitButton} fill="none" viewBox="0 0 24 24" stroke="currentColor">
