@@ -55,6 +55,14 @@ export default function CardBack({ card, favStatus }) {
         }  
       }
 
+      const buttonVariants = {
+        initial: { opacity: 0, },
+        animate: { 
+            opacity: [0, 1], 
+            transition: { delay: .5, duration: .8 }
+        }  
+    }
+
     return (
         <div className={styles.container}>
 
@@ -74,7 +82,7 @@ export default function CardBack({ card, favStatus }) {
                 />
         </motion.figure>
 
-        <button className={styles.backbutton} onClick={() => history.goBack()}>Back</button>
+        <motion.button variants={buttonVariants} initial={'initial'} animate={'animate'} className={styles.backbutton} onClick={() => history.goBack()}>Back</motion.button>
       </div>
     )
 }
