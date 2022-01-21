@@ -58,7 +58,7 @@ export default function CardBack({ card, favStatus }) {
                 />
         </figure>
 
-        <button onClick={() => history.goBack()}>Back</button>
+        <button className={styles.back} onClick={() => history.goBack()}>Back</button>
       </div>
     )
 }
