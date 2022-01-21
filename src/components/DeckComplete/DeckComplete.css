@@ -1,0 +1,22 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.completeModal div {
+  background-color: rgb(240, 238, 226);
+  gap: 15px;
+  width: 50vw;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: row;
+}

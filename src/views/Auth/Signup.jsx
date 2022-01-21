@@ -16,12 +16,10 @@ export default function Signup() {
         password: ''
     });
 
-    const {from} = location.state || { from: { pathname: '/select'}};
-
     async function handleSubmit (e){
         e.preventDefault();
         await signUp(email, password);
-        history.replace(from);
+        history.push('/select');
     }
 
     return (
