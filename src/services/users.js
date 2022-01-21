@@ -1,4 +1,4 @@
-import { client } from './client';
+import { client, parseData } from './client';
 
 export function getUser() {
   try{
@@ -18,8 +18,8 @@ export function getSession() {
 
 export async function signUpUser(email, password) {
   try {
-    const { user } = await client.auth.signUp({ email, password });
-    return user;
+    const response = await client.auth.signUp({ email, password });
+    return parseData(response);
   } catch (error) {
     console.log(error);
   }
