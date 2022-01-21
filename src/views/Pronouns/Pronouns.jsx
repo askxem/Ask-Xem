@@ -42,6 +42,7 @@ export default function Pronouns() {
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
       <Guide text={guideText}/>
+      { (pronSeen.length === 8) && <DeckComplete />}
     </main>
   )
 }

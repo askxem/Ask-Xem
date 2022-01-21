@@ -47,7 +47,7 @@ export default function Gender() {
       <CardList cards={deck} rainbow={rainbow} />
       {rainbow}
       <Guide text={guideText} />
-      { (genSeen.length === 8) && <DeckComplete deckCategory={'gender'}/>}
+      { (genSeen.length === 8) && <DeckComplete />}
     </main>
   )
 }
