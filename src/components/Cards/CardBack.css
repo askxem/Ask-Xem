@@ -56,13 +56,18 @@
     font-size: 1em;
 }
 
+.backbutton:hover {
+    color: #FFFA9B; 
+}
+
+
 @media only screen and (min-width: 768px) {
     .image {
         width: 30%;
     }
 
     .container {
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 200px;
+        margin-right: 200px;
     }
 }
