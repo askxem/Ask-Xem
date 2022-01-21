@@ -23,6 +23,7 @@ exports[`renders nav component render nav bar with user in context 1`] = `
             alt="world map"
             src="/nav-icons/world-map.png"
             style="transform: scale(0) translateZ(0);"
+            title="Options"
           />
         </a>
         <a
@@ -32,12 +33,14 @@ exports[`renders nav component render nav bar with user in context 1`] = `
             alt="backpack"
             src="/nav-icons/backpack.png"
             style="transform: scale(0) translateZ(0);"
+            title="Favs"
           />
         </a>
         <img
           alt="notebook"
           src="/nav-icons/notebook.png"
           style="transform: scale(0) translateZ(0);"
+          title="Journal"
         />
       </div>
     </nav>
