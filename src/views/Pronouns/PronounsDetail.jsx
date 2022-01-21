@@ -7,6 +7,7 @@ import { getCard } from '../../services/cards'
 import { getFavs } from '../../services/favorites'
 import { useDeck } from '../../context/DeckContext/DeckContext'
 import { useAuth } from '../../context/AuthContext'
+import Loader from '../../components/Loading/Loader.jsx'
 
 
 export default function PronounsDetail() {
@@ -59,7 +60,7 @@ export default function PronounsDetail() {
 
   return (
     <main>
-      {loading && <p>Loading...</p>}
+      {loading && <Loader />}
       {card && <CardBack card={card} favStatus={favStatus}/>}
       {guideText && <Guide text={guideText}/>}
     </main>
