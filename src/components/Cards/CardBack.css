@@ -27,3 +27,15 @@ figure {
 .heart {
     width: 10vw;
 }
+.back{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    background-color: #91ad8c; 
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px gray;
+    color: white;
+}

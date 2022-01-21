@@ -16,6 +16,9 @@ export default function Guide({text}) {
 
   return (
     <article className={styles.guideContainer}>
+
+
+
       <div aria-label='guide text box' className={styles.guideText}>
         <p>
         {text}
