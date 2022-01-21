@@ -13,9 +13,14 @@ const guideVariants = {
       opacity: [0, 1], 
       x: 0,
       transition: { delay: .5, duration: .5 }
-  }  
+  },
 }
 
+const guideImgVariants = {
+  initial: { scale: 0 },
+  animate: { scale: [0, 1.2, 1] },
+  bounce: { y: [0, -12, 0] }
+}
 /**
  * 
  * @param {string} text the guide's text box will display this value 
@@ -31,7 +36,16 @@ export default function Guide({text}) {
 
       <div aria-label='guide text box' className={styles.guideText}>
         <p>{text}</p>
-        <img className={styles.guideImg} src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
+        <motion.img 
+        className={styles.guideImg} 
+        src={`/icons/${userGuide}.png`} 
+        alt={userGuide} 
+        aria-label='user guide'
+        variants={guideImgVariants}
+            initial={'initial'}
+            animate={'animate'}
+            whileHover={'bounce'}
+            whileFocus={'bounce'}/>
       </div>
     </motion.article>
   )
