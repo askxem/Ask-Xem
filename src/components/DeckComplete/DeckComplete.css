@@ -11,9 +11,14 @@
   align-items: center;
 }
 .completeModal div {
-  background-color: rgb(240, 238, 226);
-  gap: 15px;
+  border-radius: 10px;
   width: 50vw;
+  height: 60vh;
+  padding: 10px;
+  text-overflow: scroll;
+  background-color: white;
+  font-family: 'Varela Round', sans-serif;
+  color: black;
 }
 
 .buttonDiv {
