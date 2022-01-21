@@ -14,7 +14,7 @@ export default function renderRainbow(seenCount) {
             return ['red','orange','yellow','green','blue','indigo']
         case 7: 
             return ['red','orange','yellow','green','blue','indigo','purple']
-        case 8: 
+            case (seenCount >= 8): 
             return ['YAYAYAY']
         default:
             return []
