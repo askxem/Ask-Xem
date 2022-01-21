@@ -4,6 +4,7 @@ import Guide from "../../components/Guide/Guide.jsx"
 import CardList from "../../components/Cards/CardList"
 import { useDeck } from "../../context/DeckContext/DeckContext"
 import renderRainbow from "../../utils/rainbow"
+import Loader from "../../components/Loading/Loader.jsx"
 
 export default function Pronouns() {
   const [deck, setDeck] = useState('')
@@ -38,7 +39,7 @@ export default function Pronouns() {
 
   return (
     <main>
-      {loading && <p>Loading...</p>}
+      {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
       <Guide text={guideText}/>
     </main>
