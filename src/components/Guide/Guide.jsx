@@ -9,8 +9,7 @@ import styles from "./Guide.css"
  * @returns an image of the user's selected guide and a guide text box
  */
 export default function Guide({text}) {
-  //LATER:
-    // pull users guide from user context
+
   const { guide } = useGuide();
   const [userGuide, setUserGuide] = useState( guide ? guide : 'lion');
 
