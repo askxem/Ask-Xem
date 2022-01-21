@@ -4,6 +4,7 @@ import CardList from "../../components/Cards/CardList"
 import { useDeck } from "../../context/DeckContext/DeckContext"
 import renderRainbow from "../../utils/rainbow"
 import Guide from "../../components/Guide/Guide.jsx"
+import Loader from "../../components/Loading/Loader.jsx"
 
 
 
@@ -40,7 +41,7 @@ export default function Gender() {
 
   return (
     <main>
-      {loading && <p>Loading...</p>}
+      {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
       {rainbow}
       <Guide text={guideText} />

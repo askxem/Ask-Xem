@@ -7,6 +7,7 @@ import Guide from '../../components/Guide/Guide.jsx'
 import retrieveGuideText from '../../utils/retrieveGuideText/retrieveGuideText.js'
 import { getFavs } from '../../services/favorites'
 import { useAuth } from '../../context/AuthContext'
+import Loader from '../../components/Loading/Loader.jsx'
 
 
 export default function GenderDetail() {
@@ -60,7 +61,7 @@ export default function GenderDetail() {
 
   return (
     <main>
-      {loading && <p>Loading...</p>}
+      {loading && <Loader />}
       {card && <CardBack card={card} favStatus={favStatus}/>}
       {guideText && <Guide text={guideText}/>}
     </main>

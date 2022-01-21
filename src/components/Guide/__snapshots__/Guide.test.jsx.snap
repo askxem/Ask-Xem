@@ -4,6 +4,7 @@ exports[`renders guide component 1`] = `
 <div>
   <article
     class="guideContainer"
+    style="opacity: 0; transform: translateX(-100vw) translateZ(0);"
   >
     <div
       aria-label="guide text box"

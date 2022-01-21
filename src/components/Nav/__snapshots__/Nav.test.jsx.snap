@@ -13,26 +13,33 @@ exports[`renders nav component render nav bar with user in context 1`] = `
       </h1>
     </a>
     <nav>
-      <a
-        href="/select"
+      <div
+        class="navicons"
       >
+        <a
+          href="/select"
+        >
+          <img
+            alt="world map"
+            src="/nav-icons/world-map.png"
+            style="transform: scale(0) translateZ(0);"
+          />
+        </a>
+        <a
+          href="/favorites"
+        >
+          <img
+            alt="backpack"
+            src="/nav-icons/backpack.png"
+            style="transform: scale(0) translateZ(0);"
+          />
+        </a>
         <img
-          alt="world map"
-          src="/nav-icons/world-map.png"
+          alt="notebook"
+          src="/nav-icons/notebook.png"
+          style="transform: scale(0) translateZ(0);"
         />
-      </a>
-      <a
-        href="/favorites"
-      >
-        <img
-          alt="backpack"
-          src="/nav-icons/backpack.png"
-        />
-      </a>
-      <img
-        alt="notebook"
-        src="/nav-icons/notebook.png"
-      />
+      </div>
     </nav>
     <article>
       <span>
