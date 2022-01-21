@@ -1,28 +1,49 @@
+
+.text{
+    padding: 25px;
+}
+
 .guideContainer {
   display:flex;
   flex-direction: column;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   table-layout: fixed;
   border-collapse: collapse;
   z-index: 3;
   position:relative;
+  align-items: center;
+  gap: 15px;
 }
 
 .guideText {
   height: auto;
-	padding: 30px;
-	margin: 40px auto;
+  width: fit-content;
+  padding: 35px;
+  margin: 30px auto;
   position: relative;
-	border-radius: 200px;
-	text-align: center;
+  border-radius: 200px;
+  text-align: center;
   background-color:rgba(255, 255, 255, 0.74);
-  justify-content: flex-end;
+  justify-content: center;
   font-weight: bold;
-  font-size: medium;
+  font-size:medium;
+  font-family: 'Varla Round', sans-serif;
 }
 
 .guideImg{
   width: 30%;
 } 
+
+@media only screen and (min-width: 768px) {
+    .guideImg {
+        width: 30%;
+    }
+
+    .guideContainer {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
 
