@@ -23,8 +23,10 @@ export default function Guide({text}) {
         <p>
         {text}
         </p>
+        <img className={styles.guideImg} src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
       </div>
-      <img className={styles.guideImg} src={`/icons/${userGuide}.png`} alt={userGuide} aria-label='user guide'/>
+
+
     </article>
   )
 }

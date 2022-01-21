@@ -1,15 +1,7 @@
 .guideContainer {
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-start; */
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  justify-content:flex-start;
-  width: 90vw;
-  margin-right: 5%;
-  align-self: start;
-  justify-items: normal;
+display:flex;
+flex-direction: column;
+
 }
 
 .guideText {
@@ -26,37 +18,7 @@
 
 }
 
-.guideText:before,
-.guideText:after {
-	content: ' ';
-	position: absolute;
-	left: 10px;
-	bottom: -30px;
-	width: 40px;
-	height: 40px;
-	background-color: white;
-	border: 1px solid #333;
-	border-radius: 28px;
-}
-
-.guideText:after {
-	width: 20px;
-	height: 20px;
-	left: 5px;
-	bottom: -40px;
-	border-radius: 18px;
-  background-color: white;
-}
-
 .guideImg{
-  width: 150px;
-  position: absolute;
-  padding: 10px;
-  border-radius: 10%;
-  position: relative;
-  padding: 0;
-  margin: 0;
-  float: left;
-  justify-content: flex-start;
+  width: 30%;
 } 
 
