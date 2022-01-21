@@ -2,12 +2,12 @@ import hedgehog from '../../assets/Icons/hedgehog.png'
 import lion from '../../assets/Icons/lion.png'
 import turtle from '../../assets/Icons/turtle.png'
 import llama from '../../assets/Icons/llama.png'
-
+import styles from './About.css'
 
 
 export default function About() {
   return (
-    <div className="about">
+    <div className={styles.about}>
       <h2>Meet Our Team</h2>
 
       <div className="members">
