@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
-import { NavLink, Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext.jsx';
 import Journal from '../Journal/Journal.jsx';
 import styles from './Nav.css'
@@ -22,19 +21,43 @@ export default function Nav() {
     }  
 }
 
+const iconVariants = {
+  initial: { scale: 0 },
+  animate: { scale: [0, 1.2, 1] },
+  bounce: { y: [0, -10, 0], transition: { yoyo: 10 }}
+}
+
   return (
     <motion.header variants={headerVariants} initial={'initial'} animate={'animate'}>
       <Link to='/'><h1>ask xem</h1></Link>
       {
       user.id &&
       <nav>
+        <div className={styles.navicons}>
         <Link to='/select'>
-          <img src='/nav-icons/world-map.png' alt="world map" />
+          <motion.img variants={iconVariants}
+            initial={'initial'}
+            animate={'animate'}
+            whileHover={'bounce'}
+            whileFocus={'bounce'}
+            src='/nav-icons/world-map.png' alt="world map" />
         </Link>
         <Link to='/favorites'>
-          <img src='/nav-icons/backpack.png' alt="backpack" />
+          <motion.img variants={iconVariants}
+            initial={'initial'}
+            animate={'animate'}
+            whileHover={'bounce'}
+            whileFocus={'bounce'}
+            src='/nav-icons/backpack.png' alt="backpack" />
         </Link>
-        <img src="/nav-icons/notebook.png" alt="notebook" onClick={() => setShowJournal(true)} />
+          <motion.img 
+          variants={iconVariants}
+          initial={'initial'}
+          animate={'animate'}
+          whileHover={'bounce'}
+          whileFocus={'bounce'}
+          src="/nav-icons/notebook.png" alt="notebook" onClick={() => setShowJournal(true)} />
+        </div>
         {
           showJournal && <Journal setShowJournal={setShowJournal}/>
         }

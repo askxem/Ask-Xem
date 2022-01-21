@@ -40,3 +40,27 @@
     color: white;
 }
 
+.guidecontent {
+    display: flex;
+}
+
+.guidecontent img {
+    height: 14vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .guidecontent img {
+        height: 20vh;
+    }
+
+    .authbuttons {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        /* width: 50vw; */
+    }
+
+    .authbuttons a {
+        width: 40%;
+    }
+}
