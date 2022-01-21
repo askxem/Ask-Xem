@@ -2,12 +2,6 @@ import { createContext, useState, useContext } from "react";
 
 const DeckContext = createContext()
 
-    //on click, 
-        //push id to array IF not aleady in array.
-        //render rainbow color according to number of array elements
-        //once array.length=8, some sort of animation
-
-
 const DeckProvider = ({ children }) => {
     const [genSeen, setGenSeen] = useState(JSON.parse(localStorage.getItem('genSeen')) || [])
     const [pronSeen, setPronSeen] = useState(JSON.parse(localStorage.getItem('pronSeen')) || [])
