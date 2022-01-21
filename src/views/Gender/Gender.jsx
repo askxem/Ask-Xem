@@ -15,7 +15,7 @@ export default function Gender() {
   
   const { genSeen } = useDeck()
 
-  const guideText = 'This is the Gender Deck. Here, you can '
+  const guideText = 'This is the Gender Deck - click on a card to see the definition!'
 
   useEffect(() => {
     const fetchDeck = async () => {
