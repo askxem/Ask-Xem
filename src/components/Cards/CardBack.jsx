@@ -2,8 +2,12 @@ import styles from './CardBack.css'
 import { useState, useEffect } from 'react'
 import { addFav, deleteFav, getFavs } from '../../services/favorites'
 import { useAuth } from '../../context/AuthContext'
+import { motion } from 'framer-motion'
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
  
 export default function CardBack({ card, favStatus }) {
+    const history = useHistory()
+
     const [fav, setFav] = useState(favStatus)
     const { user } = useAuth()
 
@@ -39,10 +43,22 @@ export default function CardBack({ card, favStatus }) {
            updateFavTable()
       }, [fav])
 
+      const containerVariants = {
+        initial: {
+            opacity: 0, 
+            x: '100vw'
+        },
+        animate: {
+            opacity: [0, 1], 
+            x: 0,
+            transition: { delay: .5, duration: .5 }
+        }  
+      }
+
     return (
         <div className={styles.container}>
 
-          <figure className={styles.backcontainer}>
+          <motion.figure className={styles.backcontainer} variants={containerVariants} initial={'initial'} animate={'animate'}>
                 <div className={styles.heartcontainer}>
                     <img className={styles.heart} onClick={handleFav} src={fav ? '/redheart.png' : '/heart.png'} alt='heart' />
                 </div>
@@ -56,9 +72,9 @@ export default function CardBack({ card, favStatus }) {
                     alt={card.animal}
                     className={styles.image}
                 />
-        </figure>
+        </motion.figure>
 
-        <button className={styles.back} onClick={() => history.goBack()}>Back</button>
+        <button className={styles.backbutton} onClick={() => history.goBack()}>Back</button>
       </div>
     )
 }
