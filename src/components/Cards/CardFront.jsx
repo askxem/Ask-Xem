@@ -2,7 +2,7 @@ import styles from './CardFront.css'
 
 export default function CardFront({ card }) {
   return (
-    <figure>
+    <figure className={styles.frontcontainer}>
       <h3>{card.title}</h3>
       <img
           src={`/icons/${card.animal}.png`}
