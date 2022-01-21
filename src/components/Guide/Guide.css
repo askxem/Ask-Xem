@@ -1,13 +1,12 @@
 .guideContainer {
-display:flex;
-flex-direction: column;
-margin-left: auto;
-margin-right: auto;
-table-layout: fixed;
-border-collapse: collapse;
-z-index: 3;
-position:relative;
-
+  display:flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  z-index: 3;
+  position:relative;
 }
 
 .guideText {
@@ -17,14 +16,10 @@ position:relative;
   position: relative;
 	border-radius: 200px;
 	text-align: center;
-	/* border: 1px solid #333; */
   background-color:rgba(255, 255, 255, 0.74);
   justify-content: flex-end;
   font-weight: bold;
   font-size: medium;
-  
- 
-
 }
 
 .guideImg{

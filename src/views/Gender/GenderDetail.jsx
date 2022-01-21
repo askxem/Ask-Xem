@@ -19,6 +19,7 @@ export default function GenderDetail() {
   const { seen } = useDeck()
   const [favStatus, setFavStatus] = useState(false)
 
+
   useEffect(() => {
     const fetchFavs = async () => {
       if (user.id){
