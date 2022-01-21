@@ -7,12 +7,11 @@ import React, { useState } from 'react'
  */
 export default function useForm(intialValue) {
     const [formState, setFormState] = useState({...intialValue});
+    const [error, setError] = useState('');
 
     function handleChange(e){
         e.preventDefault();
-
         const {name, value} = e.target;
-
         setFormState(prevState => {
             return {
                 ...prevState,
@@ -21,5 +20,5 @@ export default function useForm(intialValue) {
         });
     }
 
-    return [formState, handleChange];
+    return [formState, handleChange, error, setError];
 }

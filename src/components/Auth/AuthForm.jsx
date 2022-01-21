@@ -15,7 +15,8 @@ export default function AuthForm({
   handleChange, 
   handleSubmit,
   isPasswordVisible,
-  setIsPasswordVisible}) {
+  setIsPasswordVisible,
+  error}) {
 
   return (
     <div className={styles.formcontainer}>
@@ -53,7 +54,15 @@ export default function AuthForm({
           </div>
 
           {
-            isSigningUp && <p aria-label='Password contraints'>{password.length >= 12 ? '🟢 Password must be at least 12 characters long.' : '🔴 Password must be at least 12 characters long.'}</p>
+            error 
+            ? <p aria-label='Error message.'>🔴 {error}.</p> 
+            : <p aria-label='Password contraints'>
+                {
+                  password.length >= 12 
+                  ? '🟢 Password must be at least 12 characters long.' 
+                  : '🔴 Password must be at least 12 characters long.'
+                }
+              </p>
           }
           
           {

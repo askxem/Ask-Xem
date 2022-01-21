@@ -17,21 +17,13 @@ export function getSession() {
 }
 
 export async function signUpUser(email, password) {
-  try {
     const response = await client.auth.signUp({ email, password });
     return parseData(response);
-  } catch (error) {
-    console.log(error);
-  }
 }
 
 export async function signInUser(email, password) {
-  try {
-    const { user, error } = await client.auth.signIn({ email, password });
-    return user;
-  } catch (error) {
-    console.log(error);
-  }
+    const response = await client.auth.signIn({ email, password });
+    return parseData(response);
 }
 
 export async function signOutUser() {
