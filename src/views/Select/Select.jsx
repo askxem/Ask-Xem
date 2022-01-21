@@ -67,7 +67,9 @@ export default function Select() {
         </label>
        </div>
   )
+  
     }
+    </motion.section>
     <motion.section className={styles.deckchoice} variants={linkVariants} initial={'initial'} animate={'animate'}>
       <h2>Choose Your Deck</h2>
         <div className={styles.deckbuttons}>
