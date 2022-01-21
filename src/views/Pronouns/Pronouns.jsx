@@ -12,7 +12,7 @@ export default function Pronouns() {
   const [rainbow, setRainbow] = useState('')
   const { pronSeen } = useDeck()
 
-  const guideText = 'This is the Pronouns Deck'
+  const guideText = 'This is the Pronouns Deck - click on a card to find out more!'
 
   useEffect(() => {
     const fetchDeck = async () => {
