@@ -13,10 +13,19 @@ export default function Gender() {
   const [deck, setDeck] = useState('')
   const [loading, setLoading] =useState(true)
   const [rainbow, setRainbow] = useState('')
+  const [showModal, setShowModal] = useState(false)
   
   const { genSeen } = useDeck()
 
-  const guideText = 'This is the Gender Deck - click on a card to see the definition!'
+  const guideText = 'This is the Gender Deck - click on a card to find out more!'
+
+  useEffect(() => {
+    const showModal = () => {
+      if (genSeen.length === 8) {
+        setShowModal(true)
+      }
+    }
+  },[genSeen])
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -46,7 +55,7 @@ export default function Gender() {
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
       <Guide text={guideText} />
-      { (genSeen.length === 8) && <DeckComplete deckCategory={'gender'}/>}
+      { showModal && <DeckComplete />}
     </main>
   )
 }
