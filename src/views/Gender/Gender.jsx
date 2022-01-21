@@ -54,7 +54,6 @@ export default function Gender() {
     <main>
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
-      {rainbow}
       <Guide text={guideText} />
       { showModal && <DeckComplete />}
     </main>

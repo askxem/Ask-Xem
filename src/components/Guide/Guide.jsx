@@ -35,7 +35,7 @@ export default function Guide({text}) {
     <motion.article className={styles.guideContainer} variants={guideVariants} initial={'initial'} animate={'animate'}>
 
       <div aria-label='guide text box' className={styles.guideText}>
-        <p>{text}</p>
+        <p className={styles.text}>{text}</p>
         <motion.img 
         className={styles.guideImg} 
         src={`/icons/${userGuide}.png`} 
