@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import CoppaDisclaimer from "./CoppaDisclaimer.jsx"
+import { Link } from "react-router-dom"
 import styles from './AuthForm.css'
 
 /**
@@ -60,8 +61,13 @@ export default function AuthForm({
             ? (<>
               <CoppaDisclaimer />
               <button disabled={password.length < 12}>Create Account</button>
+              <Link to='/login'>Alright have an account?</Link>
             </>)
-            : <button>Login</button>
+            : 
+            <>
+              <button>Login</button>
+              <Link to='/signup'>Need an account?</Link>
+            </>
           }
           
         </form>

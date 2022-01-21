@@ -33,7 +33,7 @@ const linkVariants = {
 
 export default function Select() {
   const { user } = useAuth();
-  const { guide, setGuideGlobal } = useGuide();
+  const { setGuideGlobal } = useGuide();
 
   return (
     <main className={styles.main}>
@@ -68,11 +68,12 @@ export default function Select() {
        </div>
   )
     }
-    </motion.section>
-    <motion.section className={styles.section} variants={linkVariants} initial={'initial'} animate={'animate'}>
+    <motion.section className={styles.deckchoice} variants={linkVariants} initial={'initial'} animate={'animate'}>
       <h2>Choose Your Deck</h2>
-      <Link to="/pronouns">Pronouns Deck</Link>
-      <Link to="/gender">Gender Deck</Link>
+        <div className={styles.deckbuttons}>
+          <Link to="/pronouns">Pronouns Deck</Link>
+          <Link to="/gender">Gender Deck</Link>        
+        </div>
       </motion.section>
     </main>
   )

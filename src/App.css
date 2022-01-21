@@ -14,7 +14,6 @@
 
 body { 
     background-color: rgb(240, 238, 226);
-    /* min-height: 100vh;  */
     margin: 0;
 }
 
@@ -25,6 +24,7 @@ h1 {
 }
 
 h2, h3, h4 {
+    padding: 10px;
     font-family: 'Varela Round', sans-serif;
 }
 
