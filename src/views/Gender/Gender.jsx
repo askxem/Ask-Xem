@@ -13,7 +13,7 @@ export default function Gender() {
   const [deck, setDeck] = useState('')
   const [loading, setLoading] =useState(true)
   const [rainbow, setRainbow] = useState('')
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false)
   
   const { genSeen } = useDeck()
 
