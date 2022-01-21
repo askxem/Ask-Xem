@@ -14,7 +14,8 @@ export default function Pronouns() {
   const [showModal, setShowModal] = useState(false)
   const { pronSeen } = useDeck()
 
-  const guideText = 'This is the Pronouns Deck - click on a card to find out more!'
+  const guideText = <p>This is the Pronoun Deck - click on a card to find out more! Visit all of my friends for a colorful surprise :)</p>
+
 
   const handleClick = () => {
     setShowModal(false)
