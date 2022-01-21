@@ -17,7 +17,7 @@
 }
 
 .exitButton {
-  width: 5%;
+  width: 15%;
   cursor: pointer;
 }
 
@@ -64,5 +64,9 @@
 @media only screen and (min-width: 768px) {
 .link {
   width: 40%;
+}
+
+.exitButton{
+  width: 5%;
 }
 }
