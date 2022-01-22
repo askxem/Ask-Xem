@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env: 
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -12,9 +15,6 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '14.x'
-    env: 
-        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
     - run: npm ci
     - run: npm test
         CI: true
