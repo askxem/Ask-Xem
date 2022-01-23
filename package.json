@@ -15,7 +15,7 @@
     "testEnvironment": "jsdom"
   },
   "scripts": {
-    "test": "jest --verbose",
+    "test": "dotenv -e .env.development jest --verbose",
     "test:watch": "npm run test -- --watch",
     "start": "webpack serve --hot --mode development --devtool eval-source-map --open",
     "start:watch": "npm run start",
@@ -51,7 +51,7 @@
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
-    "msw": "^0.36.0",
+    "msw": "^0.36.5",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.1",
     "postcss-nested": "^5.0.6",
@@ -64,7 +64,8 @@
     "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^1.29.2",
+    "@supabase/supabase-js": "^1.29.3",
+    "dotenv-cli": "^4.1.1",
     "framer-motion": "^6.0.0",
     "react": "^17.0.2",
     "react-confetti": "^6.0.1",
