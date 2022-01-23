@@ -61,7 +61,7 @@ export default function AuthForm({
             ? (<>
               <CoppaDisclaimer />
               <button disabled={password.length < 12}>Create Account</button>
-              <Link to='/login'>Alright have an account?</Link>
+              <Link to='/login'>Already have an account?</Link>
             </>)
             : 
             <>
