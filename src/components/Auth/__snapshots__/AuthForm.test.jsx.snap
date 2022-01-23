@@ -43,11 +43,6 @@ exports[`renders authForm component renders login form 1`] = `
         >
           Show Password
         </div>
-        <p
-          aria-label="Password contraints"
-        >
-          🟢 Password must be at least 12 characters long.
-        </p>
         <button>
           Login
         </button>
