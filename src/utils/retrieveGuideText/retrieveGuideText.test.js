@@ -1,5 +1,15 @@
 import retrieveGuideText from "./retrieveGuideText.js"
 
+// const url = 'https://en.pronouns.page/api/pronouns'
+// let mockResponse = ['I think she is very nice', 'I asked her if I can borrow her pencil', 'She told me that the house is hers', 'She said she would rather do it herself']
+// const serverPronoun = setupServer(
+//     rest.get(url, (req, res, ctx) => {
+//         return res(
+//             ctx.json(mockResponse)
+//         ) 
+//     })
+// )
+
 
 describe('retrieveGuideText behaves as expected per deck category', () => {
 
@@ -21,7 +31,7 @@ describe('retrieveGuideText behaves as expected per deck category', () => {
     
     // LATER:
         // pronoun api should be mocked
-    it('returns a paragraph of examples from the pronouns api.', async () => {
+    it.skip('returns a paragraph of examples from the pronouns api.', async () => {
         const actual = await retrieveGuideText('pronoun', 'sheep', 'she/her');
     
         const expected = 'I think she is very nice. I asked her if I can borrow her pencil. She told me that the house is hers. She said she would rather do it herself.';
