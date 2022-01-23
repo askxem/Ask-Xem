@@ -1,7 +1,18 @@
+import { rest } from 'msw'
+import { setupServer } from "msw/node"
 import retrieveGuideText from "./retrieveGuideText.js"
 
-const url = 'https://en.pronouns.page/api/pronouns'
-let mockResponse = ['I think she is very nice', 'I asked her if I can borrow her pencil', 'She told me that the house is hers', 'She said she would rather do it herself']
+const url = 'https://en.pronouns.page/api/pronouns/she/her'
+
+let mockResponse = {
+    examples: [
+        'I think she is very nice.', 
+        'I asked her if I can borrow her pencil.', 
+        'She told me that the house is hers.', 
+        'She said she would rather do it herself.'
+    ]
+};
+
 const server = setupServer(
     rest.get(url, (req, res, ctx) => {
         return res(

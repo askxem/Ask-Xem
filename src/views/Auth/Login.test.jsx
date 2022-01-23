@@ -28,7 +28,6 @@ import { GuideProvider } from '../../context/GuideContext/GuideContext.jsx'
             rest.post(url, (req, res, ctx) => {
                 // mocks user validation and error throwing
                 const {email, password} = JSON.parse(req.body);
-                console.log(email, password);
                 if (email === 'test@test.com' && password === 'test-password') {
                     return res(
                         ctx.json(mockResponse)
@@ -43,11 +42,11 @@ import { GuideProvider } from '../../context/GuideContext/GuideContext.jsx'
 
     describe('test login behavior', () => {
 
-        beforeEach(() => {
+        beforeAll(() => {
             server.listen()
         })
 
-        afterEach(() => {
+        afterAll(() => {
             server.close()
         })
 
@@ -134,8 +133,6 @@ import { GuideProvider } from '../../context/GuideContext/GuideContext.jsx'
 
             fireEvent.change(emailInput, {target: {value: 'fail@test.com'}});
             fireEvent.change(passwordInput, {target: {value: 'test-password'}});
-            
-            screen.debug();
             
             const loginButton = screen.getByRole('button');
             
