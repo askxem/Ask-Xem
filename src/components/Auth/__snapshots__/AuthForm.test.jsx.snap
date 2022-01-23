@@ -139,7 +139,7 @@ exports[`renders authForm component renders signup form failing password contrai
         <a
           href="/login"
         >
-          Alright have an account?
+          Already have an account?
         </a>
       </form>
     </fieldset>
@@ -227,7 +227,7 @@ exports[`renders authForm component renders signup form meeting password constra
         <a
           href="/login"
         >
-          Alright have an account?
+          Already have an account?
         </a>
       </form>
     </fieldset>
