@@ -72,7 +72,7 @@ import { GuideProvider } from '../../context/GuideContext/GuideContext.jsx'
             const [passwordInput] = screen.getAllByLabelText(/password/i);
 
             screen.getByText(/🔴 Password must be at least 12 characters long./i);
-
+            screen.debug();
             fireEvent.change(emailInput, {target: {value: 'test@test.com'}});
             fireEvent.change(passwordInput, {target: {value: 'test-password'}});
 
