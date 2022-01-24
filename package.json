@@ -8,6 +8,7 @@
       "@testing-library/jest-dom/extend-expect",
       "<rootDir>/src/setupTests.js"
     ],
+    "setupFiles": ["jest-canvas-mock"],
     "moduleNameMapper": {
       "\\.(css)$": "identity-obj-proxy",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
@@ -68,6 +69,7 @@
     "ci": "^2.1.1",
     "dotenv-cli": "^4.1.1",
     "framer-motion": "^6.0.0",
+    "jest-canvas-mock": "^2.3.1",
     "react": "^17.0.2",
     "react-confetti": "^6.0.1",
     "react-dom": "^17.0.2",

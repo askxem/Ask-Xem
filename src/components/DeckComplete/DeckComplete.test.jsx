@@ -1,15 +1,12 @@
 import {render} from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom';
-import { DeckProvider } from '../../context/DeckContext/DeckContext.jsx';
 import DeckComplete from './DeckComplete.jsx';
 
 
-it.skip('renders the journal component', () => {
+it.only('renders the deck complete component', () => {
     const {container} = render(
-      <MemoryRouter initialEntries={['/pronouns']}>
-        <DeckProvider>
-          <DeckComplete />
-        </DeckProvider>
+      <MemoryRouter>
+            <DeckComplete />
       </MemoryRouter>
     )
 
