@@ -5,10 +5,13 @@ exports[`renders front card component 1`] = `
   <figure
     class="frontcontainer"
   >
-    <h3 />
+    <h3>
+      Sylvestor the Cat
+    </h3>
     <img
+      alt="cat"
       class="image"
-      src="/icons/undefined.png"
+      src="/icons/cat.png"
     />
   </figure>
 </div>
