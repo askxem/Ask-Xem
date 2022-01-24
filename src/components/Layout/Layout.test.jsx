@@ -15,8 +15,5 @@ it('renders layout component', () => {
     )
 
     expect(container).toMatchSnapshot();
-<<<<<<< HEAD
 })
-=======
-})
->>>>>>> 7bb88b403a2b6cdba29a5e6f8af8870df456b680
+

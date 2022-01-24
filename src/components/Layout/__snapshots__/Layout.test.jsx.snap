@@ -21,15 +21,6 @@ exports[`renders layout component 1`] = `
         </a>
       </article>
     </header>
-    <div
-      class="footerDiv"
-    >
-      <a
-        href="/about"
-      >
-        meet the Ask Xem team
-      </a>
-    </div>
   </div>
 </div>
 `;
