@@ -23,7 +23,6 @@ it('renders card with empty heart, renders full heart onClick', async () => {
         );
 
         const heartButton = screen.getByAltText(/empty heart/i);
-        console.log(heartButton);
         fireEvent.click(heartButton);
 
         screen.getByAltText(/full heart/i);
