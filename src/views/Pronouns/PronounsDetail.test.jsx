@@ -17,20 +17,20 @@ const serverPronoun = setupServer(
     })
 )
 
-const urlCards = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards'
+const urlCards = process.env.SUPABASE_URL + '/rest/v1'
 let mockCard = [{id: 1, title: 'coolio', definition:'this is a card', source:'cardURL', image:'dog'}]
 const serverCard = setupServer(
-    rest.get(urlCards, (req, res, ctx) => {
+    rest.get(urlCards + '/cards', (req, res, ctx) => {
        return res(
            ctx.json(mockCard)
        ) 
     })
 )
 
-const urlFavs = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/favs'
+const urlFavs = process.env.SUPABASE_URL + '/rest/v1'
 let mockFavs = [{id: 1, card_id: 1, user_id: 1}]
 const serverFav = setupServer(
-    rest.get(urlFavs, (req, res, ctx) => {
+    rest.get(urlFavs + '/favs', (req, res, ctx) => {
        return res(
            ctx.json(mockFavs)
        ) 

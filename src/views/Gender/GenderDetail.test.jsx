@@ -7,24 +7,24 @@ import { DeckProvider } from '../../context/DeckContext/DeckContext'
 import GenderDetail from './GenderDetail'
 import { GuideProvider } from '../../context/GuideContext/GuideContext'
 
-const urlCards = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards'
+const urlCards = process.env.SUPABASE_URL + '/rest/v1'
 
 let mockCard = [{id: 2, title: 'awesomesauce', definition:'this is a card', source:'cardURL', image:'llama'}]
 
 const serverCard = setupServer(
-    rest.get(urlCards, (req, res, ctx) => {
+    rest.get(urlCards + '/cards', (req, res, ctx) => {
        return res(
            ctx.json(mockCard)
        ) 
     })
 )
 
-const urlFavs = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/favs'
+const urlFavs = process.env.SUPABASE_URL + '/rest/v1'
 let mockFavs = [{id: 2, card_id: 2, user_id: 2}]
 
 
 const serverFav = setupServer(
-    rest.get(urlFavs, (req, res, ctx) => {
+    rest.get(urlFavs + '/favs', (req, res, ctx) => {
        return res(
            ctx.json(mockFavs)
        ) 
