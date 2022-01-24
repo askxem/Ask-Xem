@@ -18,7 +18,7 @@ export default function About() {
 
       <img src={llama} alt="llama"/>
         <h3>Michael</h3>
-        <p>My pronouns are he/him. Before this project I thought I was understanding and a good support system. Now I realized that thinking I am isn't enough, I actually need to be those things. Being a responsible friend requires real work. I hope this project can help others as much as it's helped me. <a href='https://www.linkedin.com/in/mikepdxrider/'>LinkedIn</a> // <a href='https://github.com/MikepdXRider'>Github</a>
+        <p>-My pronouns are he/him. Before this project I thought I was understanding and a good support system. Now I realized that thinking I am isn't enough, I actually need to be those things. Being a responsible friend requires real work. I hope this project can help others as much as it's helped me. <a href='https://www.linkedin.com/in/mikepdxrider/'>LinkedIn</a> // <a href='https://github.com/MikepdXRider'>Github</a>
         </p>
 
       <img src={turtle} alt="turtle"/>
