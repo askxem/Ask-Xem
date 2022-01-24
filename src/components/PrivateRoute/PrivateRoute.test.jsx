@@ -80,7 +80,7 @@ describe('tests privateroute behavior', () => {
         fireEvent.change(emailInput, {target: {value: 'test@test.com'}});
         fireEvent.change(passwordInput, {target: {value: 'test-password'}});
     
-        const loginButton = screen.getByRole('button');
+        const loginButton = screen.getByRole('button', {name: /login/i});
         fireEvent.click(loginButton);
     
         await screen.findByAltText(/red heart/i);
