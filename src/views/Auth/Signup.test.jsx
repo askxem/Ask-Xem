@@ -9,14 +9,7 @@ import Select from '../Select/Select.jsx'
 import Login from './Login.jsx'
 import Signup from './Signup.jsx'
 
-// Weird behaviors:
-    // If test sends the correct email up line, matching test@test.com, and setUpserver responds with a user object.
-        //  No error should be thrown, user should be directed to select page. Test throws error caused by a the setError timing out in signUp.jsx. Which means this mock server is erroring somehow and the setError call isn't coming back late.
-    // If test sends the incorrect email up the line, not matching test@test.com, and setUpServer responds with an error.
-        // Error is thrown and displayed on page. Not as expected though. There seems to be two errors attempting to display.
-
-// const url = `${process.env.SUPABASE_URL}/auth/v1/signup`;
-const url = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/auth/v1/signup';
+const url = `${process.env.SUPABASE_URL}/auth/v1/signup`;
 
 const mockResponse = {
     id: 1000,
