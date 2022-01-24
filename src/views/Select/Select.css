@@ -1,0 +1,83 @@
+.main, .section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.guidechoice img {
+  width: 30%;
+}
+
+.deckchoice h2 {
+  margin-bottom: 10px;
+}
+
+.deckbuttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.deckbuttons a {
+  text-align: center;
+  border: none;
+  background-color: #91ad8c; 
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 5px 10px gray;
+  color: white;
+}
+
+.deckbuttons a:hover {
+  color: #FFFA9B; 
+}
+
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+
+[type=radio]+img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 5px dotted #E57C49;
+}
+
+.locked {
+  cursor: default;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+   -ms-filter: grayscale(100%);
+       filter: grayscale(100%);
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .deckchoice {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .deckbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .deckbuttons a {
+    width: 80%;
+  }
+}

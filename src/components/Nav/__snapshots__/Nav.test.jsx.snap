@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders nav component render nav bar with user in context 1`] = `
+<div>
+  <header
+    style="opacity: 0; transform: translateY(-100vh) translateZ(0);"
+  >
+    <a
+      href="/"
+    >
+      <h1>
+        ask xem
+      </h1>
+    </a>
+    <nav>
+      <div
+        class="navicons"
+      >
+        <a
+          href="/select"
+        >
+          <img
+            alt="world map"
+            src="/nav-icons/world-map.png"
+            style="transform: scale(0) translateZ(0);"
+            title="Options"
+          />
+        </a>
+        <a
+          href="/favorites"
+        >
+          <img
+            alt="backpack"
+            src="/nav-icons/backpack.png"
+            style="transform: scale(0) translateZ(0);"
+            title="Favs"
+          />
+        </a>
+        <img
+          alt="notebook"
+          src="/nav-icons/notebook.png"
+          style="transform: scale(0) translateZ(0);"
+          title="Journal"
+        />
+      </div>
+    </nav>
+    <article>
+      <span>
+        Signed in as 
+        test@test.com
+      </span>
+      <button>
+        Sign out
+      </button>
+    </article>
+  </header>
+</div>
+`;
+
+exports[`renders nav component render nav bar without user in context 1`] = `
+<div>
+  <header
+    style="opacity: 0; transform: translateY(-100vh) translateZ(0);"
+  >
+    <a
+      href="/"
+    >
+      <h1>
+        ask xem
+      </h1>
+    </a>
+    <article>
+      <a
+        href="/login"
+      >
+        Login
+      </a>
+    </article>
+  </header>
+</div>
+`;

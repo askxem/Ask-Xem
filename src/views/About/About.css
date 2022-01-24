@@ -1,0 +1,21 @@
+.aboutcontainer {
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.aboutcontainer img {
+    width: 50px;
+}
+
+.aboutcontainer p {
+    margin-bottom: 20px;
+}
+
+.aboutcontainer h3 {
+    padding: 0;
+}
+
+.aboutcontainer h2 {
+    padding-bottom: 0;
+}

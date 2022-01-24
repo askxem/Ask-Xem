@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites view should display the back of the card 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <figure
+      class="backcontainer"
+      style="opacity: 0; transform: translateX(100vw) translateZ(0);"
+    >
+      <div
+        class="heartcontainer"
+      >
+        <img
+          alt="full heart"
+          class="heart"
+          src="/redheart.png"
+        />
+      </div>
+      <h3>
+        Janelle Monae
+      </h3>
+      <figcaption
+        class="definition"
+      >
+        perfection incarnate
+      </figcaption>
+      <a>
+        Source
+      </a>
+      <img
+        alt="human"
+        class="image"
+        src="/icons/human.png"
+      />
+    </figure>
+    <button
+      class="backbutton"
+      style="opacity: 0;"
+    >
+      Back
+    </button>
+  </div>
+</div>
+`;

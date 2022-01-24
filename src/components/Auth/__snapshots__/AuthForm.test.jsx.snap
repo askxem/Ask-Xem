@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders authForm component renders login form 1`] = `
+<div>
+  <div
+    class="formcontainer"
+  >
+    <fieldset>
+      <legend>
+        Login
+      </legend>
+      <form>
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          autocomplete="email"
+          id="email"
+          name="email"
+          required=""
+          type="email"
+          value="test-email"
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          autocomplete="current-password"
+          id="password"
+          name="password"
+          required=""
+          type="password"
+          value="test-password"
+        />
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          class="pwtoggle"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
+        <button>
+          Login
+        </button>
+        <a
+          href="/signup"
+        >
+          Need an account?
+        </a>
+      </form>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`renders authForm component renders signup form failing password contraints 1`] = `
+<div>
+  <div
+    class="formcontainer"
+  >
+    <fieldset>
+      <legend>
+        Sign Up
+      </legend>
+      <form>
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          autocomplete="email"
+          id="email"
+          name="email"
+          required=""
+          type="email"
+          value="test-email"
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          autocomplete="new-password"
+          id="password"
+          name="password"
+          required=""
+          type="password"
+          value="test"
+        />
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          class="pwtoggle"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
+        <p
+          aria-label="Password contraints"
+        >
+          🔴 Password must be at least 12 characters long.
+        </p>
+        <div
+          class="container"
+        >
+          <p>
+            Disclaimer: You must be 13 years of age or older to create and manage an account.
+            <a
+              href="https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule"
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="20px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </a>
+          </p>
+        </div>
+        <button
+          disabled=""
+        >
+          Create Account
+        </button>
+        <a
+          href="/login"
+        >
+          Already have an account?
+        </a>
+      </form>
+    </fieldset>
+  </div>
+</div>
+`;
+
+exports[`renders authForm component renders signup form meeting password constraints 1`] = `
+<div>
+  <div
+    class="formcontainer"
+  >
+    <fieldset>
+      <legend>
+        Sign Up
+      </legend>
+      <form>
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          autocomplete="email"
+          id="email"
+          name="email"
+          required=""
+          type="email"
+          value="test-email"
+        />
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          autocomplete="new-password"
+          id="password"
+          name="password"
+          required=""
+          type="password"
+          value="test-password"
+        />
+        <div
+          aria-label="Show password as plain text. Warning: this will display your password on the screen. Password is currently hidden"
+          class="pwtoggle"
+          id="toggle-password"
+        >
+          Show Password
+        </div>
+        <p
+          aria-label="Password contraints"
+        >
+          🟢 Password must be at least 12 characters long.
+        </p>
+        <div
+          class="container"
+        >
+          <p>
+            Disclaimer: You must be 13 years of age or older to create and manage an account.
+            <a
+              href="https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule"
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                width="20px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </a>
+          </p>
+        </div>
+        <button>
+          Create Account
+        </button>
+        <a
+          href="/login"
+        >
+          Already have an account?
+        </a>
+      </form>
+    </fieldset>
+  </div>
+</div>
+`;
