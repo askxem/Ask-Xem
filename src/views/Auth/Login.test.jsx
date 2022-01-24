@@ -66,6 +66,10 @@ describe('test login behavior', () => {
         fireEvent.click(loginButton);
 
         await screen.findByText(/choose your guide/i);
+        screen.getByAltText(/bunny/i);
+        screen.getByAltText(/axolotl/i);
+        screen.getByAltText(/lion/i);
+        screen.getAllByRole('radio');
     });
     
     it('user attempts to login with incorrect credentials, recieves login error feedback', async () => {
@@ -87,7 +91,7 @@ describe('test login behavior', () => {
         fireEvent.change(emailInput, {target: {value: 'fail@test.com'}});
         fireEvent.change(passwordInput, {target: {value: 'test-password'}});
         
-        const loginButton = screen.getByRole('button');
+        const loginButton = screen.getByRole('button', {name: /login/i});
         fireEvent.click(loginButton);
         
         await screen.findByText(/🔴 Please check your credentials/i);
@@ -109,9 +113,9 @@ describe('test login behavior', () => {
             </ProvideAuth>
         );
         
-        const signupButton = screen.getByText('Need an account?');
-        fireEvent.click(signupButton);
+        const signupLink = screen.getByRole('link', { name: 'Need an account?' });
+        fireEvent.click(signupLink);
         
-        screen.getByText(/create account/i);
+        screen.getByRole('button', { name: /create account/i });
     })
 })
