@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders front card component 1`] = `
+<div>
+  <figure
+    class="frontcontainer"
+  >
+    <h3 />
+    <img
+      class="image"
+      src="/icons/undefined.png"
+    />
+  </figure>
+</div>
+`;
