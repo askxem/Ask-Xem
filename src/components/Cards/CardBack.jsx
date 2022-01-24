@@ -66,7 +66,7 @@ export default function CardBack({ card, favStatus }) {
 
           <motion.figure className={styles.backcontainer} variants={containerVariants} initial={'initial'} animate={'animate'}>
                 <div className={styles.heartcontainer}>
-                    <img className={styles.heart} onClick={handleFav} src={fav ? '/redheart.png' : '/heart.png'} alt='heart' />
+                    <img className={styles.heart} onClick={handleFav} src={fav ? '/redheart.png' : '/heart.png'} alt={fav ? 'full heart' : 'empty heart'} />
                 </div>
                 <h3>{card.title}</h3>
                 <figcaption className={styles.definition}>
