@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import DeckComplete from './DeckComplete.jsx';
 
 
-it.only('renders the deck complete component', () => {
+it('renders the deck complete component', () => {
     const {container} = render(
       <MemoryRouter>
             <DeckComplete />

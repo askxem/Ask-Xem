@@ -17,7 +17,7 @@ it('renders guide component', () => {
 });
 
 //skipping to make sure to come back to test if act errors still occur when bringing in the server setup similar to the list views' tests
-it.skip('when on the Pronouns page - should render the Pronouns guide text message', async() => {
+it('when on the Pronouns page - should render the Pronouns guide text message', async() => {
   const { container } = render(
     <MemoryRouter initialEntries={['/pronouns']}>
       <DeckProvider>
@@ -35,7 +35,7 @@ it.skip('when on the Pronouns page - should render the Pronouns guide text messa
   // screen.getByText(guideText);
 });
 
-it.skip('when on the Gender page - should render the Gender guide text message', async() => {
+it('when on the Gender page - should render the Gender guide text message', async() => {
     const { container } = render(
       <MemoryRouter initialEntries={['/gender']}>
         <DeckProvider>
