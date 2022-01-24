@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Confetti from 'react-confetti'
 import styles from './DeckComplete.css'

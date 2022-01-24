@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the deck complete component 1`] = `
+<div>
+  <div
+    class="backdrop"
+    style="opacity: 0;"
+  >
+    <div
+      class="completeModal"
+    >
+      <canvas
+        height="768"
+        style="z-index: 2; position: absolute; pointer-events: none; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+        width="1024"
+      />
+      <div
+        class="completedContent"
+      >
+        <div
+          class="buttonContainer"
+        >
+          <svg
+            class="exitButton"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <p>
+          You completed the rainbow!
+        </p>
+        <p>
+          Great job!
+        </p>
+        <p>
+          Now would be a great time to open the journal to keep track of what you learned or how you feel. Or you can take a look at the favorites you've been saving along the way!
+        </p>
+        <div
+          class="buttonDiv"
+        >
+          <a
+            class="link"
+            href="/favorites"
+          >
+            Favorites
+          </a>
+          <a
+            class="link"
+            href="/select"
+          >
+            Choose New Deck
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
