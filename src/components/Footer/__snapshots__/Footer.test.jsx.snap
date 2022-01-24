@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders footer component 1`] = `
+<div>
+  <div
+    class="footerDiv"
+  >
+    <a
+      href="/about"
+    >
+      meet the Ask Xem team
+    </a>
+  </div>
+</div>
+`;

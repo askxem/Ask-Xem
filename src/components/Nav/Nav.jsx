@@ -76,7 +76,7 @@ const iconVariants = {
           user.id 
           ? <>
             <span>Signed in as {user.email}</span>
-            <button onClick={signOut}>Signout</button>
+            <button onClick={signOut}>Sign out</button>
           </>
           : <Link to='/login'>Login</Link>
         }

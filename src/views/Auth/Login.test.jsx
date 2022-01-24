@@ -11,7 +11,7 @@ import Signup from './Signup.jsx'
 
 const url = `${process.env.SUPABASE_URL}/auth/v1/token`;
 
-let mockResponse = {id: 1000, email: 'test@test.com'};
+let mockResponse = {user: {id: 1000, email: 'test@test.com'}};
 
 const server = setupServer(
     rest.post(url, (req, res, ctx) => {
@@ -62,7 +62,7 @@ describe('test login behavior', () => {
         fireEvent.change(emailInput, {target: {value: 'test@test.com'}});
         fireEvent.change(passwordInput, {target: {value: 'test-password'}});
 
-        const loginButton = screen.getByRole('button');
+        const loginButton = screen.getByRole('button', {name: /login/i});
         fireEvent.click(loginButton);
 
         await screen.findByText(/choose your guide/i);

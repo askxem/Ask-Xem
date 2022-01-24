@@ -1,0 +1,8 @@
+.footerDiv {
+  width: 100vw;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1%;
+}
