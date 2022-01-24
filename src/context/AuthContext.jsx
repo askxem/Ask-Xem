@@ -26,6 +26,7 @@ function ProvideAuth({children}) {
         await signOutUser();
         localStorage.clear();
         setUser({});
+        history.push('/home');
     }
 
     const value = useMemo(() => ({ user, signUp, signIn, signOut}), [user]);

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders loader component 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      aria-label="Loading."
+      class="loader"
+    />
+  </div>
+</div>
+`;

@@ -18,7 +18,7 @@ export default function About() {
 
       <div className="members">    
       <h2>Michael</h2>
-      <p>-inser bio here-</p>
+      <p>My pronouns are he/him. Before this project I thought I was understanding and a good support system. Now I realized that thinking I am isn't enough, I actually need to be those things. Being a responsible friend requires real work. I hope this project can help others as much as it's helped me.</p>
       <img src={llama} alt="llama"/>
       </div>
 

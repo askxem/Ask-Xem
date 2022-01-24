@@ -50,7 +50,7 @@ exports[`renders nav component render nav bar with user in context 1`] = `
         test@test.com
       </span>
       <button>
-        Signout
+        Sign out
       </button>
     </article>
   </header>
