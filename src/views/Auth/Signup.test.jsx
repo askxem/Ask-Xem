@@ -58,9 +58,6 @@ describe('tests signup behavior', () => {
                         <Route path='/signup'>
                             <Signup />
                         </Route>
-                        <Route path='/select'>
-                            <Select />
-                        </Route>
                     </MemoryRouter>
                 </GuideProvider>
             </ProvideAuth>

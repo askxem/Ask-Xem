@@ -22,7 +22,10 @@ const server = setupServer(
                 ctx.json(mockResponse)
                 );
         } else {
-            throw('Invalid login credentials');
+            return res(
+                ctx.status(400),
+                ctx.json({error: 'Invalid credentials'})
+            )
         }
     })
 );  
@@ -72,9 +75,6 @@ describe('test login behavior', () => {
                     <MemoryRouter initialEntries={['/login']}>
                         <Route path='/login'>
                             <Login />
-                        </Route>
-                        <Route path='/select'>
-                            <Select />
                         </Route>
                     </MemoryRouter>
                 </GuideProvider>
