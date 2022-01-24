@@ -1,7 +1,7 @@
 //npm i msw before starting tests
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { ProvideAuth } from '../../context/AuthContext'
 import { DeckProvider } from '../../context/DeckContext/DeckContext'
@@ -27,7 +27,7 @@ describe('Pronouns List', () => {
     afterAll(() => {
         server.close()
     })
-    it.skip('should render the pronouns cards', async () => {
+    it('should render the pronouns cards', async () => {
         render(
             <GuideProvider>
             <ProvideAuth>
@@ -40,5 +40,21 @@ describe('Pronouns List', () => {
              </GuideProvider>
         )
         await screen.findByText('blahblah')
-    })  
+    });
+
+    it('when on the Pronouns page - should render the Pronouns guide text message', async() => {
+      render(
+        <MemoryRouter initialEntries={['/pronouns']}>
+          <DeckProvider>
+            <GuideProvider>
+                <Pronouns />
+            </GuideProvider>
+          </DeckProvider>
+        </MemoryRouter>
+      );
+    
+      const guideText = "This is the Pronoun Deck - click on a card to find out more! Visit all of my friends for a colorful surprise :)"
+    
+      await waitFor(() => screen.findByText(guideText));
+    });  
 })
