@@ -28,12 +28,10 @@ export default function CardBack({ card, favStatus }) {
                 //if faved is true and fav state is now false, delete
                 if(faved && fav == false) {
                   await deleteFav(card.id)
-                  console.log('deleted')
                 } 
                 //if faved is false (card is not already in db) and fav stat is now true, add
                 if(!faved && fav) {
                   await addFav(card.id, user.id)
-                  console.log('added')
                 }
             } catch (error) {
                 console.log(error.message)
