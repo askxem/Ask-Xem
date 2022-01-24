@@ -38,6 +38,7 @@ describe('Gender List', () => {
              </ProvideAuth>
              </GuideProvider>
         )
+        screen.getByLabelText(/loading./i)
         await screen.findByText('thisisdope')
     })  
 })

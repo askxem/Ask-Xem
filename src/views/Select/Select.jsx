@@ -43,26 +43,26 @@ export default function Select() {
       !user.id ? (
       <div className={styles.guidechoice}>
         <label>
-        <input type="radio" value={lion} name="guide"/>
+        <input type="radio" value={lion} name="lion"/>
         <img src={lion} alt="lion" />
         </label>
-        <input className="locked" disabled type="radio" value={axolotl} name="guide" />
+        <input className="locked" disabled type="radio" value={axolotl} name="axolotl" />
         <img className={styles.locked} src={axolotl} alt="axolotl" />
-        <input className="locked" disabled type="radio" value={bunny} name="guide" />
+        <input className="locked" disabled type="radio" value={bunny} name="bunny" />
         <img className={styles.locked} src={bunny} alt="bunny" />
       </div>
   ) : ( 
         <div className={styles.guidechoice}>
           <label>
-        <input type="radio" value={'lion'} name="guide" onClick={setGuideGlobal} />
+        <input type="radio" value={'lion'} name="lion" onClick={setGuideGlobal} />
         <img src={lion} alt="lion" />
         </label>
         <label>
-        <input type="radio" value={'axolotl'} name="guide" onClick={setGuideGlobal} />
+        <input type="radio" value={'axolotl'} name="axolotl" onClick={setGuideGlobal} />
         <img src={axolotl} alt="axolotl" />
         </label>
         <label>
-        <input type="radio" value={'bunny'} name="guide" onClick={setGuideGlobal} />
+        <input type="radio" value={'bunny'} name="bunny" onClick={setGuideGlobal} />
         <img src={bunny} alt="bunny" />
         </label>
        </div>
