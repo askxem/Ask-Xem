@@ -23,7 +23,7 @@ export default function Loader() {
 
     return(
         <div className={styles.container}>
-            <motion.div className={styles.loader} variants={loaderVariants} animate='animationOne' ></motion.div>
+            <motion.div className={styles.loader} variants={loaderVariants} animate='animationOne' aria-label='Loading.'></motion.div>
         </div>
     );
 }
