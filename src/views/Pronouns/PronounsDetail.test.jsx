@@ -1,24 +1,26 @@
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { ProvideAuth } from '../../context/AuthContext'
 import { DeckProvider } from '../../context/DeckContext/DeckContext'
 import PronounsDetail from './PronounsDetail'
 import { GuideProvider } from '../../context/GuideContext/GuideContext'
 
-const urlPronoun= 'https://en.pronouns.page/api/pronouns'
-let mockPronoun = ['test']
-const serverPronoun = setupServer(
-    rest.get(urlPronoun, (req, res, ctx) => {
-       return res(
-           ctx.json(mockPronoun)
-       ) 
-    })
-)
+jest.mock('../../utils/retrieveGuideText/retrieveGuideText.js')
+
+// const urlPronoun= 'https://en.pronouns.page/api/pronouns/test'
+// let mockPronoun = ['test']
+// const serverPronoun = setupServer(
+//     rest.get(urlPronoun, (req, res, ctx) => {
+//        return res(
+//            ctx.json(mockPronoun)
+//        ) 
+//     })
+// )
 
 const urlCards = process.env.SUPABASE_URL + '/rest/v1'
-let mockCard = [{id: 1, title: 'coolio', definition:'this is a card', source:'cardURL', image:'dog'}]
+let mockCard = [{id: 1, title: 'coolio', definition:'this is a card', source:'cardURL', image:'dog', category:'pronoun'}]
 const serverCard = setupServer(
     rest.get(urlCards + '/cards', (req, res, ctx) => {
        return res(
@@ -41,14 +43,14 @@ describe('Pronouns Detail', () => {
     beforeAll(() => {
         serverCard.listen()
         serverFav.listen()
-        serverPronoun.listen()
+        // serverPronoun.listen()
     })
     afterAll(() => {
         serverCard.close()
         serverFav.close()
-        serverPronoun.close()
+        // serverPronoun.close()
     })
-    it('should render pronoun details', async () => {
+    it.only('should render pronoun details', async () => {
         render(
             <GuideProvider>
             <ProvideAuth>
@@ -60,6 +62,7 @@ describe('Pronouns Detail', () => {
              </ProvideAuth>
              </GuideProvider>
         )
-        await screen.findByText('coolio')
+        screen.getByLabelText(/loading./i)
+        await waitFor(() => screen.findByText('coolio'))
     })  
 })
