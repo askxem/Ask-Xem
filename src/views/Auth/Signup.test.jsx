@@ -143,6 +143,6 @@ describe('tests signup behavior', () => {
         const signupButton = screen.getByText('Already have an account?');
         fireEvent.click(signupButton);
         
-        await screen.findAllByText(/login/i);
+        await screen.findByRole('button', { name: /login/i });
     })
 })
