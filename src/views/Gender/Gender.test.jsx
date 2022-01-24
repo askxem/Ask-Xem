@@ -6,16 +6,13 @@ import { ProvideAuth } from '../../context/AuthContext'
 import { DeckProvider } from '../../context/DeckContext/DeckContext'
 import Gender from './Gender'
 import { GuideProvider } from '../../context/GuideContext/GuideContext'
-// import App from '../../App'
 
-// const url = process.env.SUPABASE_URL + '/rest/v1'
-// const url = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards?select=*&order=title.asc.nullslast&category=eq.pronoun'
-const url = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards'
+const url = process.env.SUPABASE_URL + '/rest/v1'
 
-let mockResponse = [{title: 'Gender', animal:'dog', image:'URL'}]
+let mockResponse = [{title: 'thisisdope', animal:'dog', image:'URL'}]
 
 const server = setupServer(
-    rest.get(url, (req, res, ctx) => {
+    rest.get(url + '/cards', (req, res, ctx) => {
        return res(
            ctx.json(mockResponse)
        ) 
@@ -41,6 +38,6 @@ describe('Gender List', () => {
              </ProvideAuth>
              </GuideProvider>
         )
-        await screen.findByText('Gender')
+        await screen.findByText('thisisdope')
     })  
 })
