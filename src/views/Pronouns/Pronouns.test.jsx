@@ -39,6 +39,7 @@ describe('Pronouns List', () => {
              </ProvideAuth>
              </GuideProvider>
         )
+        screen.getByLabelText(/loading./i)
         await screen.findByText('blahblah')
     })  
 })
