@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders front card component 1`] = `
+<div>
+  <ul
+    aria-label="cards"
+    class="list"
+  >
+    <li
+      class="item"
+      style="transform: scale(0) translateZ(0);"
+    >
+      <a
+        href="/pronoun/1"
+      >
+        <figure
+          class="frontcontainer"
+        >
+          <h3>
+            Pepe Le Pew
+          </h3>
+          <img
+            alt="skunk"
+            class="image"
+            src="/icons/skunk.png"
+          />
+        </figure>
+      </a>
+    </li>
+    <li
+      class="item"
+      style="transform: scale(0) translateZ(0);"
+    >
+      <a
+        href="/pronoun/2"
+      >
+        <figure
+          class="frontcontainer"
+        >
+          <h3>
+            Taz
+          </h3>
+          <img
+            alt="tazmanian"
+            class="image"
+            src="/icons/tazmanian.png"
+          />
+        </figure>
+      </a>
+    </li>
+    <li
+      class="item"
+      style="transform: scale(0) translateZ(0);"
+    >
+      <a
+        href="/pronoun/3"
+      >
+        <figure
+          class="frontcontainer"
+        >
+          <h3>
+            Tweety
+          </h3>
+          <img
+            alt="bird"
+            class="image"
+            src="/icons/bird.png"
+          />
+        </figure>
+      </a>
+    </li>
+  </ul>
+  <div
+    class="rainbow"
+  >
+    <img
+      alt="red"
+      src="/rainbow/red.png"
+      style="opacity: 0;"
+    />
+    <img
+      alt="orange"
+      src="/rainbow/orange.png"
+      style="opacity: 0;"
+    />
+    <img
+      alt="yellow"
+      src="/rainbow/yellow.png"
+      style="opacity: 0;"
+    />
+  </div>
+</div>
+`;
