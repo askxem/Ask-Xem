@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders front card component 1`] = `
+<div>
+  <figure
+    class="frontcontainer"
+  >
+    <h3>
+      Sylvestor the Cat
+    </h3>
+    <img
+      alt="cat"
+      class="image"
+      src="/icons/cat.png"
+    />
+  </figure>
+</div>
+`;
