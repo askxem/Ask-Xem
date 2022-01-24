@@ -27,6 +27,7 @@ describe('Favorites view', () => {
             <ProvideAuth mockUser={{id: 2}}>
                 <MemoryRouter>    
                     <CardBack card={{
+                        id: 1,
                         title: 'Janelle Monae',
                         animal: 'human',
                         definition: 'perfection incarnate',
