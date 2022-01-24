@@ -17,9 +17,9 @@ let mockResponse = [{title: 'Test', animal:'dog', image:'testURL'}]
 
 const server = setupServer(
     rest.get(url, (req, res, ctx) => {
-       return res(
-           ctx.json(mockResponse)
-       ) 
+        return res(
+            ctx.json(mockResponse)
+        ) 
     })
 )
 

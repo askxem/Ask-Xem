@@ -9,7 +9,7 @@ import Select from '../Select/Select.jsx'
 import Login from './Login.jsx'
 import Signup from './Signup.jsx'
 
-const url = `${process.env.SUPABASE_URL}/auth/v1/token`
+const url = `${process.env.SUPABASE_URL}/auth/v1/token`;
 
 let mockResponse = {id: 1000, email: 'test@test.com'};
 
@@ -25,11 +25,10 @@ const server = setupServer(
             throw('Invalid login credentials');
         }
     })
-);
-    
+);  
 
 describe('test login behavior', () => {
-
+    
     beforeAll(() => {
         server.listen()
     })
@@ -65,7 +64,6 @@ describe('test login behavior', () => {
 
         await screen.findByText(/choose your guide/i);
     });
-    
     
     it('user attempts to login with incorrect credentials, recieves login error feedback', async () => {
         render(
