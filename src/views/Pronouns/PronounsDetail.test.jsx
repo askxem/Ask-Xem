@@ -18,7 +18,7 @@ const serverPronoun = setupServer(
 )
 
 const urlCards = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards'
-let mockCard = [{id: 1, title: 'card', definition:'this is a card', source:'cardURL', image:'dog'}]
+let mockCard = [{id: 1, title: 'coolio', definition:'this is a card', source:'cardURL', image:'dog'}]
 const serverCard = setupServer(
     rest.get(urlCards, (req, res, ctx) => {
        return res(
@@ -60,8 +60,6 @@ describe('Pronouns Detail', () => {
              </ProvideAuth>
              </GuideProvider>
         )
-        // screen.debug()
-        await screen.findByText('card')
-        // screen.debug()
+        await screen.findByText('coolio')
     })  
 })

@@ -7,16 +7,14 @@ import { ProvideAuth } from '../../context/AuthContext'
 import { DeckProvider } from '../../context/DeckContext/DeckContext'
 import Pronouns from './Pronouns'
 import { GuideProvider } from '../../context/GuideContext/GuideContext'
-// import App from '../../App'
+import App from '../../App'
 
-// const url = process.env.SUPABASE_URL + '/rest/v1'
-// const url = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards?select=*&order=title.asc.nullslast&category=eq.pronoun'
-const url = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards'
+const url = process.env.SUPABASE_URL + '/rest/v1'
 
-let mockResponse = [{title: 'Test', animal:'dog', image:'testURL'}]
+let mockResponse = [{title: 'blahblah', animal:'dog', image:'testURL'}]
 
 const server = setupServer(
-    rest.get(url, (req, res, ctx) => {
+    rest.get(url + '/cards', (req, res, ctx) => {
        return res(
            ctx.json(mockResponse)
        ) 
@@ -46,6 +44,6 @@ describe('Pronouns List', () => {
              </ProvideAuth>
              </GuideProvider>
         )
-        await screen.findByText('Test')
+        await screen.findByText('b;ahblah')
     })  
 })

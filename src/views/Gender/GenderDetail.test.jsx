@@ -9,7 +9,7 @@ import { GuideProvider } from '../../context/GuideContext/GuideContext'
 
 const urlCards = 'https://pzdwkdslmaoyxsiqkohn.supabase.co/rest/v1/cards'
 
-let mockCard = [{id: 2, title: 'card', definition:'this is a card', source:'cardURL', image:'llama'}]
+let mockCard = [{id: 2, title: 'awesomesauce', definition:'this is a card', source:'cardURL', image:'llama'}]
 
 const serverCard = setupServer(
     rest.get(urlCards, (req, res, ctx) => {
@@ -52,6 +52,6 @@ describe('Gender Detail', () => {
              </ProvideAuth>
              </GuideProvider>
         )
-        await screen.findByText('card')
+        await screen.findByText('awesomesauce')
     })  
 })
