@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import styles from './Home.css'
 import { useAuth } from "../../context/AuthContext";
+import Footer from "../../components/Footer/Footer.jsx";
 
 export default function Home() {
   const { user } = useAuth()
@@ -59,6 +60,7 @@ export default function Home() {
       <motion.div className={styles.authbuttons} variants={linkVariants} initial={'initial'} animate={'animate'}>
       <Link to='/select'>Let's Go!</Link>
       </motion.div>}
+      <Footer />
     </main>
   )
 }
