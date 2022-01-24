@@ -40,7 +40,7 @@ describe('test login behavior', () => {
         server.close()
     })
 
-    it('user can login, is redirected to select page', async () => {
+    it.skip('user can login, is redirected to select page', async () => {
         render(
             <ProvideAuth>
                 <GuideProvider>
@@ -68,7 +68,7 @@ describe('test login behavior', () => {
         await screen.findByText(/choose your guide/i);
     });
     
-    it('user attempts to login with incorrect credentials, recieves login error feedback', async () => {
+    it.skip('user attempts to login with incorrect credentials, recieves login error feedback', async () => {
         render(
             <ProvideAuth>
                 <GuideProvider>
@@ -93,7 +93,7 @@ describe('test login behavior', () => {
         await screen.findByText(/🔴 Please check your credentials/i);
     })
 
-    it("user clicks 'Need an account?', is redirected to signup page", () => {
+    it.skip("user clicks 'Need an account?', is redirected to signup page", () => {
         render(
             <ProvideAuth>
                 <GuideProvider>

@@ -7,7 +7,15 @@ import { DeckProvider } from '../../context/DeckContext/DeckContext'
 import PronounsDetail from './PronounsDetail'
 import { GuideProvider } from '../../context/GuideContext/GuideContext'
 
-jest.mock('../../utils/retrieveGuideText/retrieveGuideText.js')
+jest.mock('../../utils/retrieveGuideText/retrieveGuideText.js', () => {
+  return {
+    retrieveGuideText: jest.fn(() => {
+      return 'guide text test'
+    })
+  }
+})
+
+
 
 // const urlPronoun= 'https://en.pronouns.page/api/pronouns/test'
 // let mockPronoun = ['test']
@@ -50,7 +58,7 @@ describe('Pronouns Detail', () => {
         serverFav.close()
         // serverPronoun.close()
     })
-    it.only('should render pronoun details', async () => {
+    it('should render pronoun details', async () => {
         render(
             <GuideProvider>
             <ProvideAuth>
@@ -63,6 +71,6 @@ describe('Pronouns Detail', () => {
              </GuideProvider>
         )
         screen.getByLabelText(/loading./i)
-        await waitFor(() => screen.findByText('coolio'))
+        await screen.findByText('coolio')
     })  
 })
