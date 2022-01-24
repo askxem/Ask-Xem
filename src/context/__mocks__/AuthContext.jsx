@@ -17,12 +17,12 @@ function ProvideAuth({mockUser ,children}) {
 
     async function signIn(email, password) {
         const newUser = await signInUser(email, password);
-        console.log(newUser);
         setUser(newUser);
     }
 
     async function signOut() {
         await signOutUser();
+        localStorage.clear();
         setUser({});
     }
 

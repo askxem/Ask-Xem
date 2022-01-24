@@ -17,14 +17,15 @@ export function getSession() {
 }
 
 export async function signUpUser(email, password) {
-      const { user, error } = await client.auth.signUp({ email, password });
-      if(error) throw error;
-      return user;
+  const { user, error } = await client.auth.signUp({ email, password });
+  if(error) throw error;
+  return user;
 }
 
 export async function signInUser(email, password) {
-    const response = await client.auth.signIn({ email, password });
-    return parseData(response);
+  const { user, error } = await client.auth.signIn({ email, password });
+  if(error) throw error;
+  return user;
 }
 
 export async function signOutUser() {
