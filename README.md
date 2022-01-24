@@ -16,6 +16,8 @@
 ### This app allows users of all ages to learn about the different pronouns and genders. 
 <br>
 
+### Planning:
+Check out our [Miro](https://miro.com/app/board/uXjVOV9lPBg=/?invite_link_id=646045603700)
 
 ### User Story:
 1. Login in, create a new user, or even continue as a guest user
