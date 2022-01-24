@@ -7,7 +7,6 @@ import { ProvideAuth } from '../../context/AuthContext'
 import { DeckProvider } from '../../context/DeckContext/DeckContext'
 import Pronouns from './Pronouns'
 import { GuideProvider } from '../../context/GuideContext/GuideContext'
-import App from '../../App'
 
 const url = process.env.SUPABASE_URL + '/rest/v1'
 
@@ -34,16 +33,12 @@ describe('Pronouns List', () => {
             <ProvideAuth>
             <DeckProvider>
             <MemoryRouter initialEntries={['/pronouns']}>
-                {/* <Switch>
-                <Route exact path='/pronouns'> */}
                 <Pronouns />
-                {/* </Route>
-                </Switch> */}
             </MemoryRouter>
              </DeckProvider>
              </ProvideAuth>
              </GuideProvider>
         )
-        await screen.findByText('b;ahblah')
+        await screen.findByText('blahblah')
     })  
 })
