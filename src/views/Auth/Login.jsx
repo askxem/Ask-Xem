@@ -1,7 +1,7 @@
 import React from 'react'
 import AuthForm from '../../components/Auth/AuthForm.jsx'
 import useForm from '../../hooks/useForm.js';
-import { useHistory, useLocation, Link } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext.jsx';
 import styles from './AuthView.css'
@@ -12,7 +12,7 @@ export default function Login() {
     const location = useLocation();
     const {signIn, user} = useAuth();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-    const [{email, password}, handleChange] = useForm({
+    const [{email, password}, handleChange, error, setError] = useForm({
         email: '',
         password: ''
     });
@@ -21,8 +21,13 @@ export default function Login() {
 
     async function handleSubmit (e){
         e.preventDefault();
-        await signIn(email, password);
-        history.replace(from);
+
+        try{
+            await signIn(email, password);
+            history.replace(from);
+        } catch(e) {
+            setError('Please check your credentials');
+        }
     }
 
     return (
@@ -35,10 +40,13 @@ export default function Login() {
             handleSubmit={handleSubmit}
             isPasswordVisible={isPasswordVisible}
             setIsPasswordVisible={setIsPasswordVisible}
+            error={error}
             />
         </section>}
 
-        {user.id && <p>You're already logged in! If you're ready to log out, there's a handy button for that up top!</p>}
+        {
+            user.id && <p>You're already logged in! If you're ready to log out, there's a handy button for that up top!</p>
+        }
         </div>
     )
 }

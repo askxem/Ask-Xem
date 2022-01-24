@@ -15,7 +15,8 @@ export default function AuthForm({
   handleChange, 
   handleSubmit,
   isPasswordVisible,
-  setIsPasswordVisible}) {
+  setIsPasswordVisible,
+  error}) {
 
   return (
     <div className={styles.formcontainer}>
@@ -51,20 +52,30 @@ export default function AuthForm({
           onClick={() => setIsPasswordVisible(prevState => !prevState)}>
             { isPasswordVisible ? 'Hide Password' : 'Show Password'}
           </div>
-
-          {
-            isSigningUp && <p aria-label='Password contraints'>{password.length >= 12 ? '🟢 Password must be at least 12 characters long.' : '🔴 Password must be at least 12 characters long.'}</p>
-          }
           
           {
             isSigningUp
             ? (<>
+              {
+                error 
+                ? <p aria-label='Error message.'>🔴 {error}.</p> 
+                : <p aria-label='Password contraints'>
+                    {
+                      password.length >= 12 
+                      ? '🟢 Password must be at least 12 characters long.' 
+                      : '🔴 Password must be at least 12 characters long.'
+                    }
+                </p> 
+              }
               <CoppaDisclaimer />
               <button disabled={password.length < 12}>Create Account</button>
               <Link to='/login'>Already have an account?</Link>
             </>)
             : 
             <>
+              {
+                error && <p aria-label='Error message.'>🔴 {error}.</p>
+              }
               <button>Login</button>
               <Link to='/signup'>Need an account?</Link>
             </>
