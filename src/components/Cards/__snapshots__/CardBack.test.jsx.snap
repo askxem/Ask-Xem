@@ -13,7 +13,7 @@ exports[`Favorites view should display the back of the card 1`] = `
         class="heartcontainer"
       >
         <img
-          alt="heart"
+          alt="full heart"
           class="heart"
           src="/redheart.png"
         />
