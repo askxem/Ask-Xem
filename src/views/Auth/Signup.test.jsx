@@ -90,10 +90,14 @@ describe('tests signup behavior', () => {
         fireEvent.change(emailInput, {target: {value: 'newuser@test.com'}});
         fireEvent.change(passwordInput, {target: {value: 'test-password'}});
 
-        const signupButton = screen.getByRole('button');
+        const signupButton = screen.getByRole('button', {name: 'Create Account'});
         fireEvent.click(signupButton);
             
         await screen.findByText(/choose your guide/i);
+        screen.getByAltText(/bunny/i);
+        screen.getByAltText(/axolotl/i);
+        screen.getByAltText(/lion/i);
+        screen.getAllByRole('radio');
     });
 
     it('user attempts to signup with existing account, recieves signup error feedback', async () => {
@@ -118,7 +122,7 @@ describe('tests signup behavior', () => {
         fireEvent.change(emailInput, {target: {value: 'test@test.com'}});
         fireEvent.change(passwordInput, {target: {value: 'test-password'}});
 
-        const signupButton = screen.getByRole('button');
+        const signupButton = screen.getByRole('button', {name: 'Create Account'});
         fireEvent.click(signupButton);
 
         await screen.findByText('🔴 User already registered.');
@@ -140,9 +144,9 @@ describe('tests signup behavior', () => {
             </ProvideAuth>
         );
         
-        const signupButton = screen.getByText('Already have an account?');
-        fireEvent.click(signupButton);
+        const loginLink = screen.getByRole('link', { name: 'Already have an account?' });
+        fireEvent.click(loginLink);
         
-        await screen.findAllByText(/login/i);
+        await screen.findByRole('button', { name: /login/i });
     })
 })
