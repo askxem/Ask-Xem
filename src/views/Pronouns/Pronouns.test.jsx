@@ -30,7 +30,7 @@ describe('Pronouns List', () => {
     afterAll(() => {
         server.close()
     })
-    it.skip('should render the pronouns cards', async () => {
+    it('should render the pronouns cards', async () => {
         render(
             <GuideProvider>
             <ProvideAuth>
