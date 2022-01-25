@@ -13,40 +13,40 @@ const testProps = {
 }
 
 describe('renders authForm component', () => {
-    
+
     it('renders login form', () => {
-        const {container} = render(
-        <MemoryRouter initialEntries={['/']}>
-            <Route path='/'>
-                <AuthForm {...testProps}/>
-            </Route>
-        </MemoryRouter>
+        const { container } = render(
+            <MemoryRouter initialEntries={['/']}>
+                <Route path='/'>
+                    <AuthForm {...testProps} />
+                </Route>
+            </MemoryRouter>
         );
-    
+
         expect(container).toMatchSnapshot();
     })
 
     it('renders signup form meeting password constraints', () => {
-        const {container} = render(
+        const { container } = render(
             <MemoryRouter initialEntries={['/']}>
-            <Route path='/'>
-                <AuthForm {...testProps} isSigningUp={true}/>
-            </Route>
-        </MemoryRouter>
+                <Route path='/'>
+                    <AuthForm {...testProps} isSigningUp={true} />
+                </Route>
+            </MemoryRouter>
         );
-    
+
         expect(container).toMatchSnapshot();
     })
 
     it('renders signup form failing password contraints', () => {
-        const {container} = render(
+        const { container } = render(
             <MemoryRouter initialEntries={['/']}>
-            <Route path='/'>
-                <AuthForm {...testProps} password={'test'} isSigningUp={true}/>
-            </Route>
-        </MemoryRouter>
+                <Route path='/'>
+                    <AuthForm {...testProps} password={'test'} isSigningUp={true} />
+                </Route>
+            </MemoryRouter>
         );
-    
+
         expect(container).toMatchSnapshot();
     })
 

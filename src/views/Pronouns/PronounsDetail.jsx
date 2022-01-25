@@ -9,7 +9,6 @@ import { useDeck } from '../../context/DeckContext/DeckContext'
 import { useAuth } from '../../context/AuthContext'
 import Loader from '../../components/Loading/Loader.jsx'
 
-
 export default function PronounsDetail() {
   const { user } = useAuth()
   const { id } = useParams();
@@ -21,7 +20,7 @@ export default function PronounsDetail() {
 
   useEffect(() => {
     const fetchFavs = async () => {
-      if (user.id){
+      if (user.id) {
         try {
           //get the card ids in the favs table for this user
           const response = await getFavs(user.id)
@@ -35,8 +34,8 @@ export default function PronounsDetail() {
           console.log(error.message)
         }
       }
-     }
-     fetchFavs()
+    }
+    fetchFavs()
   }, [])
 
   useEffect(() => {
@@ -51,7 +50,7 @@ export default function PronounsDetail() {
         const newGuideText = await retrieveGuideText(response.category, response.animal, response.title)
         setGuideText(newGuideText)
       } catch (error) {
-       console.log(error.message) 
+        console.log(error.message)
       }
     }
     fetchCard()
@@ -61,8 +60,8 @@ export default function PronounsDetail() {
   return (
     <main>
       {loading && <Loader />}
-      {card && <CardBack card={card} favStatus={favStatus}/>}
-      {guideText && <Guide text={guideText}/>}
+      {card && <CardBack card={card} favStatus={favStatus} />}
+      {guideText && <Guide text={guideText} />}
     </main>
   )
 }

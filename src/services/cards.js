@@ -6,7 +6,7 @@ export async function getCards() {
 }
 
 export async function getCardsByCategory(category) {
-  try{
+  try {
     const request = await client
       .from('cards')
       .select()
@@ -21,20 +21,20 @@ export async function getCardsByCategory(category) {
 
 export async function getCard(id) {
   try {
-     const request = await client.from('cards').select().match({ id });
-      return parseData(request);
+    const request = await client.from('cards').select().match({ id });
+    return parseData(request);
   } catch (error) {
-      console.log(error);
-      return {}
+    console.log(error);
+    return {}
   }
 }
 
 export async function getCardbyTitle(title) {
   try {
-     const request = await client.from('cards').select().textSearch('title', title);
-      return parseData(request);
+    const request = await client.from('cards').select().textSearch('title', title);
+    return parseData(request);
   } catch (error) {
-      console.log(error);
-      return {}
+    console.log(error);
+    return {}
   }
 }

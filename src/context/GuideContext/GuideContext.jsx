@@ -2,7 +2,7 @@ import { createContext, useState, useContext } from "react";
 
 const GuideContext = createContext();
 
-function GuideProvider({children}) {
+function GuideProvider({ children }) {
 
   const hasSelectedGuide = getGuideLocal();
 
@@ -25,16 +25,16 @@ function GuideProvider({children}) {
   }
 
   return (
-      <GuideContext.Provider value={{guide, setGuideGlobal}} >
-          {children}
-      </GuideContext.Provider>
+    <GuideContext.Provider value={{ guide, setGuideGlobal }} >
+      {children}
+    </GuideContext.Provider>
   )
 }
 
 const useGuide = () => {
-    const context = useContext(GuideContext);
-    if (context === undefined) throw new Error('Guide context not accessible outside of the guide provider.')
-    return context;
+  const context = useContext(GuideContext);
+  if (context === undefined) throw new Error('Guide context not accessible outside of the guide provider.')
+  return context;
 }
 
 export { GuideProvider, useGuide }

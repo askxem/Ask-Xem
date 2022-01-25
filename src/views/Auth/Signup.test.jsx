@@ -19,22 +19,22 @@ const mockResponse = {
 const server = setupServer(
     rest.post(url, (req, res, ctx) => {
         // mocks user validation and error throwing
-        const {email} = JSON.parse(req.body);
+        const { email } = JSON.parse(req.body);
         if (email !== 'test@test.com') {
             return res(
                 ctx.json(mockResponse)
-                );
+            );
         } else {
             return res(
                 ctx.status(400),
-                ctx.json({error: 'User already registered'})
+                ctx.json({ error: 'User already registered' })
             );
         }
     })
 );
 
 describe('tests signup behavior', () => {
-    
+
     beforeAll(() => {
         server.listen()
     })
@@ -43,7 +43,7 @@ describe('tests signup behavior', () => {
         server.close()
     })
 
-    it('user can type in a 12+ character password, recieves password constraint feedback.', async () =>{
+    it('user can type in a 12+ character password, recieves password constraint feedback.', async () => {
         render(
             <ProvideAuth>
                 <GuideProvider>
@@ -61,8 +61,8 @@ describe('tests signup behavior', () => {
 
         screen.getByText(/🔴 Password must be at least 12 characters long./i);
 
-        fireEvent.change(emailInput, {target: {value: 'test@test.com'}});
-        fireEvent.change(passwordInput, {target: {value: 'test-password'}});
+        fireEvent.change(emailInput, { target: { value: 'test@test.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'test-password' } });
 
         screen.getByText(/🟢 Password must be at least 12 characters long./i);
     })
@@ -87,12 +87,12 @@ describe('tests signup behavior', () => {
         const emailInput = screen.getByLabelText(/email/i);
         const [passwordInput] = screen.getAllByLabelText(/password/i);
 
-        fireEvent.change(emailInput, {target: {value: 'newuser@test.com'}});
-        fireEvent.change(passwordInput, {target: {value: 'test-password'}});
+        fireEvent.change(emailInput, { target: { value: 'newuser@test.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'test-password' } });
 
-        const signupButton = screen.getByRole('button', {name: 'Create Account'});
+        const signupButton = screen.getByRole('button', { name: 'Create Account' });
         fireEvent.click(signupButton);
-            
+
         await screen.findByText(/choose your guide/i);
         screen.getByAltText(/bunny/i);
         screen.getByAltText(/axolotl/i);
@@ -119,10 +119,10 @@ describe('tests signup behavior', () => {
         const emailInput = screen.getByLabelText(/email/i);
         const [passwordInput] = screen.getAllByLabelText(/password/i);
 
-        fireEvent.change(emailInput, {target: {value: 'test@test.com'}});
-        fireEvent.change(passwordInput, {target: {value: 'test-password'}});
+        fireEvent.change(emailInput, { target: { value: 'test@test.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'test-password' } });
 
-        const signupButton = screen.getByRole('button', {name: 'Create Account'});
+        const signupButton = screen.getByRole('button', { name: 'Create Account' });
         fireEvent.click(signupButton);
 
         await screen.findByText('🔴 User already registered.');
@@ -143,10 +143,10 @@ describe('tests signup behavior', () => {
                 </GuideProvider>
             </ProvideAuth>
         );
-        
+
         const loginLink = screen.getByRole('link', { name: 'Already have an account?' });
         fireEvent.click(loginLink);
-        
+
         await screen.findByRole('button', { name: /login/i });
     })
 })

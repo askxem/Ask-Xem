@@ -27,7 +27,7 @@ export default function Pronouns() {
       }
     }
     showModal()
-  },[pronSeen])
+  }, [pronSeen])
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -38,7 +38,7 @@ export default function Pronouns() {
         setDeck(response)
         setLoading(false)
       } catch (error) {
-       console.log(error.message) 
+        console.log(error.message)
       }
     }
     fetchDeck()
@@ -56,8 +56,8 @@ export default function Pronouns() {
     <main>
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
-      <Guide text={guideText}/>
-      { showModal && <DeckComplete handleClick={handleClick}/>}
+      <Guide text={guideText} />
+      {showModal && <DeckComplete handleClick={handleClick} />}
     </main>
   )
 }

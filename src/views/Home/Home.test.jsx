@@ -31,7 +31,7 @@ describe('tests home behavior', () => {
         fireEvent.click(loginLink);
 
         screen.getAllByLabelText(/password/i);
-        screen.getByRole('button', {name: 'Login'});
+        screen.getByRole('button', { name: 'Login' });
     });
 
     it('redirects user to signup page on click of login link', () => {
@@ -53,7 +53,7 @@ describe('tests home behavior', () => {
         fireEvent.click(signupLink);
 
         screen.getAllByLabelText(/password/i);
-        screen.getByRole('button', {name: 'Create Account'});
+        screen.getByRole('button', { name: 'Create Account' });
     });
 
     it('redirects user to select page on click of continue as guest link, with two disabled guest inputs', () => {
@@ -83,9 +83,9 @@ describe('tests home behavior', () => {
     });
 
     it('renders a link to select page if user exists in context that redirects user to select page on click', () => {
-        
+
         render(
-            <ProvideAuth mockUser={{id: 20}}>
+            <ProvideAuth mockUser={{ id: 20 }}>
                 <GuideProvider>
                     <MemoryRouter>
                         <Route exact path='/'>

@@ -14,16 +14,16 @@ const mockCard = {
 }
 
 it('renders card with empty heart, renders full heart onClick', async () => {
-        render(
-            <ProvideAuth mockUser={{id: 1}}>
-                <CardBack 
+    render(
+        <ProvideAuth mockUser={{ id: 1 }}>
+            <CardBack
                 card={mockCard}
-                favStatus={false}/>
-            </ProvideAuth>
-        );
+                favStatus={false} />
+        </ProvideAuth>
+    );
 
-        const heartButton = screen.getByAltText(/empty heart/i);
-        fireEvent.click(heartButton);
+    const heartButton = screen.getByAltText(/empty heart/i);
+    fireEvent.click(heartButton);
 
-        screen.getByAltText(/full heart/i);
+    screen.getByAltText(/full heart/i);
 });

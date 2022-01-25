@@ -22,7 +22,7 @@ export default function App() {
     <ProvideAuth>
       <DeckProvider>
         <GuideProvider>
-    
+
           <Router>
             <Layout>
               <Switch>
@@ -30,35 +30,36 @@ export default function App() {
                 <Route exact path='/about'>
                   <About />
                 </Route>
-        
+
                 <PrivateRoute exact path='/favorites'>
                   <Favorites />
                 </PrivateRoute>
-        
+
+                {/* This path should match with your list view, ie. /pronouns/:id */}
                 <Route path='/pronoun/:id'>
-                    <PronounsDetail />
+                  <PronounsDetail />
                 </Route>
-    
+
                 <Route path='/gender/:id'>
-                    <GenderDetail />
+                  <GenderDetail />
                 </Route>
-    
+
                 <Route exact path='/gender'>
-                    <Gender />
+                  <Gender />
                 </Route>
-    
+
                 <Route exact path='/pronouns'>
-                    <Pronouns />
+                  <Pronouns />
                 </Route>
-        
+
                 <PrivateRoute exact path='/profile'>
                   <Profile />
                 </PrivateRoute>
-        
+
                 <Route exact path='/select'>
-                    <Select />
+                  <Select />
                 </Route>
-        
+
                 <Route exact path='/login'>
                   <Login />
                 </Route>
@@ -66,7 +67,7 @@ export default function App() {
                 <Route exact path='/signup'>
                   <Signup />
                 </Route>
-        
+
                 <Route exact path='/'>
                   <Home />
                 </Route>
@@ -74,9 +75,9 @@ export default function App() {
               </Switch>
             </Layout>
           </Router>
-          
+
         </GuideProvider>
       </DeckProvider>
     </ProvideAuth>
-    );
+  );
 }

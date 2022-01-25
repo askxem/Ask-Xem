@@ -22,7 +22,7 @@ export default function GenderDetail() {
 
   useEffect(() => {
     const fetchFavs = async () => {
-      if (user.id){
+      if (user.id) {
         try {
           //get the card ids in the favs table for this user
           const response = await getFavs(user.id)
@@ -36,8 +36,8 @@ export default function GenderDetail() {
           console.log(error.message)
         }
       }
-     }
-     fetchFavs()
+    }
+    fetchFavs()
   }, [])
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function GenderDetail() {
         setGuideText(newGuideText)
 
       } catch (error) {
-       console.log(error.message) 
+        console.log(error.message)
       }
     }
     fetchCard()
@@ -63,8 +63,8 @@ export default function GenderDetail() {
   return (
     <main>
       {loading && <Loader />}
-      {card && <CardBack card={card} favStatus={favStatus}/>}
-      {guideText && <Guide text={guideText}/>}
+      {card && <CardBack card={card} favStatus={favStatus} />}
+      {guideText && <Guide text={guideText} />}
     </main>
   )
 }

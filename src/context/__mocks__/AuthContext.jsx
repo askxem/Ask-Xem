@@ -5,9 +5,9 @@ import { signInUser, signOutUser, signUpUser } from "../../services/users.js";
 
 const AuthContext = createContext();
 
-function ProvideAuth({mockUser ,children}) {
+function ProvideAuth({ mockUser, children }) {
     const [user, setUser] = useState(
-        mockUser ? {...mockUser} : {}
+        mockUser ? { ...mockUser } : {}
     );
 
     async function signUp(email, password) {
@@ -26,7 +26,7 @@ function ProvideAuth({mockUser ,children}) {
         setUser({});
     }
 
-    const value = useMemo(() => ({ user, signUp, signIn, signOut}), [user]);
+    const value = useMemo(() => ({ user, signUp, signIn, signOut }), [user]);
 
     return (
         <AuthContext.Provider value={value} >
@@ -39,7 +39,7 @@ function ProvideAuth({mockUser ,children}) {
  * 
  * @returns a user object, a signup, signin, and signout fn that hits the database.
  */
-function useAuth(){
+function useAuth() {
     const context = useContext(AuthContext);
 
     if (context === undefined) throw new Error('Auth context not accessible outside of the auth provider.')

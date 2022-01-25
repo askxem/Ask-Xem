@@ -6,12 +6,12 @@ import React, { useState } from 'react'
  * @returns an array containing current form state object, a handleChange fn for inputs, an error message, and a setError message fn.
  */
 export default function useForm(intialValue) {
-    const [formState, setFormState] = useState({...intialValue});
+    const [formState, setFormState] = useState({ ...intialValue });
     const [error, setError] = useState('');
 
-    function handleChange(e){
+    function handleChange(e) {
         e.preventDefault();
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setFormState(prevState => {
             return {
                 ...prevState,

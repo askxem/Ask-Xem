@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './Loader.css'
 
-const loaderVariants ={
+const loaderVariants = {
     animationOne: {
         x: [-30, 30],
         y: [0, -30],
@@ -21,7 +21,7 @@ const loaderVariants ={
 
 export default function Loader() {
 
-    return(
+    return (
         <div className={styles.container}>
             <motion.div className={styles.loader} variants={loaderVariants} animate='animationOne' aria-label='Loading.'></motion.div>
         </div>
