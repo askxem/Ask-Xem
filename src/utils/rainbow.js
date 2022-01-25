@@ -1,10 +1,4 @@
 export default function renderRainbow(seenCount) {
-    if(seenCount == 1) return ['red']
-    else if(seenCount == 2) return ['red','orange']
-    else if(seenCount == 3) return ['red','orange','yellow']
-    else if(seenCount == 4) return ['red','orange','yellow','green']
-    else if(seenCount == 5) return ['red','orange','yellow','green','blue']
-    else if(seenCount == 6) return ['red','orange','yellow','green','blue','indigo']
-    else if(seenCount >= 7) return ['red','orange','yellow','green','blue','indigo','purple']
-
+    // Handy one-liner that does the same as all the if statements
+    return ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'purple'].slice(0, Math.min(seenCount, 7))
 }

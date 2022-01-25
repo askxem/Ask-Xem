@@ -4,12 +4,12 @@ import { getUser, signInUser, signOutUser, signUpUser } from "../services/users.
 
 const AuthContext = createContext();
 
-function ProvideAuth({children}) {
+function ProvideAuth({ children }) {
 
     const currentUser = getUser();
 
     const [user, setUser] = useState(
-        currentUser ? {...currentUser} : {}
+        currentUser ? { ...currentUser } : {}
     );
 
     async function signUp(email, password) {
@@ -29,7 +29,7 @@ function ProvideAuth({children}) {
         history.push('/home');
     }
 
-    const value = useMemo(() => ({ user, signUp, signIn, signOut}), [user]);
+    const value = useMemo(() => ({ user, signUp, signIn, signOut }), [user]);
 
     return (
         <AuthContext.Provider value={value} >
@@ -42,7 +42,7 @@ function ProvideAuth({children}) {
  * 
  * @returns a user object, a signup, signin, and signout fn that hits the database.
  */
-function useAuth(){
+function useAuth() {
     const context = useContext(AuthContext);
 
     if (context === undefined) throw new Error('Auth context not accessible outside of the auth provider.')

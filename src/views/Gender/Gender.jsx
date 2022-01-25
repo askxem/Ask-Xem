@@ -11,10 +11,10 @@ import Loader from "../../components/Loading/Loader.jsx"
 
 export default function Gender() {
   const [deck, setDeck] = useState('')
-  const [loading, setLoading] =useState(true)
+  const [loading, setLoading] = useState(true)
   const [rainbow, setRainbow] = useState('')
   const [showModal, setShowModal] = useState(false)
-  
+
   const { genSeen } = useDeck()
 
   const guideText = "This is the Gender Deck - click on a card to find out more! Visit all of my friends for a colorful surprise :)"
@@ -30,7 +30,7 @@ export default function Gender() {
       }
     }
     showModal()
-  },[genSeen])
+  }, [genSeen])
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -41,7 +41,7 @@ export default function Gender() {
         setDeck(response)
         setLoading(false)
       } catch (error) {
-       console.log(error.message) 
+        console.log(error.message)
       }
     }
     fetchDeck()
@@ -60,7 +60,7 @@ export default function Gender() {
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
       <Guide text={guideText} />
-      { showModal && <DeckComplete handleClick={handleClick}/>}
+      {showModal && <DeckComplete handleClick={handleClick} />}
     </main>
   )
 }

@@ -9,14 +9,14 @@ import styles from './AuthForm.css'
  * @returns a form that can handle signing up and logging in.
  */
 export default function AuthForm({
-  isSigningUp=false,
+  isSigningUp = false,
   email,
-  password, 
-  handleChange, 
+  password,
+  handleChange,
   handleSubmit,
   isPasswordVisible,
   setIsPasswordVisible,
-  error}) {
+  error }) {
 
   return (
     <div className={styles.formcontainer}>
@@ -25,62 +25,62 @@ export default function AuthForm({
         <form onSubmit={handleSubmit}>
 
           <label htmlFor="email">Email</label>
-          <input 
-          name='email' 
-          type="email" 
-          id="email" 
-          value={email} 
-          onChange={handleChange} 
-          autoComplete="email" 
-          required 
+          <input
+            name='email'
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleChange}
+            autoComplete="email"
+            required
           />
 
           <label htmlFor="password">Password</label>
-          <input 
-          name='password'
-          id="password"
-          value={password}
-          onChange={handleChange} 
-          type={isPasswordVisible ? 'text' : 'password'} 
-          autoComplete={isSigningUp ? 'new-password' : 'current-password'} 
-          required 
+          <input
+            name='password'
+            id="password"
+            value={password}
+            onChange={handleChange}
+            type={isPasswordVisible ? 'text' : 'password'}
+            autoComplete={isSigningUp ? 'new-password' : 'current-password'}
+            required
           />
-          
+
           <div className={styles.pwtoggle}
-          id="toggle-password"
-          aria-label={`Show password as plain text. Warning: this will display your password on the screen. Password is currently ${isPasswordVisible ? 'visible' : 'hidden'}`}
-          onClick={() => setIsPasswordVisible(prevState => !prevState)}>
-            { isPasswordVisible ? 'Hide Password' : 'Show Password'}
+            id="toggle-password"
+            aria-label={`Show password as plain text. Warning: this will display your password on the screen. Password is currently ${isPasswordVisible ? 'visible' : 'hidden'}`}
+            onClick={() => setIsPasswordVisible(prevState => !prevState)}>
+            {isPasswordVisible ? 'Hide Password' : 'Show Password'}
           </div>
-          
+
           {
             isSigningUp
-            ? (<>
-              {
-                error 
-                ? <p aria-label='Error message.'>🔴 {error}.</p> 
-                : <p aria-label='Password contraints'>
-                    {
-                      password.length >= 12 
-                      ? '🟢 Password must be at least 12 characters long.' 
-                      : '🔴 Password must be at least 12 characters long.'
-                    }
-                </p> 
-              }
-              <CoppaDisclaimer />
-              <button disabled={password.length < 12}>Create Account</button>
-              <Link to='/login'>Already have an account?</Link>
-            </>)
-            : 
-            <>
-              {
-                error && <p aria-label='Error message.'>🔴 {error}.</p>
-              }
-              <button>Login</button>
-              <Link to='/signup'>Need an account?</Link>
-            </>
+              ? (<>
+                {
+                  error
+                    ? <p aria-label='Error message.'>🔴 {error}.</p>
+                    : <p aria-label='Password contraints'>
+                      {
+                        password.length >= 12
+                          ? '🟢 Password must be at least 12 characters long.'
+                          : '🔴 Password must be at least 12 characters long.'
+                      }
+                    </p>
+                }
+                <CoppaDisclaimer />
+                <button disabled={password.length < 12}>Create Account</button>
+                <Link to='/login'>Already have an account?</Link>
+              </>)
+              :
+              <>
+                {
+                  error && <p aria-label='Error message.'>🔴 {error}.</p>
+                }
+                <button>Login</button>
+                <Link to='/signup'>Need an account?</Link>
+              </>
           }
-          
+
         </form>
       </fieldset>
 

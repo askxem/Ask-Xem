@@ -1,7 +1,7 @@
 import { client, parseData } from './client';
 
 export function getUser() {
-  try{
+  try {
     return client.auth.user();
   } catch (error) {
     console.log(error);
@@ -9,22 +9,22 @@ export function getUser() {
 }
 
 export function getSession() {
-  try{
+  try {
     return client.auth.session();
-  } catch(error){
+  } catch (error) {
     console.log(error);
   }
 }
 
 export async function signUpUser(email, password) {
   const { user, error } = await client.auth.signUp({ email, password });
-  if(error) throw error;
+  if (error) throw error;
   return user;
 }
 
 export async function signInUser(email, password) {
   const { user, error } = await client.auth.signIn({ email, password });
-  if(error) throw error;
+  if (error) throw error;
   return user;
 }
 

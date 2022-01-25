@@ -8,14 +8,14 @@ const DeckProvider = ({ children }) => {
 
     const seen = (id, category) => {
 
-        if(category == 'gender') {
+        if (category == 'gender') {
             let genSet = new Set(genSeen)
             genSet.add(id)
             const arr = Array.from(genSet)
             setGenSeen(arr)
             localStorage.setItem('genSEEN', JSON.stringify(arr))
         }
-        if(category == 'pronoun') {
+        if (category == 'pronoun') {
             let pronSet = new Set(pronSeen)
             pronSet.add(id)
             const arr = Array.from(pronSet)
@@ -24,7 +24,7 @@ const DeckProvider = ({ children }) => {
         }
     }
 
-    return(
+    return (
         <DeckContext.Provider value={{ genSeen, pronSeen, seen }}>{children}</DeckContext.Provider>
     )
 

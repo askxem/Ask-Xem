@@ -11,27 +11,27 @@ import Signup from './Signup.jsx'
 
 const url = `${process.env.SUPABASE_URL}/auth/v1/token`;
 
-let mockResponse = {user: {id: 1000, email: 'test@test.com'}};
+let mockResponse = { user: { id: 1000, email: 'test@test.com' } };
 
 const server = setupServer(
     rest.post(url, (req, res, ctx) => {
         // mocks user validation and error throwing
-        const {email, password} = JSON.parse(req.body);
+        const { email, password } = JSON.parse(req.body);
         if (email === 'test@test.com' && password === 'test-password') {
             return res(
                 ctx.json(mockResponse)
-                );
+            );
         } else {
             return res(
                 ctx.status(400),
-                ctx.json({error: 'Invalid credentials'})
+                ctx.json({ error: 'Invalid credentials' })
             )
         }
     })
-);  
+);
 
 describe('test login behavior', () => {
-    
+
     beforeAll(() => {
         server.listen()
     })
@@ -59,10 +59,10 @@ describe('test login behavior', () => {
         const emailInput = screen.getByLabelText(/email/i);
         const [passwordInput] = screen.getAllByLabelText(/password/i);
 
-        fireEvent.change(emailInput, {target: {value: 'test@test.com'}});
-        fireEvent.change(passwordInput, {target: {value: 'test-password'}});
+        fireEvent.change(emailInput, { target: { value: 'test@test.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'test-password' } });
 
-        const loginButton = screen.getByRole('button', {name: /login/i});
+        const loginButton = screen.getByRole('button', { name: /login/i });
         fireEvent.click(loginButton);
 
         await screen.findByText(/choose your guide/i);
@@ -71,7 +71,7 @@ describe('test login behavior', () => {
         screen.getByAltText(/lion/i);
         screen.getAllByRole('radio');
     });
-    
+
     it('user attempts to login with incorrect credentials, recieves login error feedback', async () => {
         render(
             <ProvideAuth>
@@ -84,16 +84,16 @@ describe('test login behavior', () => {
                 </GuideProvider>
             </ProvideAuth>
         );
-        
+
         const emailInput = screen.getByLabelText(/email/i);
         const [passwordInput] = screen.getAllByLabelText(/password/i);
 
-        fireEvent.change(emailInput, {target: {value: 'fail@test.com'}});
-        fireEvent.change(passwordInput, {target: {value: 'test-password'}});
-        
-        const loginButton = screen.getByRole('button', {name: /login/i});
+        fireEvent.change(emailInput, { target: { value: 'fail@test.com' } });
+        fireEvent.change(passwordInput, { target: { value: 'test-password' } });
+
+        const loginButton = screen.getByRole('button', { name: /login/i });
         fireEvent.click(loginButton);
-        
+
         await screen.findByText(/🔴 Please check your credentials/i);
     })
 
@@ -112,10 +112,10 @@ describe('test login behavior', () => {
                 </GuideProvider>
             </ProvideAuth>
         );
-        
+
         const signupLink = screen.getByRole('link', { name: 'Need an account?' });
         fireEvent.click(signupLink);
-        
+
         screen.getByRole('button', { name: /create account/i });
     })
 })

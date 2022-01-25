@@ -10,13 +10,13 @@ import { GuideProvider } from '../../context/GuideContext/GuideContext'
 
 const url = process.env.SUPABASE_URL + '/rest/v1'
 
-let mockResponse = [{title: 'blahblah', animal:'dog', image:'testURL'}]
+let mockResponse = [{ title: 'blahblah', animal: 'dog', image: 'testURL' }]
 
 const server = setupServer(
     rest.get(url + '/cards', (req, res, ctx) => {
-       return res(
-           ctx.json(mockResponse)
-       ) 
+        return res(
+            ctx.json(mockResponse)
+        )
     })
 )
 
@@ -30,16 +30,16 @@ describe('Pronouns List', () => {
     it('should render the pronouns cards', async () => {
         render(
             <GuideProvider>
-            <ProvideAuth>
-            <DeckProvider>
-            <MemoryRouter initialEntries={['/pronouns']}>
-                <Pronouns />
-            </MemoryRouter>
-             </DeckProvider>
-             </ProvideAuth>
-             </GuideProvider>
+                <ProvideAuth>
+                    <DeckProvider>
+                        <MemoryRouter initialEntries={['/pronouns']}>
+                            <Pronouns />
+                        </MemoryRouter>
+                    </DeckProvider>
+                </ProvideAuth>
+            </GuideProvider>
         )
         screen.getByLabelText(/loading./i)
         await screen.findByText('blahblah')
-    })  
+    })
 })
