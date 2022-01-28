@@ -1,54 +1,51 @@
-import { createContext, useState, useContext, useMemo } from "react";
-import { getUser, signInUser, signOutUser, signUpUser } from "../services/users.js";
+import { createContext, useState, useContext, useMemo } from 'react'
+import {
+  getUser,
+  signInUser,
+  signOutUser,
+  signUpUser,
+} from '../services/users.js'
 
+const AuthContext = createContext()
 
-const AuthContext = createContext();
+function ProvideAuth({ children }) {
+  const currentUser = getUser()
 
-function ProvideAuth({children}) {
+  const [user, setUser] = useState(currentUser ? { ...currentUser } : {})
 
-    const currentUser = getUser();
+  async function signUp(email, password) {
+    const newUser = await signUpUser(email, password)
+    setUser(newUser)
+  }
 
-    const [user, setUser] = useState(
-        currentUser ? {...currentUser} : {}
-    );
+  async function signIn(email, password) {
+    const newUser = await signInUser(email, password)
+    setUser(newUser)
+  }
 
-    async function signUp(email, password) {
-        const newUser = await signUpUser(email, password);
-        setUser(newUser);
-    }
+  async function signOut() {
+    await signOutUser()
+    localStorage.clear()
+    setUser({})
+    history.push('/home')
+  }
 
-    async function signIn(email, password) {
-        const newUser = await signInUser(email, password);
-        setUser(newUser);
-    }
+  const value = useMemo(() => ({ user, signUp, signIn, signOut }), [user])
 
-    async function signOut() {
-        await signOutUser();
-        localStorage.clear();
-        setUser({});
-        history.push('/home');
-    }
-
-    const value = useMemo(() => ({ user, signUp, signIn, signOut}), [user]);
-
-    return (
-        <AuthContext.Provider value={value} >
-            {children}
-        </AuthContext.Provider>
-    )
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 /**
- * 
+ *
  * @returns a user object, a signup, signin, and signout fn that hits the database.
  */
-function useAuth(){
-    const context = useContext(AuthContext);
+function useAuth() {
+  const context = useContext(AuthContext)
 
-    if (context === undefined) throw new Error('Auth context not accessible outside of the auth provider.')
+  if (context === undefined)
+    throw new Error('Auth context not accessible outside of the auth provider.')
 
-    return context;
+  return context
 }
-
 
 export { ProvideAuth, useAuth }

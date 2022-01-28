@@ -9,7 +9,6 @@ import { getFavs } from '../../services/favorites'
 import { useAuth } from '../../context/AuthContext'
 import Loader from '../../components/Loading/Loader.jsx'
 
-
 export default function GenderDetail() {
   const { user } = useAuth()
   const { id } = useParams()
@@ -19,14 +18,13 @@ export default function GenderDetail() {
   const { seen } = useDeck()
   const [favStatus, setFavStatus] = useState(false)
 
-
   useEffect(() => {
     const fetchFavs = async () => {
-      if (user.id){
+      if (user.id) {
         try {
           //get the card ids in the favs table for this user
           const response = await getFavs(user.id)
-          //extract an array of just the card ids from the response         
+          //extract an array of just the card ids from the response
           const favArr = response.map((item) => item.card_id)
           //does the extracted array include the current card?
           const faved = favArr.includes(Number(id))
@@ -36,8 +34,8 @@ export default function GenderDetail() {
           console.log(error.message)
         }
       }
-     }
-     fetchFavs()
+    }
+    fetchFavs()
   }, [])
 
   useEffect(() => {
@@ -49,22 +47,24 @@ export default function GenderDetail() {
         setCard(response)
         setLoading(false)
         seen(response.id, response.category)
-        const newGuideText = await retrieveGuideText(response.category, response.animal, response.title)
+        const newGuideText = await retrieveGuideText(
+          response.category,
+          response.animal,
+          response.title
+        )
         setGuideText(newGuideText)
-
       } catch (error) {
-       console.log(error.message) 
+        console.log(error.message)
       }
     }
     fetchCard()
   }, [])
 
-
   return (
     <main>
       {loading && <Loader />}
-      {card && <CardBack card={card} favStatus={favStatus}/>}
-      {guideText && <Guide text={guideText}/>}
+      {card && <CardBack card={card} favStatus={favStatus} />}
+      {guideText && <Guide text={guideText} />}
     </main>
   )
 }

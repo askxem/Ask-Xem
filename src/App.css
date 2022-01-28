@@ -6,43 +6,46 @@
 /* font-family: 'Allerta Stencil', sans-serif; */
 
 * {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body { 
-    background-color: rgb(240, 238, 226);
-    margin: 0;
+body {
+  background-color: rgb(240, 238, 226);
+  margin: 0;
 }
 
 h1 {
-    font-family: 'Allerta Stencil', sans-serif;
-    font-size: xx-large;
-    color: #E57C49;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: xx-large;
+  color: #e57c49;
 }
 
-h2, h3, h4 {
-    padding: 10px;
-    font-family: 'Varela Round', sans-serif;
+h2,
+h3,
+h4 {
+  padding: 10px;
+  font-family: 'Varela Round', sans-serif;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    font-family: 'Varela Round', sans-serif;
-    text-decoration: none;
-    color: #79ACFF;
+  font-family: 'Varela Round', sans-serif;
+  text-decoration: none;
+  color: #79acff;
 }
 
-a:active, a:hover {
-    text-decoration: none;
-    color: #E57C49;
+a:active,
+a:hover {
+  text-decoration: none;
+  color: #e57c49;
 }
 
 p {
-    padding: 10px;
+  padding: 10px;
 }

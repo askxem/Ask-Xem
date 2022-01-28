@@ -1,10 +1,9 @@
-
-.text{
-    padding: 25px;
+.text {
+  padding: 25px;
 }
 
 .guideContainer {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   margin-left: auto;
@@ -12,7 +11,7 @@
   table-layout: fixed;
   border-collapse: collapse;
   z-index: 3;
-  position:relative;
+  position: relative;
   align-items: center;
   gap: 15px;
 }
@@ -25,25 +24,24 @@
   position: relative;
   border-radius: 200px;
   text-align: center;
-  background-color:rgba(255, 255, 255, 0.74);
+  background-color: rgba(255, 255, 255, 0.74);
   justify-content: center;
   font-weight: bold;
-  font-size:medium;
+  font-size: medium;
   font-family: 'Varla Round', sans-serif;
 }
 
-.guideImg{
+.guideImg {
   width: 30%;
-} 
-
-@media only screen and (min-width: 768px) {
-    .guideImg {
-        width: 30%;
-    }
-
-    .guideContainer {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
 }
 
+@media only screen and (min-width: 768px) {
+  .guideImg {
+    width: 30%;
+  }
+
+  .guideContainer {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}

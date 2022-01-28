@@ -1,52 +1,53 @@
 header {
-    position: relative;
-    z-index: 10;
-    padding: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content: space-between;
-    box-shadow: 0px 5px 10px gray;
-    background-color: white;
-    gap: 10px;
+  position: relative;
+  z-index: 10;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 5px 10px gray;
+  background-color: white;
+  gap: 10px;
 }
 
 nav img {
-    width: 50px;
-    cursor: pointer;
-    background-color: #ecb9a1;
-    border-radius: 100%;
-    padding: 10px;
-    box-shadow: 0px 5px 10px gray;
+  width: 50px;
+  cursor: pointer;
+  background-color: #ecb9a1;
+  border-radius: 100%;
+  padding: 10px;
+  box-shadow: 0px 5px 10px gray;
 }
 
 .navicons {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 header span {
-    margin-right: 5px;
-    font-size: .9em;
+  margin-right: 5px;
+  font-size: 0.9em;
 }
 
 header button {
-    border: none;
-    background-color: #91ad8c;
-    border-radius: 5px;
-    padding: 3px;
-    color: white;
-    cursor: pointer;
+  border: none;
+  background-color: #91ad8c;
+  border-radius: 5px;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
 }
 
-header button:hover, button:focus {
-    background-color: #E57C49;
+header button:hover,
+button:focus {
+  background-color: #e57c49;
 }
 
 @media only screen and (min-width: 768px) {
-    nav img {
-        width: 80px;
-    }
+  nav img {
+    width: 80px;
+  }
 }

@@ -6,51 +6,52 @@
 /* font-family: 'Allerta Stencil', sans-serif; */
 
 .formcontainer {
-    padding: 20px;
+  padding: 20px;
 }
 
 .formcontainer button {
-    text-align: center;
-    border: none;
-    background-color: #91ad8c; 
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0px 5px 10px gray;
-    color: white;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1em;
-    cursor: pointer;
+  text-align: center;
+  border: none;
+  background-color: #91ad8c;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 5px 10px gray;
+  color: white;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 legend {
-    font-family: 'Varela Round', sans-serif;
-    margin-bottom: 10px;
+  font-family: 'Varela Round', sans-serif;
+  margin-bottom: 10px;
 }
 
-fieldset, form {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+fieldset,
+form {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .formcontainer input {
-    border: 1px solid grey;
-    border-radius: 5px;
-    height: 30px;
-    padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 30px;
+  padding: 10px;
 }
 
 .pwtoggle {
-    text-align: right;
-    font-size: .9em;
-    cursor: pointer;
-    text-decoration: underline;
+  text-align: right;
+  font-size: 0.9em;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 @media only screen and (min-width: 768px) {
-    .formcontainer {
-        width: 50%;
-        margin-left: 40px;
-    }
+  .formcontainer {
+    width: 50%;
+    margin-left: 40px;
+  }
 }

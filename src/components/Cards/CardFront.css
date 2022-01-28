@@ -1,27 +1,27 @@
 .frontcontainer {
-    padding: 10px;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid gray;
-    border-radius: 20px;
-    background-color: white;
-    min-height: 130px;
-    text-align: center;
-    overflow-wrap: normal;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background-color: white;
+  min-height: 130px;
+  text-align: center;
+  overflow-wrap: normal;
 }
 
 .frontcontainer h3 {
-    font-size: 100%;
-    padding-left: 5px;
-    padding-right: 5px;
-    color: #A486FF;
+  font-size: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #a486ff;
 }
 
 @media only screen and (min-width: 768px) {
-    .frontcontainer h3 {
-        font-size: x-large;
-    }
+  .frontcontainer h3 {
+    font-size: x-large;
+  }
 }
