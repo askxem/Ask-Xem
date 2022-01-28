@@ -1,17 +1,17 @@
 /* eslint-disable no-undef */
-const webpack = require('webpack');
-const path = require('path');
-const HtmlPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const HtmlPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const env = Object.entries({
   ...require('dotenv').config(),
   ...process.env,
 }).reduce((acc, [key, value]) => {
-  acc[key] = value;
-  return acc;
-}, {});
+  acc[key] = value
+  return acc
+}, {})
 
 // eslint-disable-next-line
 module.exports = {
@@ -90,4 +90,4 @@ module.exports = {
       },
     ],
   },
-};
+}

@@ -1,51 +1,43 @@
-import { createContext, useState, useContext, useMemo } from "react";
-import { signInUser, signOutUser, signUpUser } from "../../services/users.js";
+import { createContext, useState, useContext, useMemo } from 'react'
+import { signInUser, signOutUser, signUpUser } from '../../services/users.js'
 
+const AuthContext = createContext()
 
+function ProvideAuth({ mockUser, children }) {
+  const [user, setUser] = useState(mockUser ? { ...mockUser } : {})
 
-const AuthContext = createContext();
+  async function signUp(email, password) {
+    const newUser = await signUpUser(email, password)
+    setUser(newUser)
+  }
 
-function ProvideAuth({mockUser ,children}) {
-    const [user, setUser] = useState(
-        mockUser ? {...mockUser} : {}
-    );
+  async function signIn(email, password) {
+    const newUser = await signInUser(email, password)
+    setUser(newUser)
+  }
 
-    async function signUp(email, password) {
-        const newUser = await signUpUser(email, password);
-        setUser(newUser);
-    }
+  async function signOut() {
+    await signOutUser()
+    localStorage.clear()
+    setUser({})
+  }
 
-    async function signIn(email, password) {
-        const newUser = await signInUser(email, password);
-        setUser(newUser);
-    }
+  const value = useMemo(() => ({ user, signUp, signIn, signOut }), [user])
 
-    async function signOut() {
-        await signOutUser();
-        localStorage.clear();
-        setUser({});
-    }
-
-    const value = useMemo(() => ({ user, signUp, signIn, signOut}), [user]);
-
-    return (
-        <AuthContext.Provider value={value} >
-            {children}
-        </AuthContext.Provider>
-    )
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 /**
- * 
+ *
  * @returns a user object, a signup, signin, and signout fn that hits the database.
  */
-function useAuth(){
-    const context = useContext(AuthContext);
+function useAuth() {
+  const context = useContext(AuthContext)
 
-    if (context === undefined) throw new Error('Auth context not accessible outside of the auth provider.')
+  if (context === undefined)
+    throw new Error('Auth context not accessible outside of the auth provider.')
 
-    return context;
+  return context
 }
-
 
 export { ProvideAuth, useAuth }

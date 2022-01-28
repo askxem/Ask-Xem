@@ -5,16 +5,16 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: 
+    env:
       SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
       SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
       CI: true
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-    - run: npm ci
-    - run: npm test
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - run: npm ci
+      - run: npm test

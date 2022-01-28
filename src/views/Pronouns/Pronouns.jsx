@@ -1,11 +1,11 @@
-import { getCardsByCategory } from "../../services/cards"
-import { useState, useEffect } from "react"
-import Guide from "../../components/Guide/Guide.jsx"
-import CardList from "../../components/Cards/CardList"
-import DeckComplete from "../../components/DeckComplete/DeckComplete.jsx"
-import { useDeck } from "../../context/DeckContext/DeckContext"
-import renderRainbow from "../../utils/rainbow"
-import Loader from "../../components/Loading/Loader.jsx"
+import { getCardsByCategory } from '../../services/cards'
+import { useState, useEffect } from 'react'
+import Guide from '../../components/Guide/Guide.jsx'
+import CardList from '../../components/Cards/CardList'
+import DeckComplete from '../../components/DeckComplete/DeckComplete.jsx'
+import { useDeck } from '../../context/DeckContext/DeckContext'
+import renderRainbow from '../../utils/rainbow'
+import Loader from '../../components/Loading/Loader.jsx'
 
 export default function Pronouns() {
   const [deck, setDeck] = useState('')
@@ -14,7 +14,8 @@ export default function Pronouns() {
   const [showModal, setShowModal] = useState(false)
   const { pronSeen } = useDeck()
 
-  const guideText = "This is the Pronoun Deck - click on a card to find out more! Visit all of my friends for a colorful surprise :)"
+  const guideText =
+    'This is the Pronoun Deck - click on a card to find out more! Visit all of my friends for a colorful surprise :)'
 
   const handleClick = () => {
     setShowModal(false)
@@ -27,7 +28,7 @@ export default function Pronouns() {
       }
     }
     showModal()
-  },[pronSeen])
+  }, [pronSeen])
 
   useEffect(() => {
     const fetchDeck = async () => {
@@ -38,7 +39,7 @@ export default function Pronouns() {
         setDeck(response)
         setLoading(false)
       } catch (error) {
-       console.log(error.message) 
+        console.log(error.message)
       }
     }
     fetchDeck()
@@ -56,10 +57,8 @@ export default function Pronouns() {
     <main>
       {loading && <Loader />}
       <CardList cards={deck} rainbow={rainbow} />
-      <Guide text={guideText}/>
-      { showModal && <DeckComplete handleClick={handleClick}/>}
+      <Guide text={guideText} />
+      {showModal && <DeckComplete handleClick={handleClick} />}
     </main>
   )
 }
-
-

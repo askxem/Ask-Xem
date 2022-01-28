@@ -1,46 +1,46 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.7);
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.modal form{
-    display: flex;
-    flex-direction: column;
+.modal form {
+  display: flex;
+  flex-direction: column;
 }
 
-.modal button{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border: none;
-    background-color: #91ad8c; 
-    border-radius: 20px;
-    padding: 10px;
-    box-shadow: 0px 5px 10px gray;
-    color: white;
+.modal button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  background-color: #91ad8c;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 5px 10px gray;
+  color: white;
 }
 
 .modal div {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .journal {
-    border-radius: 10px;
-    width: 75vw;
-    height: 60vh;
-    padding: 10px;
-    text-overflow: scroll;
-    background-color: white;
-    font-family: 'Varela Round', sans-serif;
-    color: black;
+  border-radius: 10px;
+  width: 75vw;
+  height: 60vh;
+  padding: 10px;
+  text-overflow: scroll;
+  background-color: white;
+  font-family: 'Varela Round', sans-serif;
+  color: black;
 }

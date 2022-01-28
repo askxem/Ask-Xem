@@ -1,8 +1,3 @@
-
 export default function Profile() {
-  return (
-    <div>
-      Profile view.
-    </div>
-  )
+  return <div>Profile view.</div>
 }
