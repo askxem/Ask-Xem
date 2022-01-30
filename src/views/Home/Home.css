@@ -1,5 +1,6 @@
 .main {
   padding: 5%;
+  height: 100%;
 }
 
 .main p {
@@ -46,6 +47,11 @@
 
 .guidecontent img {
   height: 14vh;
+}
+
+.aboutcontainer {
+  text-align: center;
+  padding-top: 40px;
 }
 
 @media only screen and (min-width: 768px) {
